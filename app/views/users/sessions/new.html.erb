@@ -1,62 +1,30 @@
-<header>
-    <div class="head-serch">
-      <div class="serch">
-        <form id="serch_form" action="" method="get">
-        <input id="serch_box" name="s" type="text"  placeholder="キーワードを入力" >
-        <input id="serch_btn" type="submit" value="検索" ><a href="#"></a></form>
-      </div>
-    </div>
-  <input id="head-input" type="checkbox" class="head-unshown">
-  <label id="head-open" for="head-input"><span></span></label>
-  <label class="head-unshown" id="head-close" for="head-input"></label>
-  <div class="head"><span class="head-title"><strong>heavenly</strong></span></div>
-</header>
-
 <div class="signup-container">
   <div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br/>
-    <%= f.email_field :email, autofocus: true, class: "col-xs-12" %>
-  </div>
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="signin-box">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, class: "col-xs-12" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br/>
-    <%= f.password_field :password, class: "col-xs-12" %>
-  </div>
+      <div class="field">
+        <%= f.label :password %><br/>
+        <%= f.password_field :password, class: "col-xs-12" %>
+      </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field-check">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class="button">
+        <%= f.submit "Log in", class: "btn btn-success" %>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="field">
-    <%= f.submit "Log in", class: "btn btn-success" %>
-  </div>
-</div>
-  </div>
+      </div>
+       </div>
 </div>
 <% end %>
-
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-nav">
-      <ul>
-        <li><a href="#">MY PROFILE</a></li>
-        <li><a href="#">CART</a></li>
-        <li><a href="#">MESSAGE</a></li>
-        <li><a href="#">ARTISTS</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">LOGOUT</a></li>
-      </ul>
-    </div>
-    <p class="copyright">©︎ Heavenly music</p>
-  </div>
-</footer>
