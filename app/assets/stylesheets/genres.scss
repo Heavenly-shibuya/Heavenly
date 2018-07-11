@@ -1,22 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.clearfix::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
 header {
   position: relative;
 }
-.head {
-  color: white;
-  /*font-family: verdana;*/
-}
+
 .head-unshown {
   display:none;
 }
@@ -29,6 +14,10 @@ header {
   float: left;
   margin: 10px 8px 3px 10px;
   border: 1px solid #666666;
+}
+
+#head-open span {
+  float: left;
 }
 
 #head-open span, #head-open span:before, #head-open span:after {
@@ -138,21 +127,20 @@ header {
   width: 100%;
   background-color: #222222;
   border-bottom: 12px solid #222222;
-/*  border-top: 1px solid #222222;*/
   line-height: 100px;
+  padding-right: 25px;
 }
-
-
 
 .head-title {
   font-size: 50px;
+  color: white;
+  margin-right: 22px;
 }
 
 
 .sidebar {
   width: 20%;
   height: 800px;
-  background-color: #222222;
   float: left;
 }
 
@@ -369,7 +357,6 @@ header {
 .copyright {
   color: #fff;
   text-align: right;
-  margin-top: 10px;
 }
 
 .serch {
