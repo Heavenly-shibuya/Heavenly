@@ -317,83 +317,9 @@ header {
 }
 
 
-.footer-container {
-  padding: 20px;
-  background-color: #222222;
-  height: 180px;
-}
-
-.footer-nav li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  /*font-family: verdana;*/
-}
-
-.footer-nav li a:hover {
-  color: gray;
-}
-
-.footer-nav li {
-  margin-top: 10px;
-}
-
 .item-content {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.footer-nav {
-  display: flex;
-  justify-content: space-around;
-  color: #fff;
-}
-
-.footer-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.8rem;
-}
-
-.copyright {
-  color: #fff;
-  text-align: right;
-}
-
-.serch {
-  position: absolute;
-  right: 18px;
-  bottom: 42px;
-  padding-top: 30px;
-}
-
-#serch_box {
-  height: 40px;
-  padding: 0 10px;
-  width: 200px;
-  border-radius: 40px;
-  border:solid 2px #eaeaea;
-  outline: 0;
-  color: #fff;
-  font-size: 13px;
-}
-
-#serch_btn {
-  padding: 0;
-  width: 70px;
-  height: 40px;
-  border-radius: 40px;
-  background: #666666;
-  color: #fff;
-  border:solid 2px #eaeaea;
-  font-weight: bold;
-  font-size: 14px;
-  outline: 0;
-}
-
-#serch_btn:hover {
-  background: #eaeaea;
-  color: #666666;
-}
