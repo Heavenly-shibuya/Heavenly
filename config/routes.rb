@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   }
 
   resources :genres
+  resources :news_posts, :only => [:index, :show, :edit, :new]
 
 end
