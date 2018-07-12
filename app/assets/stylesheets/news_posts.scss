@@ -1,3 +1,57 @@
-// Place all the styles related to the news_posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// index
+.news-main {
+	width: 80%;
+	height: 800px;
+	padding-left: 20px;
+	float: right;
+	border: 3px solid #444444;
+	background-color: #222222;
+}
+.news-content {
+	margin: 20px 0;
+}
+.news-image {
+	float: left;
+	border: 1px solid gray;
+	width: 200px;
+	height: 150px;
+	background-image: url(/microphone-3484199_640.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.news-caption {
+	float: left;
+}
+.news-caption p {
+	color: white;
+}
+.news-page ul {
+}
+// show-page
+.news-show-image {
+	float: left;
+	margin-top: 25px;
+	margin-left: 25px;
+	border: 1px solid gray;
+	width: 300px;
+	height: 300px;
+	background-image: url(/microphone-3484199_640.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.news-show-title {
+	float: left;
+	margin-left: 30px;
+	font-size: 30px;
+	color: white;
+	padding-top: 285px;
+}
+.news-show-caption {
+	float: right;
+	margin-top: 30px;
+	margin-right: 35px;
+	width: 400px;
+}
+.news-show-caption p {
+	color: white;
+}

@@ -1,4 +1,12 @@
-.head-title {
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.head {
+
   font-size: 50px;
   color: white;
   margin-right: 22px;
@@ -16,6 +24,7 @@
   margin-top: 40px;
 }
 
+
 .signin-box {
   margin-top: 80px;
 }
@@ -23,6 +32,7 @@
 .field-check {
   margin-top: 30px;
 }
+
 
 .container {
   width: 100%;
