@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :artists
   resources :order_items
   resources :favorites, :only => [:index]
+  resources :delivery_addresss
   resources :news_posts, :only => [:index, :show, :edit, :new]
 
 
