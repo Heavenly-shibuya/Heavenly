@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -41,8 +40,22 @@
 
 .signin-container {
   width: 100%;
-  height: 400px;
+  height: 600px;
   background-color: #faf0e6;
+}
+.user-show-container {
+  width: 100%;
+  height: 950px;
+  background-color: #222222;
+  border-top: 3px solid #444444;
+  border-bottom: 3px solid #444444;
+}
+.user-edit-container {
+  width: 100%;
+  height: 750px;
+  background-color: #222222;
+  border-top: 3px solid #444444;
+  border-bottom: 3px solid #444444;
 }
 
 .signup-container {
@@ -51,4 +64,120 @@
   background-color: #faf0e6;
 }
 
+.footer-container {
+  padding: 20px;
+  background-color: #222222;
+  height: 180px;
+}
 
+.footer-nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-nav li a:hover {
+  color: gray;
+}
+
+.footer-nav li {
+  margin-top: 10px;
+}
+
+.item-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.footer-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+}
+
+.copyright {
+  color: #fff;
+  text-align: right;
+  display: block;
+}
+.user-show-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+  margin-top: 50px;
+  background-image: url(/sample-author8.jpg);
+  background-size: cover;
+}
+.title {
+  text-align: left;
+  padding-top: 20px;
+  color: white;
+  font-family: verdana;
+  font-size: 35px;
+    border-bottom: 3px solid gray;
+
+}
+.user-title {
+  text-align: left;
+  padding-top: 20px;
+  color: white;
+  font-family: verdana;
+  font-size: 35px;
+  border-bottom: 3px solid gray;
+}
+.profile-info ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 20px;
+  color: #EEEEEE;
+}
+.profile-info li {
+  margin-top: 10px;
+  border-bottom:  3px solid gray;
+}
+.user-profile-containar {
+/*  background-color: gray;*/
+background-color: rgba(192, 192, 192, 0.2);
+padding-bottom: 15px;
+}
+.btn-default{
+  background-color: gray;
+}
+.buy-item-content {
+  margin: 20px;
+}
+.buy-history-content{
+  float:left;
+}
+
+
+.buy-item {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  border: 3px solid gray;
+  float: left;
+  background-color: black;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  height: 180px;
+  background-color: #ffa500;
+  border-bottom: 1px solid #ff8c00;
+  border-top: 12px solid #ff8c00;
+  line-height: 168px;
+}
