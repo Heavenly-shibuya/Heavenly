@@ -1,3 +1,124 @@
-// Place all the styles related to the order_items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*-----new*/
+
+
+.buy-item-content {
+  height: 90%;
+  margin: 35px 35px 35px 35px;
+  background-image: url(/buy-item1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.buy-item-content p {
+  text-align: center;
+  font-size: 55px;
+  color: black;
+  line-height: 4;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .4);
+}
+
+.buy-massege {
+  background-color: white;
+  margin: 0 auto;
+  width: 100%;
+  height: 30%;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+            background-image: url(/buy-item1.jpg);
+}
+
+.square_btn{
+  width: 300px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2), inset 0 1px 1px rgba(255, 255, 255, .7);
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+    color: #222222;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.square_btn:hover {
+    background-color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+}
+
+.top-btn {
+  text-align: center;
+  line-height: 20;
+}
+
+
+/*-----index*/
+
+
+
+.order-item-main {
+  width: 80%;
+  height: 800px;
+  padding-left: 20px;
+  float: right;
+  border: 3px solid #444444;
+  background-color: #222222;
+  overflow: scroll;
+}
+
+.order-item-content {
+  height: 220px;
+  margin: 20px 0;
+  overflow: scroll;
+  border-bottom: 1px solid gray;
+}
+
+.order-item-image {
+  float: left;
+  border: 1px solid gray;
+  width: 200px;
+  height: 200px;
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.order-item-text {
+  padding-left: 30px;
+}
+
+.order-item-table {
+  color: white;
+  font-size: 15px;
+}
+
+.order-item-table th {
+  padding: 0 20px 0 0;
+}
+
+.order-item-table td {
+  padding: 10px 25px 0 0;
+  border-bottom: 1px solid gray;
+}
+
+.order-item-name {
+  text-align: center;
+}
+
+.order-item ul {
+}
+
+.order-item-date {
+  color: wheat;
+}
+
+.order-item-title h3 {
+  font-size: 40px;
+  color: white;
+  margin-left: 40px;
+}
+
+

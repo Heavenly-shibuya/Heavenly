@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   resources :genres
   resources :artists
+  resources :order_items
+  resources :favorites, :only => [:index]
   resources :news_posts, :only => [:index, :show, :edit, :new]
+
 
 end

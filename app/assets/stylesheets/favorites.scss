@@ -1,3 +1,93 @@
-// Place all the styles related to the favorites controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.item-content {
+  margin: 20px;
+}
+
+.favorite-item {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+
+.favorite-item:nth-child(1) {
+  margin-bottom: 20px;
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(2) {
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(3) {
+  margin-bottom: 20px;
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(4) {
+  margin-bottom: 20px;
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(5) {
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(6) {
+  margin-bottom: 20px;
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(7) {
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(8) {
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-item:nth-child(9) {
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.favorite-text{
+  height: 20%;
+  width: 100%;
+  background-color: rgba(10, 10, 10, 0.5);
+  text-align: left;
+  margin-top: 80%;
+  border-radius: 10px;
+  padding-left: 7px;
+  font-size: 18px;
+  color: white;
+}
+
+.favorite-song p {
+  line-height: 0.6;
+  margin-left: 10px;
+}
+
+.item-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
