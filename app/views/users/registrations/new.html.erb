@@ -7,7 +7,7 @@
 
     <div class="field">
       <%= f.label :ユーザー名 %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "英数字のみ12文字以内", class: "col-xs-12" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "email", placeholder: "英数字のみ12文字以内", class: "col-xs-12" %>
     </div>
 
     <div class="field">
@@ -17,37 +17,37 @@
 
     <div class="field">
       <%= f.label :姓 %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "東京", class: "col-xs-12" %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "email", placeholder: "東京", class: "col-xs-12" %>
     </div>
 
     <div class="field">
       <%= f.label :姓（フリガナ） %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "トウキョウ", class: "col-xs-12" %>
+      <%= f.text_field :last_name_furi, autofocus: true, autocomplete: "email", placeholder: "トウキョウ", class: "col-xs-12" %>
     </div>
 
     <div class="field">
       <%= f.label :名 %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "太郎", class: "col-xs-12" %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "email", placeholder: "太郎", class: "col-xs-12" %>
     </div>
 
     <div class="field">
       <%= f.label :名（フリガナ） %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "タロウ", class: "col-xs-12" %>
+      <%= f.email_field :first_name_furi, autofocus: true, autocomplete: "email", placeholder: "タロウ", class: "col-xs-12" %>
     </div>
 
     <div class="field">
       <%= f.label :郵便番号 %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "123-1234", class: "col-xs-12" %>
+      <%= f.email_field :zip, autofocus: true, autocomplete: "email", placeholder: "123-1234", class: "col-xs-12" %>
     </div>
 
     <div class="field">
       <%= f.label :住所（物件名まで） %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "東京都渋谷区〇〇1-2-3", class: "col-xs-12" %>
+      <%= f.email_field :address, autofocus: true, autocomplete: "email", placeholder: "東京都渋谷区〇〇1-2-3", class: "col-xs-12" %>
     </div>
 
     <div class="field">
       <%= f.label :電話番号 %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "03-1234-5678", class: "col-xs-12" %>
+      <%= f.email_field :tel, autofocus: true, autocomplete: "email", placeholder: "03-1234-5678", class: "col-xs-12" %>
     </div>
 
     <div class="field">
