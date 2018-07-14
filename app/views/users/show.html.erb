@@ -3,7 +3,8 @@
       <div class="col-xs-2 col-xs-offset-2">
         <div class="user-show-image"></div>
         <br>
-        <div class="col-xs-10 btn btn-primary">profile編集</div>
+        <!-- <div class="col-xs-10 btn btn-primary">profile編集</div> -->
+        <%=link_to "profile編集",edit_user_path(@user), class: "col-xs-10 btn btn-primary" %>
       </div>
         <div class="col-xs-3">
           <div class="user-title">
@@ -16,10 +17,10 @@
             <div class="col-xs-9 col-xs-offset-1">
           <div class="profile-info">
             <ul>
-              <li>name:</li>
-              <li>mail:</li>
-              <li>tel:</li>
-              <li>addres:</li>
+              <li>name: &nbsp;&nbsp;&nbsp; <%= @user.name %></li>
+              <li>mail: &nbsp;&nbsp;&nbsp; <%= @user.email %></li>
+              <li>tel: &nbsp;&nbsp;&nbsp; <%= @user.tel %></li>
+              <li>addres: &nbsp;&nbsp;&nbsp; <%= @user.address %></li>
             </ul>
             <br>
           </div>

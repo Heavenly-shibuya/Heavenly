@@ -17,22 +17,22 @@
           <div class="profile-content">
             <div class="col-xs-9 col-xs-offset-1 user-profile-containar"">
               <div class="profile-info">
+                 <%= form_for(@user) do |f| %>
                 <ul>
-                  <li>name:</li>
-                  <li>mail:</li>
-                  <li>tel:</li>
-                  <li>addres:</li>
-                  <li>name:</li>
-                  <li>mail:</li>
-                  <li>tel:</li>
-                  <li>addres:</li>
-                  <li>name:</li>
-                  <li>mail:</li>
-                  <li>tel:</li>
-                  <li>addres:</li>
+                  <li>user-name: <!-- &nbsp;&nbsp;&nbsp; --> <%= f.text_field :name %></li>
+                  <li>mail: <!-- &nbsp;&nbsp;&nbsp; --> <%= f.email_field :email %></li>
+                  <li>last_name: <!-- &nbsp;&nbsp;&nbsp; --> <%= f.text_field :last_name %></li>
+                  <li>last_name_furi: &nbsp;&nbsp;&nbsp; <%= f.text_field :last_name_furi %></li>
+                  <li>first_name: &nbsp;&nbsp;&nbsp; <%= f.text_field :first_name %></li>
+                  <li>irst_name_furi: &nbsp;&nbsp;&nbsp; <%= f.text_field :first_name_furi %></li>
+                  <li>zip: &nbsp;&nbsp;&nbsp; <%= f.text_field :zip %></li>
+                  <li>addres: &nbsp;&nbsp;&nbsp; <%= f.text_field :address %></li>
+                  <li>tel: &nbsp;&nbsp;&nbsp; <%= f.text_field :tel %></li>
                 </ul>
               <br>
-                <div class="col-xs-3 col-xs-offset-9 btn btn-primary">submit</div>
+                <!-- <div class="col-xs-3 col-xs-offset-9 btn btn-primary">submit</div> -->
+                <%= f.submit "Update User", class: "col-xs-4 col-xs-offset-8 btn btn-primary"%>
+                <% end %>
             </div>
           </div>
         </div>
@@ -40,3 +40,29 @@
     </div>
 </div>
 
+<!--  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "name"
+    t.string "last_name"
+    t.string "last_name_furi"
+    t.string "first_name"
+    t.string "first_name_furi"
+    t.text "profile_image_id"
+    t.integer "delivery_address_id"
+    t.string "zip"
+    t.string "address"
+    t.string "tel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end -->
