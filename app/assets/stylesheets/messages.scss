@@ -1,3 +1,47 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// index
+.massage-main {
+	width: 80%;
+	height: 800px;
+	padding-left: 20px;
+	float: right;
+	border: 3px solid #444444;
+	background-color: #222222;
+	overflow: scroll;
+}
+// new
+.message-new-main {
+	width: 80%;
+	height: 800px;
+	padding: 30px 30px;
+	float: right;
+	border: 3px solid #444444;
+	background-color: #222222;
+	overflow: scroll;
+}
+.message-title h3 {
+	margin: 20px 30px 0 30px;
+	border-bottom: 3px solid gray;
+	color: white;
+  	font-size: 40px;
+}
+.message-new-content {
+	padding-top: 20px;
+}
+.message-new-list {
+	margin: 30px 0;
+	color: white;
+	font-size: 20px;
+}
+.message-new-main {
+	// margin: 0;
+}
+.text-box {
+	margin-top: 30px;
+	background-color: white;
+	color: black;
+	border: 3px solid gray;
+	border-radius: 25px;
+}
+.text-box p {
+	margin:10px auto;
+}
