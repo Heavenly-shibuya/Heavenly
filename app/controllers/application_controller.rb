@@ -1,2 +1,22 @@
 class ApplicationController < ActionController::Base
+	protect_from_forgery with: :exception
+	before_action :configure_permitted_parameters, if: :devise_controller?
+
+	def after_sign_in_path_for(resource)
+    genres_path # ログイン後に遷移するpathを設定
+  	end
+
+  	  def after_sign_out_path_for(resource)
+		new_user_session_path
+	end
+
+
+	def configure_permitted_parameters
+	devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email,:last_name,:last_name_furi,:first_name,:first_name_furi,:delivery_address_id,:zip,:address,:tel])
+	# devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+	# devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+	end
 end
+
+
+
