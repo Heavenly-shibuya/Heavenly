@@ -1,3 +1,71 @@
-// Place all the styles related to the reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.review-title {
+  text-align: left;
+  padding-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: white;
+  font-family: verdana;
+  font-size: 35px;
+  border-bottom: 3px solid gray;
+}
+.review-title h3 {
+  margin: 20px 20px 20px 60px;
+  font-size: 40px;
+}
+.review-user-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 90px;
+/*  margin: auto;*/
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background-image: url(/sample-author8.jpg);
+  background-size: cover;
+}
+.review-comment {
+	color: #EEEEEE;
+	margin-top: 70px;
+}
+.review {
+	border-bottom: 1px solid gray;
+	margin-bottom: 15px;
+}
+.review-show-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+/*  margin-top: 50px;*/
+  background-image: url(/sample-author8.jpg);
+  background-size: cover;
+  margin: 0 auto;
+}
+.review-image {
+	padding-top: 100px;
+}
+.review-profile-name {
+	font-size: 25px;
+	color: #EEEEEE;
+	text-align: center;
+}
+.review-content {
+	background-color: rgba(192, 192, 192, 0.2);
+/*	height: 600px;*/
+	margin-top: 100px;
+}
+.hyouka {
+	color: #EEEEEE;
+	font-size: 25px;
+}
+.review-hyouka {
+	margin-top: 20px;
+	border-bottom: 2px solid gray;
+}
+.review-text {
+	margin-top: 20px;
+	font-size: 20px;
+	color: #EEEEEE;
+	word-wrap: break-word
+}
+.review-back {
+	margin-top: 15px;
+}

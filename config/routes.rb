@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   resources :genres
   resources :artists
   resources :news_posts, :only => [:index, :show, :edit, :new]
+  resources :reviews, :only => [:index, :show]
+  resources :carts_items, :only => [:index, :edit]
+
 
 end
