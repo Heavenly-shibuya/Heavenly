@@ -65,9 +65,10 @@ img {
 	float: right;
 	border: 3px solid #444444;
 	background-color: #222222;
+	overflow: scroll;
 }
 .news-new-content {
-	padding: 100px 0;
+	padding-top: 100px;
 }
 .news-new-list {
 	margin: 30px 0;
@@ -76,5 +77,4 @@ img {
 }
 .upimage {
 	margin-top: 30px;
-	margin-left: 30px;
 }
