@@ -275,7 +275,47 @@
 }
 
 
+/*-----new
+-----edit*/
 
+.new-artist-title {
+  text-align: left;
+  padding-top: 20px;
+  color: white;
+  font-family: verdana;
+  font-size: 35px;
+}
 
+.new-artist-title p {
+  padding-left: 20px;
+}
+
+.new-artist-main {
+  width: 80%;
+  height: 800px;
+  padding: 0 20px 20px;
+  float: right;
+  border: 3px solid #444444;
+  background-color: #222222;
+}
+
+.artist-header {
+  height: 250px;
+  background-color: white;
+  border: 5px solid gray;
+  margin-bottom: 10px;
+}
+
+.artist-header p {
+  color: #3e3e3e;
+  font-size: 40px;
+  line-height: 6;
+  text-align: center;
+}
+
+.artist-new-content {
+  width: 100%;
+  background-color: red;
+}
 
 
