@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/show'
   get 'users/edit'
+  get 'items/stock'
+  get 'items/stock_edit'
+
     devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -20,11 +23,13 @@ Rails.application.routes.draw do
   resources :artists
   resources :news_posts
   resources :items
-
+  resources :rooms
+  resources :messages
+  resources :users
+  resources :admins
   resources :order_items
   resources :favorites, :only => [:index]
   resources :delivery_addresss
-  resources :news_posts, :only => [:index, :show, :edit, :new]
   resources :reviews, :only => [:index, :show]
   resources :carts_items, :only => [:index, :edit]
 
