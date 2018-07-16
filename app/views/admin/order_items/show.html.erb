@@ -17,87 +17,199 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="title"style="margin-bottom: 30px;"><h3><strong>注文一覧</strong></h3></div>
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>注文ID</th>
-                  <th>商品名</th>
-                  <th>金額</th>
-                  <th>数量</th>
-                  <th>小計</th>
-                  <th>合計</th>
-                  <th>購入者名</th>
-                  <th>ステータス</th>
-                  <th>支払い方法</th>
-                  <th>住所</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>1</th>
-                  <th>heavenly</th>
-                  <td>2425</td>
-                  <td>1</td>
-                  <td>2425</td>
-                  <td>17608</td>
+          <!-- 注文１ -->
+          <div style="margin: 35px 0;">
+            <div class="table-responsive">
+              <table class="table">
+                <!-- 購入者情報 -->
+                <thead>
+                  <tr>
+                    <th>注文日</th>
+                    <th>購入者名</th>
+                    <th>ステータス</th>
+                    <th>支払い方法</th>
+                    <th>住所</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <th>2018/07/15</th>
                   <th>ユーザー１</th>
                   <th>商品準備中</th>
                   <th>クレジットカード</th>
                   <th>××県××市××町2-2-2</th>
-                </tr>
-                <tr>
-                  <th>1</th>
-                  <th>Tierra</th>
-                  <td>2396</td>
-                  <td>2</td>
-                  <td>4792</td>
-                  <td>17608</td>
-                  <th>ユーザー１</th>
-                  <th>商品準備中</th>
-                  <th>クレジットカード</th>
-                  <th>××県××市××町2-2-2</th>
-                </tr>
-                <tr>
-                  <th>1</th>
-                  <th>True</th>
-                  <td>2136</td>
-                  <td>3</td>
-                  <td>6408</td>
-                  <td>17608</td>
-                  <th>ユーザー１</th>
-                  <th>商品準備中</th>
-                  <th>クレジットカード</th>
-                  <th>××県××市××町2-2-2</th>
-                </tr>
-                <tr>
-                  <th>2</th>
-                  <th>タイトル１</th>
-                  <td>1000</td>
-                  <td>1</td>
-                  <td>1000</td>
-                  <td>5000</td>
-                  <th>ユーザー2</th>
-                  <th>受付け</th>
-                  <th>代引き</th>
-                  <th>××県××市××町1-1-1</th>
-                </tr>
-                <tr>
-                  <th>2</th>
-                  <th>タイトル２</th>
-                  <td>2000</td>
-                  <td>2</td>
-                  <td>4000</td>
-                  <td>5000</td>
-                  <th>ユーザー2</th>
-                  <th>受付け</th>
-                  <th>代引き</th>
-                  <th>××県××市××町1-1-1</th>
-                </tr>
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
+            <!-- 購入商品情報 -->
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>商品名</th>
+                    <th>価格</th>
+                    <th>数量</th>
+                    <th>小計</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>heavenly</td>
+                    <td>2425円</td>
+                    <td>1</td>
+                    <td>2425円</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Tierra</td>
+                    <td>2396円</td>
+                    <td>2</td>
+                    <td>4792円</td>
+                  </tr>
+                  <tr>
+                    <td>True</td>
+                    <td>2136円</td>
+                    <td>3</td>
+                    <td>6408円</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right;"><strong>合計</strong> 13625円</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <a class="btn btn-default" href="#" role="button" style="margin: 10px 0;"></span>管理者画面へ</a>
+          <!-- 注文2 -->
+          <div style="margin: 35px 0;">
+            <div class="table-responsive">
+              <table class="table">
+                <!-- 購入者情報 -->
+                <thead>
+                  <tr>
+                    <th>注文日</th>
+                    <th>購入者名</th>
+                    <th>ステータス</th>
+                    <th>支払い方法</th>
+                    <th>住所</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <th>2018/07/15</th>
+                  <th>ユーザー１</th>
+                  <th>商品準備中</th>
+                  <th>クレジットカード</th>
+                  <th>××県××市××町2-2-2</th>
+                </tbody>
+              </table>
+            </div>
+            <!-- 購入商品情報 -->
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>商品名</th>
+                    <th>価格</th>
+                    <th>数量</th>
+                    <th>小計</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>heavenly</td>
+                    <td>2425円</td>
+                    <td>1</td>
+                    <td>2425円</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Tierra</td>
+                    <td>2396円</td>
+                    <td>2</td>
+                    <td>4792円</td>
+                  </tr>
+                  <tr>
+                    <td>True</td>
+                    <td>2136円</td>
+                    <td>3</td>
+                    <td>6408円</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right;"><strong>合計</strong> 13625円</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- 注文3 -->
+          <div style="margin: 35px 0;">
+            <div class="table-responsive">
+              <table class="table">
+                <!-- 購入者情報 -->
+                <thead>
+                  <tr>
+                    <th>注文日</th>
+                    <th>購入者名</th>
+                    <th>ステータス</th>
+                    <th>支払い方法</th>
+                    <th>住所</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <th>2018/07/15</th>
+                  <th>ユーザー１</th>
+                  <th>商品準備中</th>
+                  <th>クレジットカード</th>
+                  <th>××県××市××町2-2-2</th>
+                </tbody>
+              </table>
+            </div>
+            <!-- 購入商品情報 -->
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>商品名</th>
+                    <th>価格</th>
+                    <th>数量</th>
+                    <th>小計</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>heavenly</td>
+                    <td>2425円</td>
+                    <td>1</td>
+                    <td>2425円</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Tierra</td>
+                    <td>2396円</td>
+                    <td>2</td>
+                    <td>4792円</td>
+                  </tr>
+                  <tr>
+                    <td>True</td>
+                    <td>2136円</td>
+                    <td>3</td>
+                    <td>6408円</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align: right;"><strong>合計</strong> 13625円</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <a class="btn btn-default" href="#" role="button" style="margin: 10px 0;"></span>Buy Historyへ</a>
         </div>
       </div>
     </div>
