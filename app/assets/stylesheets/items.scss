@@ -129,11 +129,9 @@
   padding-left: 40px;
 }
 
-.order-item-aaa {
-  height: 440px;
-  background-color: #666666;
-  border: 2px solid gray;
-  color: white;
+.quantity-edit-form {
+  background-color: #fbeed7;
+  border: 1px solid gray;
 }
 
 
@@ -141,9 +139,47 @@
   margin: 20px 10px 20px 10px;
 }
 
-.item-quantity-edit-btn {
-	background-color: yellow;
+.form-quantity-edit {
+  padding: 10px 1px;
 }
+
+.item-quantity-edit-btn {
+	color: white;
+	font-size: 15px;
+}
+
+.form-quantity-edit-btn {
+	font-size: 30px;
+}
+
+.quantity-edit-content {
+  margin: 20px 0;
+  padding-bottom: 25px;
+  border-bottom: 1px solid gray;
+}
+
+.quantity-edit-image2 {
+  border: 1px solid gray;
+  width: 270px;
+  height: 270px;
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/*-----edit*/
+
+.item-image {
+	height: 300px;
+	width: 300px;
+	background-image: cover;
+	background-image: url(/record-3195585_640.jpg);
+	background-position: -80px;
+	margin:0 auto;
+}
+
+
+
 
 
 
