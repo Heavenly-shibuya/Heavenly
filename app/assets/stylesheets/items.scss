@@ -49,3 +49,137 @@
 .review-up {
 	margin-top: 30px;
 }
+
+
+/*-----stock*/
+
+.item-quantity-table {
+  color: white;
+  margin-top: 55px;
+}
+
+
+.item-quantity-table td {
+  padding: 10px 25px 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+.item-quantity {
+	width: 70px;
+	height: 40px;
+	background-color: #2f4f4f;
+	border: 1px solid #fff;
+}
+
+.item-quantity p {
+	line-height: 40px;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+.item-quantity-btn{
+  width: 70px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, .2);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, .4);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.item-quantity:hover {
+    background-color: rgba(255, 255, 255, .7);
+    text-decoration: none;
+    color: #222222;
+}
+
+.item-quantity-btn-content {
+  border-bottom: none;
+}
+
+
+/*-----stock_edit*/
+
+.item-quantity-edit-main {
+  width: 80%;
+  height: 800px;
+  padding: 0 20px 0 20px;
+  float: right;
+  border: 3px solid #444444;
+  background-color: #222222;
+}
+
+.item-quantity-edit-table {
+  color: white;
+  margin-top: 55px;
+}
+
+.item-quantity-edit-table td {
+  padding: 10px 20px 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+.item-quantity-edit-text {
+  padding-left: 40px;
+}
+
+.quantity-edit-form {
+  background-color: #fbeed7;
+  border: 1px solid gray;
+}
+
+
+.item-quantity-edit-form {
+  margin: 20px 10px 20px 10px;
+}
+
+.form-quantity-edit {
+  padding: 10px 1px;
+}
+
+.item-quantity-edit-btn {
+	color: white;
+	font-size: 15px;
+}
+
+.form-quantity-edit-btn {
+	font-size: 30px;
+}
+
+.quantity-edit-content {
+  margin: 20px 0;
+  padding-bottom: 25px;
+  border-bottom: 1px solid gray;
+}
+
+.quantity-edit-image2 {
+  border: 1px solid gray;
+  width: 270px;
+  height: 270px;
+  background-image: url(/song1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/*-----edit*/
+
+.item-image {
+	height: 300px;
+	width: 300px;
+	background-image: cover;
+	background-image: url(/record-3195585_640.jpg);
+	background-position: -80px;
+	margin:0 auto;
+}
+
+
+
+
+
+
