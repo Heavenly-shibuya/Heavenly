@@ -1,12 +1,23 @@
 // index
-.massage-main {
+.massage-index-main {
 	width: 80%;
 	height: 800px;
-	padding-left: 20px;
+	padding: 20px 15px 50px;
 	float: right;
 	border: 3px solid #444444;
 	background-color: #222222;
 	overflow: scroll;
+}
+.message-index-content {
+	padding: 35px 15px 0;
+}
+.index-text-box {
+	margin: 15px 0;
+	padding-top: 10px;
+	background-color: white;
+	color: black;
+	border: 3px solid gray;
+	border-radius: 5px;
 }
 // new
 .message-new-main {
@@ -22,13 +33,13 @@
 	margin: 20px 30px 0 30px;
 	border-bottom: 3px solid gray;
 	color: white;
-  	font-size: 40px;
+	font-size: 40px;
 }
 .message-new-content {
-	padding-top: 20px;
+	padding-top: 35px;
 }
 .message-new-list {
-	margin: 30px 0;
+	// margin: 30px 0;
 	color: white;
 	font-size: 20px;
 }
@@ -40,7 +51,7 @@
 	background-color: white;
 	color: black;
 	border: 3px solid gray;
-	border-radius: 25px;
+	border-radius: 5px;
 }
 .text-box p {
 	margin:10px auto;
