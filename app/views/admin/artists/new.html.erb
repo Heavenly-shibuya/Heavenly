@@ -15,9 +15,9 @@
   <div class="row">
     <div class="new-artist-main">
       <div class="new-artist-title"><p><strong>アーティスト新規投稿</strong></p></div>
-      <div class="artist-header col-sm-12">
-        <%= attachment_image_tag @artist_show, :top_image, :fill, 100, 100, format: 'jpeg' %>
-      </div>
+      <!-- <div class="artist-header col-sm-12">
+
+      </div> -->
       <div class="col-sm-12">
        <div class="col-sm-8"></div>
         <div class="artist-up col-sm-4">
@@ -25,15 +25,18 @@
 
             <%= form_for(@artist) do |f| %>
 
-              <h4>タイトル</h4>
+              <h4>Artist Name</h4>
               <%= f.text_field :name %>
 
-              <h4>本文</h4>
+              <h4>Artist Profile</h4>
               <%= f.text_area :body %>
 
 
-              <h4>画像</h4>
-              <%= f.attachment_field :top_image_id%>
+              <h4>Header Pic</h4>
+              <%= f.attachment_field :top_image%>
+
+              <h4>Artist Pic</h4>
+              <%= f.attachment_field :artist_image%>
 
 
               <%= f.submit '投稿' %>
