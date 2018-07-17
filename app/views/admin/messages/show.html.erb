@@ -1,2 +1,77 @@
-<h1>Admin::Messages#show</h1>
-<p>Find me in app/views/admin/messages/show.html.erb</p>
+<div class="clearfix">
+	<div class="sidebar">
+		<div class="user-content">
+			<div class="user-image">
+			</div>
+			<div class="user-profile">
+				<a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">CART</a>
+				<a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+			</div>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="message-new-main">
+		<div class="container-fruid">
+			<div class="row">
+				<div class="message-title"><h3><strong>Message Room</strong></h3></div>
+				<div class="message-new-content">
+					<div style="margin: 15px 0;">
+						<!-- ユーザーメッセージ -->
+						<div class="row">
+							<div class="col-xs-2  col-sm-2">
+								<img src="/messageimg/user1_128.png">
+							</div>
+							<div class="text-box col-xs-5 col-md-5">
+								<p>テンプレートを使ってもいいですか？</p>
+							</div>
+						</div>
+					</div>
+					<div style="margin: 15px 0;">
+						<!-- 管理者メッセージ -->
+						<div class="row">
+							<div class="text-box col-xs-offset-5 col-sm-offset-5 col-xs-5 col-md-5">
+								<p>規約をご覧頂き、お守り頂けるのであれば大歓迎です。
+								許可申請はご不要ですのでご自由にどうぞ。</p>
+							</div>
+							<div class="col-xs-2 col-sm-2">
+								<img src="/messageimg/user2_128.png">
+							</div>
+						</div>
+						<!-- ユーザーメッセージ -->
+						<div class="row">
+							<div class="col-xs-2  col-sm-2">
+								<img src="/messageimg/user1_128.png">
+							</div>
+							<div class="text-box col-xs-5 col-md-5">
+								<p>カスタマイズしてもいいですか？</p>
+							</div>
+						</div>
+						<!-- 管理者メッセージ -->
+						<div class="row">
+							<div class="text-box col-xs-offset-5 col-sm-offset-5 col-xs-5 col-md-5">
+								<p>どうぞ、ご自由にカスタマイズしてして下さい。
+								（というより、、、デザインテンプレートはカスタマイズしないと使えないです・・）</p>
+							</div>
+							<div class="col-xs-2 col-sm-2">
+								<img src="/messageimg/user2_128.png">
+							</div>
+						</div>
+						<!-- メッセージ入力 -->
+						<div class="message-new-list">
+							<form>
+								<div class="form-group col-sm-10">
+									<input type="text" name="title" class="form-control" placeholder="メッセージ入力欄">
+								</div>
+								<div class="form-group col-sm-2">
+									<button type="submit" class="btn btn-default btn-block">送信</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
