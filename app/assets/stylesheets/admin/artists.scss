@@ -131,15 +131,6 @@
 /*-----show*/
 
 
-
-.artist-head {
-  height: 250px;
-  width: 100%;
-  background-image: url(/artistimg/art1.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
 .sb-content {
   height: 100%;
   margin: 15px;
@@ -277,7 +268,6 @@
 
 /*-----new
 -----edit*/
-
 .new-artist-title {
   text-align: left;
   padding-top: 20px;
@@ -297,13 +287,7 @@
   float: right;
   border: 3px solid #444444;
   background-color: #222222;
-}
-
-.artist-header {
-  height: 250px;
-  background-color: white;
-  border: 5px solid gray;
-  margin-bottom: 10px;
+  overflow: scroll;
 }
 
 .artist-header p {
@@ -317,5 +301,61 @@
   width: 100%;
   background-color: red;
 }
+
+.artist-form {
+  color: white;
+  margin-top: 60px;
+}
+
+.artist-form-btn {
+  margin-top: 10px;
+}
+
+.artist-forms {
+  color: white;
+  border: 1px solid white;
+  padding: 10px;
+  background-image: url(/form用1.jpg);
+  background-size: cover;
+  background-position: 0px -910px;
+}
+
+.artist-edit-header-left {
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+  background-color: #666;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-right: 0.5px solid white;
+  margin-bottom: 10px;
+}
+
+.artist-edit-header-right {
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+  background-color: #666;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  margin-bottom: 10px;
+}
+
+.artist-header-bar {
+  background-color: black;
+  border: 1px solid white;
+}
+
+.artist-header-title {
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  height: 30px;
+}
+
+
+
+
+
 
 

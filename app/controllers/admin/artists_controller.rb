@@ -5,17 +5,14 @@ class Admin::ArtistsController < ApplicationController
   def show
   end
 
-  def edit
-  end
-
   def new
-   @artist = Artist.new
+    @artist = Artist.new
   end
 
   def create
-    artist = @artist.new(artist_params)
+    artist = Artist.new(artist_params)
     artist.save
-    redirect_to edit_admin_artist_path(artsit.id)
+    redirect_to edit_admin_artist_path(artist.id)
   end
 
 private
