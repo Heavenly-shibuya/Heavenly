@@ -15,21 +15,20 @@
   <div class="row">
     <div class="new-artist-main">
       <div class="new-artist-title"><p><strong>アーティスト新規投稿</strong></p></div>
-      <!-- <div class="artist-header col-sm-12">
 
-      </div> -->
+      </div>
       <div class="col-sm-12">
-       <div class="col-sm-8"></div>
-        <div class="artist-up col-sm-4">
-         <a class="btn btn-default btn-block artist-upimage" href="#">イメージを選択</a>
+       <div class="col-sm-3"></div>
+        <div class="artist-form col-sm-6">
 
-            <%= form_for(@artist) do |f| %>
+           <div class="artist-forms">
+            <%= form_for(@artist, url: admin_artists_path) do |f| %>
 
               <h4>Artist Name</h4>
-              <%= f.text_field :name %>
+              <%= f.text_field :name, class: "form-control" %>
 
               <h4>Artist Profile</h4>
-              <%= f.text_area :body %>
+              <%= f.text_area :body, class: "form-control" %>
 
 
               <h4>Header Pic</h4>
@@ -39,36 +38,14 @@
               <%= f.attachment_field :artist_image%>
 
 
-              <%= f.submit '投稿' %>
+              <%= f.submit value: "投稿", class: "btn btn-warning btn-block artist-form-btn" %>
 
               <% end %>
+            </div>
 
         </div>
-      </div>
+       </div>
 
-        <div class="col-sm-4">
-          <img src="/newsimg/1024px-No_image_available.svg.png" class="img-responsive">
-          <a class="btn btn-default btn-block upimage" href="#">イメージを選択</a>
-        </div>
-        <div class="col-sm-8">
-          <div class="news-new-list">
-            <form>
-              <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="title" class="form-control" placeholder="タイトル入力欄">
-              </div>
-              <div class="form-group">
-                <label>Artist profile</label>
-
-                <textarea placeholder="本文入力欄" rows="8" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <div class="col-xs-offset-2 col-xs-10">
-                  <button type="submit" class="btn btn-default pull-right" style="margin-bottom: 30px;">投稿</button>
-                </div>
-              </div>
-            </form>
-          </div>
       </div>
     </div>
   </div>
