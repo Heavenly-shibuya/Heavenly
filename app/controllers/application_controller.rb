@@ -3,11 +3,19 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	def after_sign_in_path_for(resource)
-    genres_path # ログイン後に遷移するpathを設定
-  	end
+    if current_admin
+      admin_genres_path
+    else
+      genres_path
+    end
+  end # ログイン後に遷移するpathを設定
 
-  	  def after_sign_out_path_for(resource)
-		new_user_session_path
+  def after_sign_out_path_for(resource)
+		if current_admin
+      new_adimin_session_path
+    else
+      new_user_session_path
+    end
 	end
 
 
