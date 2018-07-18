@@ -133,11 +133,7 @@
 
 
 .artist-head {
-  height: 250px;
-  width: 100%;
-  background-image: url(/artistimg/art1.jpg);
-  background-size: cover;
-  background-position: center;
+  margin: 15px 0 10px 0;
 }
 
 .sb-content {
@@ -153,8 +149,9 @@
   border-bottom: 1px solid gray;
 }
 
-.artist-content {
-  width: 100%;
+.artist-profile-pic {
+ text-align: center;
+ border-radius: 180px;
 }
 
 .artist-left-content {
@@ -189,7 +186,7 @@
   color: white;
   background-color: #222222;
   margin-top: 10px;
-  padding: 0 0 10px 15px;
+  padding: 5px 5px 10px 8px;
   border-bottom: 1px solid gray;
 }
 
