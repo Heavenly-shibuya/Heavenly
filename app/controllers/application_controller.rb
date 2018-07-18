@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	def after_sign_in_path_for(resource)
+
 		if current_admin
 			admin_genres_index_path
 		else
@@ -10,8 +11,13 @@ class ApplicationController < ActionController::Base
   	end
   end
 
-  	  def after_sign_out_path_for(resource)
-		new_user_session_path
+
+  def after_sign_out_path_for(resource)
+		if current_admin
+      new_adimin_session_path
+    else
+      new_user_session_path
+    end
 	end
 
 
