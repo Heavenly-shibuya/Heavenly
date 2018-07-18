@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
+    get 'discs/new'
+    get 'discs/edit'
+  end
+  namespace :admin do
     get 'orders/index'
   end
   namespace :admin do
