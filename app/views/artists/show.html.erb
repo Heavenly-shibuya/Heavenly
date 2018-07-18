@@ -14,73 +14,46 @@
    </div>
      <div class="main-content crearfix">
        <div class="sb-content">
-        <div class="artist-head"></div>
-        <div class="artist-title"><p>ArtistName</p></div>
 
-        <div class="artist-content">
-          <div class="artist-left-content">
-            <div class="user-image">
+        <!-- ヘッダー -->
+        <div class="col-sm-12 artist-head" >
+          <%= attachment_image_tag @artist, :top_image, :fill, 1000, 650, format: 'jpg' %>
+        </div>
+
+        <!-- アーティスト名 -->
+        <div class="artist-title"><p><%= @artist.name %></p></div>
+
+        <!-- アーティスト -->
+        <div class="artist-left-content">
+          <div class="artist-profile-pic">
+            <%= attachment_image_tag @artist, :artist_image, :fill, 200, 200, format: 'jpg', class: "artist-profile-pic" %>
             </div>
             <div class="artist-profile-text">
                 <span>ARTIST PROFILE</span>
             </div>
             <div class="artist-profile-text">
-                <span>・東京都出身</span><br>
-                <span>・30歳</span><br>
-                <span>・3人組</span><br>
-                <span>・男</span><br>
-                <span>・J-POP</span>
+                <%= @artist.body %></p>
             </div>
           </div>
+
+
           <div class="artist-right-content">
+
+            <% @items.each do |item| %>
+
+            <%= attachment_image_tag item, :cd_image, :fill, 200, 200, format: 'jpg', class: "artist-cd" %>
+
            <div class="artist-cd">
             <div class="artist-cd-text">
-             <div class="artist-cd-name"><p>J-POP</p></div>
+             <div class="artist-cd-name"><p><%= item.title %></p></div>
             </div>
            </div>
-          <div class="artist-cd">
-           <div class="artist-cd-text">
-            <div class="artist-cd-name"><p>J-POP</p></div>
-           </div>
-          </div>
-          <div class="artist-cd">
-           <div class="artist-cd-text">
-            <div class="artist-cd-name"><p>J-POP</p></div>
-           </div>
-          </div>
-          <div class="artist-cd">
-            <div class="artist-cd-text">
-             <div class="artist-cd-name"><p>J-POP</p></div>
-            </div>
-           </div>
-          <div class="artist-cd">
-           <div class="artist-cd-text">
-            <div class="artist-cd-name"><p>J-POP</p></div>
-           </div>
-          </div>
-          <div class="artist-cd">
-           <div class="artist-cd-text">
-            <div class="artist-cd-name"><p>J-POP</p></div>
-           </div>
-          </div>
-          <div class="artist-cd">
-            <div class="artist-cd-text">
-             <div class="artist-cd-name"><p>J-POP</p></div>
-            </div>
-           </div>
-          <div class="artist-cd">
-           <div class="artist-cd-text">
-            <div class="artist-cd-name"><p>J-POP</p></div>
-           </div>
-          </div>
-          <div class="artist-cd">
-           <div class="artist-cd-text">
-            <div class="artist-cd-name"><p>J-POP</p></div>
-           </div>
-          </div>
-          </div>
-        </div>
 
+           <% end %>
+
+          </div>
+
+        </div>
        </div>
      </div>
    </div>
