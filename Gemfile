@@ -66,7 +66,10 @@ gem "refile-mini_magick"
 gem 'pry-rails'
 gem 'kaminari'
 gem 'bootstrap-sass'
+gem 'cocoon'
 gem 'jquery-rails'
+
+
 
 
 

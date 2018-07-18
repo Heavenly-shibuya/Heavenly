@@ -17,13 +17,13 @@
       <div class="row row-eq-height">
         <div class="news-main">
           <div class="title"><h3><strong>NEWS</strong></h3></div>
-          <% @news_post.each do |news| %>
+          <% @newsall.each do |news| %>
           <div class="news-content clearfix">
             <%= attachment_image_tag @news_post, :news_image, class:"img-responsive" %>
             <div class="news-caption col-xs-12 col-sm-6">
               <p>投稿日時：2018/07/13</p><br>
-              <strong>Title:<%= @news_post.title %></strong><br>
-              <%= @news_post.body %>
+              <strong>Title:<%= @newsall.title %></strong><br>
+              <%= @newsall.body %>
             </div>
             <%= link_to "Edit ",edit_admin_news_post_path(@news_post), class:"btn btn-success " %>
             <%= link_to "delete ", admin_news_post_path(@news_post), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger " %>
