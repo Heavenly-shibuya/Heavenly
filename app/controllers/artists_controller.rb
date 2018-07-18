@@ -4,7 +4,6 @@ class ArtistsController < ApplicationController
 
   def show
 
-
   end
 
   def update
@@ -13,7 +12,7 @@ class ArtistsController < ApplicationController
     redirect_to edit_admin_artist_path(artist.id)
   end
 
-  private
+private
     def artist_params
       params.require(:artist).permit(:top_image, :artist_image, :body, :name)
     end

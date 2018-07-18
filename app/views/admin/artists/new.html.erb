@@ -15,8 +15,6 @@
   <div class="row">
     <div class="new-artist-main">
       <div class="new-artist-title"><p><strong>アーティスト新規投稿</strong></p></div>
-
-      </div>
       <div class="col-sm-12">
        <div class="col-sm-3"></div>
         <div class="artist-form col-sm-6">
@@ -25,18 +23,17 @@
             <%= form_for(@artist, url: admin_artists_path) do |f| %>
 
               <h4>Artist Name</h4>
+
               <%= f.text_field :name, class: "form-control" %>
 
               <h4>Artist Profile</h4>
               <%= f.text_area :body, class: "form-control" %>
-
 
               <h4>Header Pic</h4>
               <%= f.attachment_field :top_image%>
 
               <h4>Artist Pic</h4>
               <%= f.attachment_field :artist_image%>
-
 
               <%= f.submit value: "投稿", class: "btn btn-warning btn-block artist-form-btn" %>
 
