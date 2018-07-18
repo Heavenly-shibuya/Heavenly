@@ -3,6 +3,8 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    @items = Item.where(artist_id: @artist.id)
 
   end
 
