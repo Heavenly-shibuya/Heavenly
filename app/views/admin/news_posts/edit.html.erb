@@ -14,31 +14,27 @@
 <div class="container-fluid">
   <div class="row">
     <div class="news-new-main">
-      <div class="title"><h3><strong>NEWS 編集</strong></h3></div>
       <div class="news-new-content">
-        <div class="col-sm-4">
-          <!-- Newsイメージ画像 -->
-          <img src="/newsimg/61THfd5tgIL.jpg" class="img-responsive">
-          <a class="btn btn-default btn-block upimage" href="#">イメージを選択</a>
-        </div>
-        <div class="col-sm-8">
-          <div class="news-new-list">
-            <form>
-              <div class="form-group">
-                <label>Title</label>
-                <input type="text" name="title" class="form-control" placeholder="タイトル入力欄">
-              </div>
-              <div class="form-group">
-                <label>Caption</label>
-                <textarea placeholder="本文入力欄" rows="8" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <div class="col-xs-offset-2 col-xs-10">
-                  <button type="submit" class="btn btn-default pull-right" style="margin-bottom: 30px;">更新</button>
-                </div>
-              </div>
-            </form>
+        <div class="news-new-list">
+          <div class="title"><h3><strong>NEWS 編集</strong></h3></div>
+          <!-- form_for -->
+          <%= form_for(@news, url: edit_admin_news_post_path) do |f| %>
+          <div style="margin: 20px 0;">
+            <label>News Image</label>
+            <%= f.attachment_field :news_image %>
           </div>
+          <div style="margin: 20px 0;">
+            <label>Title</label>
+            <%= f.text_field :title, class:"form-control" %>
+          </div>
+          <div  style="margin: 20px 0;">
+            <label>Caption</label>
+            <%= f.text_area :body, class:"form-control input-lg" %>
+          </div>
+          <div style="margin: 20px 0;">
+            <%= f.submit '更新', class:"btn btn-default btn-block" %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
