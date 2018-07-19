@@ -28,16 +28,16 @@
   clear: both;
 }
 
-.cart-table > thead > tr > th,
+/*.cart-table > thead > tr > th,
 .cart-table > thead > tr > td,
 .cart-table > tbody > tr > th,
 .cart-table > tbody > tr > td,
 .cart-table > tfoot > tr > th,
 .cart-table > tfoot > tr > td {
   border-bottom: 1px solid gray;
-  border-top: 0px;
-}
-.well {
+  border-top: 0px;*/
+/*}
+*/.well {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
@@ -46,4 +46,16 @@
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+
+  float: left;
+}
+.form-group {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #EEEEEE;
+}
+input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: black;
 }

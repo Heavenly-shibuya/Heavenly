@@ -36,3 +36,34 @@ color: #EEEEEE;
 .well {
 	background-color: gray;
 }
+.new-item-side {
+	width: 30%;
+	float: left;
+	color: #EEEEEE;
+	padding: 40px;
+}
+.new-item-right {
+	width: 65%;
+	float: left;
+	color: #EEEEEE;
+}
+.item-upimage {
+	width: 70%;
+}
+.disc-remove {
+	margin-left: 40px;
+}
+.song-title {
+	border-bottom: 3px solid gray;
+}
+.song-create {
+	margin-top: 20px;
+}
+.song-content{
+	width: 100%;
+}
+td,
+th {
+  padding: 0;
+  width: 500px;
+}

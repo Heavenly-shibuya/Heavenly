@@ -1,4 +1,4 @@
- <div class="clearfix">
+<div class="clearfix">
 <div class="sidebar">
   <div class="user-content">
     <div class="user-image">
@@ -12,76 +12,17 @@
   </div>
 </div>
 
-<div class="main-content">
-    <div class="item-title">
-      <h3><strong>New Item</strong></h3>
-    </div>
-    <div class="containar">
-      <div class="row">
-        <br>
-        <br>
-        <div class="col-xs-10 col-xs-offset-1 new-item-content">
-          <div class="col-xs-3">
-            <br>
-            <br>
-            <%= form_for @item do |f| %>
-
-            <a class="btn btn-default btn-block artist-upimage" href="#">イメージを選択</a>
-
-            <div class="field">
-              <%= f.label :price, "price" %>
-              <%= f.text_field :price %>
-            </div>
-              <div class="field">
-                <%= f.label :label, "label" %>
-                <%= f.text_field :label %>
-              </div>
-                <div class="field">
-                  <%= f.label :genre_id, "genre" %>
-                  <%= f.number_field :genre_id %>
-                </div>
-          </div>
-            <div class="col-xs-6 col-xs-offset-1">
-              <div class="item-title-field">
-                <%= f.label :title, "title" %>
-                <%= f.text_field :title %>
-              </div>
-            <h3 class="song">Song</h3>
-              <div id="discs">
-                <%= f.fields_for :discs do |disc| %>
-                  <div class="nested-fields well well-compact">
-                    <div class="form-group">
-                      <%= disc.label :disc_name %>
-                      <%= disc.text_field :disc_name %><br>
-                      <%= link_to_remove_association "remove disc", f %>
-                    </div>
-
-                      <div class="songs">
-                        <%= f.fields_for :songs do |song| %>
-                          <div class="nested-fields form-inline">
-                            <div class="form-group">
-                              <%= song.label :title %>
-                              <%= song.text_field :title %>
-                              <%= link_to_remove_association "remove song", f %>
-                            </div>
-                          </div>
-                        <%end%>
-                      </div>
-                    <div class="links">
-                      <%= link_to_add_association "add song", disc, :songs %>
-                    </div>
-                  </div>
-                <% end %>
-              </div>
-              <div id="links">
-                <%= link_to_add_association 'add disc',f, :discs %>
-              </div>
-            <%= f.submit %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<div class="main-content clearfix">
+  <div class="item-title">
+    <h3><strong>New Item</strong></h3>
+  </div>
+  <div class="clearfix">
+  <div class="new-item-side">
+        <%= render 'form', item: @item %>
+  </div>
 </div>
-</div>
+
+
+
+
 
