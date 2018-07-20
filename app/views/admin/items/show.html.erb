@@ -29,15 +29,24 @@
             <div class="col-sm-12">
               <div class="music-info">
                 <h4 class="border-line"><span><i class="fas fa-music" style="font-size: 15px;"></i></span> Music Information</h4>
-                <h5>アーティスト</h5>
-                <!-- アーティスト名 -->
-                <p class="border-line">L’Arc~en~Ciel</p>
-                <h5><span><i class="fas fa-compact-disc" style="font-size: 20px;"></i></span>レーベル名</h5>
-                <!-- レーベル名 -->
-                <p class="border-line">キューンミュージック</p>
-                <h5>ジャンル</h5>
-                <!-- ジャンル名 -->
-                <p class="border-line">J-POP</p>
+                <div class="border-line">
+                  <h5>アーティスト</h5>
+                  <!-- アーティスト名 -->
+                  <%= @item.artists %>
+                </div>
+                <div class="border-line">
+                  <h5>レーベル名</h5>
+                  <!-- レーベル名 -->
+                  <%= @item.label %>
+                </div>
+                <div class="border-line">
+                  <h5>ジャンル</h5>
+                  <!-- ジャンル名 -->
+                  <%= @item.genres %>
+                </div>
+                <div class="border-line">
+                  <h5>価格：<%= @item.price %></h5>
+                </div>
               </div>
               <div class="cart-box">
                 <!-- カートアイコン画像 -->
