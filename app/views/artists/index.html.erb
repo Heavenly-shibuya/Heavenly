@@ -15,52 +15,21 @@
    <div class="main-content">
     <div class="title"><h3><strong>Artist</strong></h3></div>
       <div class="item-content">
+
+        <% @artist.each do |artists| %>
+
         <div class="artist-item">
+          <%= attachment_image_tag artists, :artist_image, :fill, 300, 300, format: 'jpg', class: "artist-profile--index-pic" %>
           <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
+            <div class="artist-name"><p><%= artists.name %></p></div>
           </div>
         </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
-        <div class="artist-item">
-          <div class="artist-text">
-            <div class="artist-name"><p>J-POP</p></div>
-          </div>
-        </div>
+        <% end %>
+
       </div>
+        <div class="pagenation">
+         <%= paginate @artist, class: "pagenate" %>
+        </div>
    </div>
  </div>
 </body>
