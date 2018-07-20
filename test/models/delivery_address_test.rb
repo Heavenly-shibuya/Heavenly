@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DeriveryAddressTest < ActiveSupport::TestCase
+class DeliveryAddressTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
