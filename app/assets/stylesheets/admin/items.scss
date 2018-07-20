@@ -1,3 +1,69 @@
-// Place all the styles related to the admin/items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.item-title {
+  text-align: left;
+  padding-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: white;
+  font-family: verdana;
+  font-size: 35px;
+  border-bottom: 3px solid gray;
+}
+.item-title h3 {
+  margin: 20px 20px 20px 60px;
+  font-size: 40px;
+}
+.main-content {
+  width: 80%;
+  height: 800px;
+  border: 3px solid #444444;
+  float: left;
+  overflow: scroll;
+  background-color: #222222;
+}
+.new-item-content {
+/*  background-color: gray;*/
+background-color: rgba(192, 192, 192, 0.2);
+padding-bottom: 15px;
+color: #EEEEEE;
+}
+.item-title-field {
+  border-bottom: 3px solid gray;
+  margin-top: 40px;
+}
+.song {
+	border-bottom: 3px solid gray;
+}
+.well {
+	background-color: gray;
+}
+.new-item-side {
+	width: 30%;
+	float: left;
+	color: #EEEEEE;
+	padding: 40px;
+}
+.new-item-right {
+	width: 65%;
+	float: left;
+	color: #EEEEEE;
+}
+.item-upimage {
+	width: 70%;
+}
+.disc-remove {
+	margin-left: 40px;
+}
+.song-title {
+	border-bottom: 3px solid gray;
+}
+.song-create {
+	margin-top: 20px;
+}
+.song-content{
+	width: 100%;
+}
+td,
+th {
+  padding: 0;
+  width: 500px;
+}
