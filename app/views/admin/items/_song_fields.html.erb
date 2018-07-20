@@ -1,14 +1,9 @@
 <div class="nested-fields form-inline">
   <div class="form-group">
- <table class="table">
-  		<tbody>
-  			<tr>
-  			<td><%= f.number_field :track_order %></td>
-  			<td><%= f.text_field :title %></td>
-  			<td><%= f.text_field :title %></td>
-  			<td><%= link_to_remove_association "remove song", f, class: "btn btn-danger" %></td>
-  		</tr>
-  		</tbody>
-  	</table>
+
+  		<%= f.number_field :track_order %>
+  		<%= f.text_field :title %>
+  		<%= f.text_field :time %>
+  		<%= link_to_remove_association "remove song", f %>
   </div>
 </div>

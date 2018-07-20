@@ -1,40 +1,45 @@
 <%= form_for(@item, url: admin_items_path) do |f| %>
 
-<a class="btn btn-default item-upimage" href="#">イメージを選択</a>
-
-  <div class="field">
-    <%= f.label :price, "price" %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :label, "label" %><br>
-    <%= f.text_field :label %>
-  </div>
-  <div class="field">
-    <%= f.label :genre_id, "genre" %><br>
-    <%= f.number_field :genre_id %>
-  </div>
-  <div class="field">
-    <%= f.label :artist_id, "artist" %><br>
-    <%= f.collection_select :artist_id, Artist.all, :id, :name %>
-  </div>
-  </div>
-  <div class="new-item-right ">
-    <div class="field">
-      <%= f.label :title, "title" %><br>
-      <%= f.text_field :title %>
-    </div>
-    <h3 class="song-title">Songs</h3>
-    <div id="discs">
-       <%= f.fields_for :discs do |disc| %>
-        <%= render 'disc_fields', f: disc %>
-       <% end %>
-     <div id="links">
-       <%= link_to_add_association 'add disc',f, :discs, class: "btn btn-primary" %><br>
-       <%= f.submit "Create", class: "btn btn-success song-create" %>
-       <% end %>
-     </div>
-    </div>
-  </div>
+<div class="field">
+  <%= f.attachment_field :item_image%>
+</div>
+<div class="field">
+  <%= f.label :price, "price" %><br>
+  <%= f.text_field :price %>
+</div>
+<div class="field">
+  <%= f.label :label, "label" %><br>
+  <%= f.text_field :label %>
+</div>
+<div class="field">
+  <%= f.label :genre_id, "genre" %><br>
+  <%= select :genre_id,:genre,Item.genre_ids.keys.to_a %>
+<!--   <%= select :genre_id,:genre,Item.genre_ids.values.to_a %> -->
+</div>
+<div class="field">
+  <%= f.label :artist_id, "artist" %><br>
+  <%= f.collection_select :artist_id, Artist.all, :id, :name %>
+</div>
+<div class="field">
+  <%= f.label :title, "title" %><br>
+  <%= f.text_field :title %>
+</div>
+<div class="field">
+  <%= f.label :stock, "stock" %><br>
+  <%= f.text_field :stock %>
 </div>
 
+
+
+<h3>Songs</h3>
+<div id="discs">
+  <%= f.fields_for :discs do |disc| %>
+    <%= render 'disc_fields', f: disc %>
+  <% end %>
+  <div id="links">
+    <%= link_to_add_association 'add disc',f, :discs %><br>
+  </div>
+
+  <%= f.submit "Create", class: "btn btn-success" %>
+</div>
+<% end %>
