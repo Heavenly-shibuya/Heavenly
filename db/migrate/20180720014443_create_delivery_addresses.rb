@@ -1,6 +1,6 @@
-class CreateDeriveryAddresses < ActiveRecord::Migration[5.2]
+class CreateDeliveryAddresses < ActiveRecord::Migration[5.2]
   def change
-    create_table :derivery_addresses do |t|
+    create_table :delivery_addresses do |t|
       t.string :last_name
       t.string :last_name_furi
       t.string :first_name

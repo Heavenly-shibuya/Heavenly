@@ -10,10 +10,26 @@
   overflow: scroll;
 }
 
-.delivery-address-post-list {
-  margin: 30px 0;
+.delivery-address-post {
+  margin-top: 10px;
+  padding: 30px;
   color: white;
   font-size: 20px;
+  background-image: url(/form用2.jpg);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid white;
+}
+
+.delivery-address-post-sab {
+  width: 45%;
+  box-shadow: 1px 10px 100px rgba(0, 0, 0, .4);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.delivery-form-btn {
+  margin-top: 20px;
 }
 
 

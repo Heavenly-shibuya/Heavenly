@@ -1,0 +1,54 @@
+<div class="sidebar">
+  <div class="user-content">
+    <div class="user-image">
+    </div>
+    <div class="user-profile">
+      <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+      <a class="my-side" href="#" style="text-decoration: none;">CART</a>
+      <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+      <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+    </div>
+  </div>
+</div>
+<!-- main -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="delivery-address-post-main">
+      <div class="title"><h3><strong>新規住所登録</strong></h3></div>
+
+          <div class="delivery-address-post">
+            <div class="delivery-address-post-sab">
+
+              <%= form_for(@delivery_address) do |f| %>
+
+              <h4>姓</h4>
+              <%= f.text_field :last_name, placeholder: "東京", class: "form-control" %>
+
+              <h4>姓（フリガナ）</h4>
+              <%= f.text_field :last_name_furi, placeholder: "トウキョウ", class: "form-control" %>
+
+              <h4>名</h4>
+              <%= f.text_field :first_name, placeholder: "太郎", class: "form-control" %>
+
+              <h4>名（フリガナ）</h4>
+              <%= f.text_field :first_name_furi, placeholder: "タロウ", class: "form-control" %>
+
+              <h4>郵便番号</h4>
+              <%= f.text_field :zip, placeholder: "123-1234", class: "form-control" %>
+
+              <h4>住所（物件名まで）</h4>
+              <%= f.text_field :address, placeholder: "東京都渋谷区◯◯1-2-3", class: "form-control" %>
+
+              <h4>電話番号</h4>
+              <%= f.text_field :tel, placeholder: "03-1234-5678", class: "form-control" %>
+
+              <%= f.submit '登録', class: "btn btn-warning btn-block delivery-form-btn"  %>
+
+              <% end %>
+            </div>
+
+          </div>
+
+    </div>
+  </div>
+</div>
