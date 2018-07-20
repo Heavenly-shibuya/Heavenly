@@ -1,6 +1,9 @@
 <%= form_for(@item, url: admin_items_path) do |f| %>
 
 <div class="field">
+  <%= f.attachment_field :item_image%>
+</div>
+<div class="field">
   <%= f.label :price, "price" %><br>
   <%= f.text_field :price %>
 </div>
@@ -10,7 +13,8 @@
 </div>
 <div class="field">
   <%= f.label :genre_id, "genre" %><br>
-  <%= f.number_field :genre_id %>
+  <%= select :genre_id,:genre,Item.genre_ids.keys.to_a %>
+<!--   <%= select :genre_id,:genre,Item.genre_ids.values.to_a %> -->
 </div>
 <div class="field">
   <%= f.label :artist_id, "artist" %><br>
@@ -20,6 +24,11 @@
   <%= f.label :title, "title" %><br>
   <%= f.text_field :title %>
 </div>
+<div class="field">
+  <%= f.label :stock, "stock" %><br>
+  <%= f.text_field :stock %>
+</div>
+
 
 
 <h3>Songs</h3>

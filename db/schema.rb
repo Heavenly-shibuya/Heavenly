@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_18_084659) do
+ActiveRecord::Schema.define(version: 2018_07_20_062506) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -91,11 +91,11 @@ ActiveRecord::Schema.define(version: 2018_07_18_084659) do
     t.integer "stock"
     t.integer "price"
     t.string "label"
-    t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "artist_id"
     t.text "item_image_id"
+    t.integer "genre_id", limit: 1, default: 0, null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(version: 2018_07_18_084659) do
     t.integer "disc_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "time"
   end
 
   create_table "users", force: :cascade do |t|
