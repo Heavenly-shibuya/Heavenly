@@ -23,7 +23,7 @@
 
 
 .item-content {
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .artist-item {
@@ -31,7 +31,6 @@
   height: 300px;
   border-radius: 10px;
   float: left;
-  margin-bottom: 10px;
 }
 
 .artist-item {
@@ -45,74 +44,14 @@
 
 .artist-item:hover {
     transform: translateY(-3px) translateX(3px) ;
-    filter: drop-shadow(2px 2px 4px #fff);
-}
-
-.artist-item:nth-child(1) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art1.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(2) {
-  background-image: url(/artistimg/art2.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(3) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art3.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(4) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art4.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(5) {
-  background-image: url(/artistimg/art5.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(6) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art6.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(7) {
-  background-image: url(/artistimg/art7.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(8) {
-  background-image: url(/artistimg/art8.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-item:nth-child(9) {
-  background-image: url(/artistimg/art9.jpg);
-  background-size: cover;
-  background-position: center;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.8));
 }
 
 .artist-text{
   height: 20%;
   width: 100%;
-  background-color: rgba(10, 10, 10, 0.5);
   text-align: center;
   margin-top: 80%;
-  border-radius: 10px;
 }
 
 .artist-name p {
@@ -154,12 +93,6 @@
 }
 
 .artist-right-content {
-  width: 70%;
-  float: left;
-  height: 100;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
 }
 
 .artist-profile {
@@ -184,15 +117,7 @@
   border-bottom: 1px solid gray;
 }
 
-.artist-cd {
-  width: 200px;
-  height: 200px;
-  border-radius: 5px;
-  float: left;
-  margin-bottom: 10px;
-}
-
-.artist-cd-name p {
+/*.artist-cd-name p {
   font-size: 20px;
   color: white;
   line-height: 2.0;
@@ -203,67 +128,10 @@
   width: 100%;
   background-color: rgba(10, 10, 10, 0.5);
   text-align: center;
-  margin-top: 80%;
   border-radius: 5px;
-}
-
-/*.artist-cd:nth-child(1) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art1.jpg);
-  background-size: cover;
-  background-position: center;
 }*/
 
-/*.artist-cd:nth-child(2) {
-  background-image: url(/artistimg/art2.jpg);
-  background-size: cover;
-  background-position: center;
-}*/
 
-.artist-cd:nth-child(3) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art3.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-cd:nth-child(4) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art4.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-cd:nth-child(5) {
-  background-image: url(/artistimg/art5.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-cd:nth-child(6) {
-  margin-bottom: 20px;
-  background-image: url(/artistimg/art6.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-cd:nth-child(7) {
-  background-image: url(/artistimg/art7.jpeg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-cd:nth-child(8) {
-  background-image: url(/artistimg/art8.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.artist-cd:nth-child(9) {
-  background-image: url(/artistimg/art9.jpg);
-  background-size: cover;
-  background-position: center;
-}
 
 
 /*-----new
