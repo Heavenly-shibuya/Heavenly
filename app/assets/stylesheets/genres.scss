@@ -355,18 +355,18 @@ header {
   padding-top: 30px;
 }
 
-#serch_box {
+.serch_box {
   height: 40px;
   padding: 0 10px;
   width: 200px;
   border-radius: 40px;
   border:solid 2px #eaeaea;
   outline: 0;
-  color: #fff;
-  font-size: 13px;
+/*  color: #fff;*/
+  font-size: 20px;
 }
 
-#serch_btn {
+.serch_btn {
   padding: 0;
   width: 70px;
   height: 40px;
@@ -379,7 +379,7 @@ header {
   outline: 0;
 }
 
-#serch_btn:hover {
+.serch_btn:hover {
   background: #eaeaea;
   color: #666666;
 }

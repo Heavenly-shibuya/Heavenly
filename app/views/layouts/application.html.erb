@@ -13,9 +13,13 @@
     <header>
       <div class="head-serch">
         <div class="serch">
-          <form id="serch_form" action="" method="get">
+<!--           <form id="serch_form" action="" method="get">
           <input id="serch_box" name="s" type="text"  placeholder="キーワードを入力" >
-          <input id="serch_btn" type="submit" value="検索" ><a href="#"></a></form>
+          <input id="serch_btn" type="submit" value="検索" ><a href="#"></a></form> -->
+          <%= form_tag items_search_path, method: :get do %>
+          <%= text_field_tag :search, params[:search], class: "serch_box" %>
+          <%= submit_tag "search", class: "serch_btn" %>
+          <% end %>
         </div>
       </div>
       <input id="head-input" type="checkbox" class="head-unshown">

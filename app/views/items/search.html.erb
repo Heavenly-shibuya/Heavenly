@@ -1,0 +1,69 @@
+<body>
+    <div class="clearfix">
+     <div class="content clearfix">
+       <div class="sidebar">
+        <div class="user-content">
+          <div class="user-image">
+          </div>
+          <div class="user-profile">
+              <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+              <a class="my-side" href="#" style="text-decoration: none;">CART</a>
+              <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+              <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+          </div>
+        </div>
+       </div>
+       <div class="main-content">
+        <% if @artists.present? %>
+          <div class="title">
+          <h3><strong>Artist</strong></h3></div>
+          <% end %>
+          <div class="item-content">
+
+          <% if @artists.present? %>
+            <% @artists.each do |artist| %>
+
+            <div class="artist-item">
+              <%= attachment_image_tag artist, :artist_image, :fill, 300, 300, format: 'jpg', class: "img-circle artist-profile--index-pic" %>
+              <div class="artist-text">
+                <div class="artist-name"><p><%= artist.name %></p></div>
+              </div>
+            </div>
+            <% end %>
+
+          </div>
+          <div class="pagenation">
+             <%= paginate @artists, class: "pagenate" %>
+          </div>
+        <% end %>
+
+
+        <% if @items.present? %>
+          <div class="title">
+            <h3><strong>Item</strong></h3>
+          </div>
+        <% end %>
+
+
+          <div class="item-content">
+            <% if @items.present? %>
+              <% @items.each do |item| %>
+
+              <div class="artist-item">
+                <%= attachment_image_tag item, :item_image, :fill, 300, 300, format: 'jpg', class: "artist-profile--index-pic" %>
+                <div class="artist-text">
+                  <div class="artist-name"><p><%= item.title %></p></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="pagenation">
+             <%= paginate @items, class: "pagenate" %>
+          </div>
+        <% end %>
+
+
+       </div>
+     </div>
+   </div>
+</body>
