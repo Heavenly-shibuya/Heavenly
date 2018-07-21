@@ -28,6 +28,24 @@
   border-radius: 5px;
 }
 
+.delivery-address-edit {
+  margin-top: 10px;
+  padding: 30px;
+  color: white;
+  font-size: 20px;
+  background-image: url(/form用3.jpg);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid white;
+}
+
+.delivery-address-edit-sab {
+  width: 45%;
+  box-shadow: 10px 10px 50px rgba(239, 226, 225, .1);
+  padding: 20px;
+  border-radius: 5px;
+}
+
 .delivery-form-btn {
   margin-top: 20px;
 }
@@ -35,6 +53,9 @@
 
 /*-----index*/
 
+.aaa {
+  padding: 30px;
+}
 
 
 .delivery-address-main {
@@ -53,7 +74,7 @@
 }
 
 .delivery-address-text {
-  padding: 5px 0 0 30px;
+  padding: 0 30px 0 10px;
 }
 
 .delivery-address-table {
@@ -66,13 +87,10 @@
 }
 
 .delivery-address-table td {
-  padding: 10px 25px 5px 0;
+  padding: 10px 10px 5px 0;
   border-bottom: 1px solid gray;
 }
 
-.delivery-address-name {
-  text-align: center;
-}
 
 .delivery-address ul {
 }

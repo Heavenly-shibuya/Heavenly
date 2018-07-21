@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
     end
 	end
 
+  def after_sign_out_path_for(resource)
+    rails_admin_path
+  end
+
 
 	def configure_permitted_parameters
 	devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email,:last_name,:last_name_furi,:first_name,:first_name_furi,:delivery_address_id,:zip,:address,:tel])

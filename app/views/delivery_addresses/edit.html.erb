@@ -14,35 +14,40 @@
 <div class="container-fluid">
   <div class="row">
     <div class="delivery-address-post-main">
-      <div class="title"><h3><strong>Delivery Address Edit</strong></h3></div>
-          <div class="delivery-address-post-list">
-            <form>
-              <div class="form-group">
-                <label>姓</label>
-                <input type="text" name="title" class="form-control" placeholder="東京">
-              </div>
-              <div class="form-group">
-                <label>名</label>
-                <input class="form-control" placeholder="太郎"></input>
-              </div>
-              <div class="form-group">
-                <label>郵便番号</label>
-                <input type="text" name="title" class="form-control" placeholder="123-1234">
-              </div>
-              <div class="form-group">
-                <label>住所</label>
-                <input type="text" class="form-control" placeholder="東京都渋谷区◯◯1-2-3 ◯◯ビル102号室"></input>
-              </div>
-              <div class="form-group">
-                <label>電話番号</label>
-                <input type="text" name="title" class="form-control" placeholder="03-1234-5678">
-              </div>
-              <div class="form-group">
-                <div class="col-xs-offset-2 col-xs-10">
-                  <button type="submit" class="btn btn-default pull-right" style="margin-bottom: 30px;">更新</button>
-                </div>
-              </div>
-            </form>
+      <div class="title"><h3><strong>登録住所変更</strong></h3></div>
+          <div class="delivery-address-edit">
+            <div class="delivery-address-edit-sab">
+
+              <%= form_for(@delivery_address) do |f| %>
+
+              <h4>姓</h4>
+              <%= f.text_field :last_name, placeholder: "東京", class: "form-control" %>
+
+              <h4>姓（フリガナ）</h4>
+              <%= f.text_field :last_name_furi, placeholder: "トウキョウ", class: "form-control" %>
+
+              <h4>名</h4>
+              <%= f.text_field :first_name, placeholder: "太郎", class: "form-control" %>
+
+              <h4>名（フリガナ）</h4>
+              <%= f.text_field :first_name_furi, placeholder: "タロウ", class: "form-control" %>
+
+              <h4>郵便番号</h4>
+              <%= f.text_field :zip, placeholder: "123-1234", class: "form-control" %>
+
+              <h4>住所（物件名まで）</h4>
+              <%= f.text_field :address, placeholder: "東京都渋谷区◯◯1-2-3", class: "form-control" %>
+
+              <h4>電話番号</h4>
+              <%= f.text_field :tel, placeholder: "03-1234-5678", class: "form-control" %>
+
+              <%= f.submit '更新', class: "btn btn-warning btn-block delivery-form-btn"  %>
+
+              <% end %>
+
+            </div>
+
+
           </div>
     </div>
   </div>
