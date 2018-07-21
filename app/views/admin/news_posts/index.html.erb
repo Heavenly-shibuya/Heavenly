@@ -1,112 +1,39 @@
-<div class="news-index">
-  <div class="clearfix">
-    <div class="sidebar">
-      <div class="user-content">
-        <div class="user-image">
-        </div>
-        <div class="user-profile">
-          <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-          <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+<div class="sidebar">
+  <div class="user-content">
+    <div class="user-image">
+    </div>
+    <div class="user-profile">
+      <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+      <a class="my-side" href="#" style="text-decoration: none;">CART</a>
+      <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+      <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+    </div>
+  </div>
+</div>
+<!-- main -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="news-main">
+      <div class="title"><h3><strong>NEWS</strong></h3></div>
+      <% @newsall.each do |news| %>
+      <div class="news-content clearfix">
+        <div class="row">
+          <%= link_to attachment_image_tag news, :news_image, class:" col-xs-12 col-sm-3" %>
+          <div class="news-caption col-xs-12 col-sm-6">
+            <strong>Title:<%= news.title %></strong>
+            <div style="margin-top: 10px;">
+            <%= news.body %>
+            <%= link_to "記事詳細へ", admin_news_post_path(news.id) %>
+          </div>
+          </div>
+          <div class="button-box col-xs-12 col-sm-3">
+            <%= link_to "Edit ",edit_admin_news_post_path(news.id), class:"btn btn-success " %>
+            <%= link_to "delete ", admin_news_post_path(news.id), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger " %>
+          </div>
+          <% end %>
         </div>
       </div>
+<!--          <%= paginate @news_post, class: "pagenate" %> -->
     </div>
-    <!-- main -->
-    <div class="container-fluid">
-      <div class="row row-eq-height">
-        <div class="news-main">
-          <div class="title"><h3><strong>NEWS</strong></h3></div>
-          <% @news_post.each do |news| %>
-          <div class="news-content clearfix">
-            <%= attachment_image_tag @news_post, :news_image, class:"img-responsive" %>
-            <div class="news-caption col-xs-12 col-sm-6">
-              <p>投稿日時：2018/07/13</p><br>
-              <strong>Title:<%= @news_post.title %></strong><br>
-              <%= @news_post.body %>
-            </div>
-            <%= link_to "Edit ",edit_admin_news_post_path(@news_post), class:"btn btn-success " %>
-            <%= link_to "delete ", admin_news_post_path(@news_post), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger " %>
-            <% end %>
-            <!-- 管理者アカウント時のみ表示する -->
-            <div class="button-box col-xs-12 col-sm-2">
-              <a class="btn btn-success" href="#" role="button"">edit</a><br>
-              <a class="btn btn-danger" href="#" role="button" style="margin: 10px 0;">delete</a>
-            </div>
-          </div>
-          <div class="news-content clearfix">
-            <a class="col-xs-12 col-sm-4 grid-img" href="#"><img src="/newsimg/Z342000099.jpg" class="img-responsive">
-            </a>
-            <div class="news-caption col-xs-12 col-sm-6">
-              <p>投稿日時：2018/07/13<br>
-                <strong>Title:IVORY</strong><br>フィリピン生まれサイパン育ちというヴォーカルのJ.SpeaksとギタリストのTaigaによるユニットの6曲入り。両者の基盤となっているブルースやヒップホップと軸に、さまざまな音楽を融合させたサーフ・ポップを奏でている。</p>
-              </div>
-              <!-- 管理者アカウント時のみ表示する -->
-              <div class="button-box col-xs-12 col-sm-2">
-                <a class="btn btn-success" href="#" role="button"">edit</a><br>
-                <a class="btn btn-danger" href="#" role="button" style="margin: 10px 0;">delete</a>
-              </div>
-            </div>
-            <div class="news-content clearfix">
-              <a class="col-xs-12 col-sm-4 grid-img" href="#"><img src="/newsimg/Z342000099.jpg" class="img-responsive">
-              </a>
-              <div class="news-caption col-xs-12 col-sm-6">
-                <p>投稿日時：2018/07/13<br>
-                  <strong>Title:IVORY</strong><br>フィリピン生まれサイパン育ちというヴォーカルのJ.SpeaksとギタリストのTaigaによるユニットの6曲入り。両者の基盤となっているブルースやヒップホップと軸に、さまざまな音楽を融合させたサーフ・ポップを奏でている。</p>
-                </div>
-                <!-- 管理者アカウント時のみ表示する -->
-                <div class="button-box col-xs-12 col-sm-2">
-                  <a class="btn btn-success" href="#" role="button"">edit</a><br>
-                  <a class="btn btn-danger" href="#" role="button" style="margin: 10px 0;">delete</a>
-                </div>
-              </div>
-              <div class="news-content clearfix">
-                <a class="col-xs-12 col-sm-4 grid-img" href="#"><img src="/newsimg/Z342000099.jpg" class="img-responsive">
-                </a>
-                <div class="news-caption col-xs-12 col-sm-6">
-                  <p>投稿日時：2018/07/13<br>
-                    <strong>Title:IVORY</strong><br>フィリピン生まれサイパン育ちというヴォーカルのJ.SpeaksとギタリストのTaigaによるユニットの6曲入り。両者の基盤となっているブルースやヒップホップと軸に、さまざまな音楽を融合させたサーフ・ポップを奏でている。</p>
-                  </div>
-                  <!-- 管理者アカウント時のみ表示する -->
-                  <div class="button-box col-xs-12 col-sm-2">
-                    <a class="btn btn-success" href="#" role="button"">edit</a><br>
-                    <a class="btn btn-danger" href="#" role="button" style="margin: 10px 0;">delete</a>
-                  </div>
-                </div>
-                <div class="news-content clearfix">
-                  <a class="col-xs-12 col-sm-4 grid-img" href="#"><img src="/newsimg/61THfd5tgIL.jpg" class="img-responsive">
-                  </a>
-                  <div class="news-caption col-xs-12 col-sm-6">
-                    <p>投稿日時：2018/07/13<br>
-                      <strong>Title:TEMPLE and TREE means like a COSMIC</strong><br>quasimodeの今泉総之輔と須長和広によるプロジェクト、COSMIC TEMPLEのアルバム。彼らのバックボーンであるジャズ・サウンドをベースに、ロック、ハウス、ヒップホップを盛り込んで、ジャズの未来と展望を感じさせる作品となった</p>
-                    </div>
-                    <!-- 管理者アカウント時のみ表示する -->
-                    <div class="button-box col-xs-12 col-sm-2">
-                      <a class="btn btn-success" href="#" role="button"">edit</a><br>
-                      <a class="btn btn-danger" href="#" role="button" style="margin: 10px 0;">delete</a>
-                    </div>
-                  </div>
-                  <nav>
-                    <ul class="pagination">
-                      <li>
-                        <a href="#" aria-label="前のページへ">
-                          <span aria-hidden="true">«</span>
-                        </a>
-                      </li>
-                      <li><a href="#">1</a></li>
-                      <li class="active"><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                      <li>
-                        <a href="#" aria-label="次のページへ">
-                          <span aria-hidden="true">»</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  </div>
+</div>
