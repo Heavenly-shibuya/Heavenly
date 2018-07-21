@@ -38,22 +38,28 @@
             </div>
           </div>
 
+        <div class=a2222>
+          <div class=a1111>
 
-          <div class="artist-right-content">
 
-            <% @items.each do |item| %>
+              <% @items.each do |item| %>
+              <div class="artist-right-content">
+              <%= link_to edit_admin_artist_path(@artist.id) do %>
 
-            <%= attachment_image_tag item, :item_image, :fill, 200, 200, format: 'jpg', class: "artist-cd" %>
+              <%= attachment_image_tag item, :item_image, :fill, 200, 200, format: 'jpg', class: "artist-cd" %>
 
-           <div class="artist-cd">
-            <div class="artist-cd-text">
-             <div class="artist-cd-name"><p><%= item.title %></p></div>
+              <% end %>
+
+              <div class="artist-cd-text">
+               <div class="artist-cd-name"><p><%= item.title %></p></div>
+              </div>
             </div>
-           </div>
 
-           <% end %>
+             <% end %>
+
 
           </div>
+        </div>
 
         </div>
        </div>
