@@ -1,23 +1,24 @@
 class Admin::ItemsController < ApplicationController
   def show
     @item =Item.find(params[:id])
-    @artist = @item.artists
-    @genre = @item.genres
+    @artist = @item.artist
+    @disc = @item.discs
+    # @song = @item.songs
     # @cart = Cart.new
 
 
     @current_stock_array = []
-    # @item.stock.times do |quantity|
-    # if quantity < 10
-    #   #quantityが10未満かどうか
-    #   @current_stock_array << [quantity + 1, quantity + 1]
-    #     #quantityは0からスタートしているので、1足した数を入れる
-    #     #配列の左側がsubmitが押された時に渡される値、右側が表示される値
-    #   else
-    #     break
-    #     #ループを抜ける
-    #   end
-    # end
+    @item.stock.times do |stock|
+    if stock < 10
+      #quantityが10未満かどうか
+      @current_stock_array << [stock + 1, stock + 1]
+        #quantityは0からスタートしているので、1足した数を入れる
+        #配列の左側がsubmitが押された時に渡される値、右側が表示される値
+      else
+        break
+        #ループを抜ける
+      end
+    end
   end
 
   def edit
@@ -43,8 +44,8 @@ class Admin::ItemsController < ApplicationController
 
 
   def item_params
-      params.require(:item).permit(:title, :label, :genre_id, :artist_id, :price, :stock, :item_image,
-                                     discs_attributes: [:id, :disc_name, :item_id, :_destroy,
-                                     songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
-    end
+    params.require(:item).permit(:title, :label, :genre_id, :artist_id, :price, :stock, :item_image,
+     discs_attributes: [:id, :disc_name, :item_id, :_destroy,
+       songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
+  end
 end

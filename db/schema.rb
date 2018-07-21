@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2018_07_20_062506) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -95,10 +95,7 @@ ActiveRecord::Schema.define(version: 2018_07_20_062506) do
     t.datetime "updated_at", null: false
     t.integer "artist_id"
     t.text "item_image_id"
-<<<<<<< HEAD
-=======
     t.integer "genre_id", limit: 1, default: 0, null: false
->>>>>>> 6270f4df6766344dc9fb70c6e85b91d9079fce42
   end
 
   create_table "messages", force: :cascade do |t|
@@ -172,8 +169,6 @@ ActiveRecord::Schema.define(version: 2018_07_20_062506) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "name"
     t.string "last_name"
     t.string "last_name_furi"
@@ -184,6 +179,8 @@ ActiveRecord::Schema.define(version: 2018_07_20_062506) do
     t.string "zip"
     t.string "address"
     t.string "tel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

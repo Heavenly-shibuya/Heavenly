@@ -2,40 +2,50 @@
 .news-main {
 	width: 80%;
 	height: 800px;
-	padding-left: 20px;
+	padding: 0 20px;
 	float: right;
 	border: 3px solid #444444;
 	background-color: #222222;
 	overflow: scroll;
 }
-img {
-  max-width: 100%;
-}
+// .row-eq-height {
+//     display: flex;
+//     flex-wrap: wrap;
+// }
+// img {
+//   max-width: 100%;
+// }
 
-.grid-img {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 30%;
-}
+// .grid-img {
+//   position: relative;
+//   overflow: hidden;
+//   padding-bottom: 30%;
+// }
 
-.grid-img img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+// .grid-img img {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+// }
+.news-content .row {
+	padding: 0 15px;
 }
 .news-content {
 	margin: 20px 0;
+	// background-color: rgba(0,0,0,0.2);
 }
-.news-caption p {
+.image-box {
+	margin-bottom: 20px;
+}
+.news-caption {
 	color: white;
-	padding-top: 13%;
-	// margin-top: 15px;
+	margin-top: 15px;
 }
 .button-box {
-	margin-top: 10%;
+	margin-top: 50px;
 }
 // show-page
 .news-show .sidebar {
@@ -65,19 +75,27 @@ img {
 	float: right;
 	border: 3px solid #444444;
 	background-color: #222222;
+	overflow: scroll;
 }
 .news-new-main .title {
 	padding: 0;
 	text-align: center;
 }
 .news-new-content {
-	padding: 50px 20%;
+	margin: 20px 0;
+	padding: 25px 15%;
+}
+.contents-bg {
+	margin: 30px 0;
+	padding: 20px 30px;
+	background-image: url(/newsimg/article-71341_1280.jpg);
+	background-position: center;
+	background-size: cover;
 }
 .news-new-list {
-	margin: 30px 0;
+	background-color: rgba(0,0,0,0.6);
 	color: white;
 	font-size: 20px;
-	// background-image: url(/piano-1239729_640.jpg);
 }
 .upimage {
 	margin-top: 30px;
