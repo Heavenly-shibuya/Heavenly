@@ -1,69 +1,67 @@
-<div class="sidebar">
-  <div class="user-content">
-    <div class="user-image">
-    </div>
-    <div class="user-profile">
-      <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
-      <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-      <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-      <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
-    </div>
-  </div>
-</div>
-<!-- main -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="new-artist-main">
-      <div class="new-artist-title"><p><strong>商品情報編集</strong></p></div>
-        <div class="col-sm-4">
-          <div class=item-image></div>
-          <a class="btn btn-default btn-block upimage" href="#">イメージを選択</a>
-        </div>
-        <div class="col-sm-8">
-          <div class="news-new-list">
-            <form>
-              <div class="form-group">
-                <label>CD Title</label>
-                <input type="text" name="title" class="form-control" placeholder="タイトル入力欄">
-              </div>
-              <div class="form-group">レーベル名</label>
-                 <textarea placeholder="本文入力欄" rows="8" class="form-control"></textarea>
-              </div>
-              <div class="form-group">
-                <label>ジャンル</label>
-                <input type="text" name="title" class="form-control" placeholder="ジャンル入力欄">
-              </div>
-              <div class="form-group">
-
-                <div class="song-edit">
-                  <div class="form-group col-sm-4">
-                    <label>Track</label>
-                    <input type="text" name="title" class="form-control" placeholder="1">
-                  </div>
-
-                  <div class="form-group col-sm-4">
-                    <label>曲名</label>
-                    <input type="text" name="title" class="form-control" placeholder="曲名入力欄">
-                  </div>
-
-                  <div class="form-group col-sm-4">
-                    <label>時間</label>
-                    <input type="text" name="title" class="form-control" placeholder="3:00">
-                    <button type="submit" class="btn btn-primary pull-right btn-block" style="margin-top: 10px;">+Add</button>
-                  </div>
-                </div>
-
-              <div class="form-group">
-              <div class="form-group">
-                <div class="col-xs-offset-2 col-xs-10">
-                  <button type="submit" class="btn btn-default pull-right" style="margin-bottom: 30px;">更新</button>
-                </div>
-              </div>
-            </div>
-          </div>
-            </form>
-          </div>
+<div class="clearfix">
+  <div class="sidebar">
+    <div class="user-content">
+      <div class="user-image">
+      </div>
+      <div class="user-profile">
+        <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+        <a class="my-side" href="#" style="text-decoration: none;">CART</a>
+        <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+        <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
       </div>
     </div>
   </div>
-</div>
+  <div class="main-content">
+    <div class="item-title">
+      <h3><strong>Edit Item</strong></h3>
+    </div>
+    <!-- form部分だけ追記 -->
+    <%= form_for(@item) do |f| %>
+    <div class="new-item-side">
+      <div class="field">
+        <%= f.attachment_field :item_image%>
+      </div>
+      <div class="field">
+        <%= f.label :price, "price" %><br>
+        <%= f.text_field :price %>
+      </div>
+      <div class="field">
+        <%= f.label :label, "label" %><br>
+        <%= f.text_field :label %>
+      </div>
+      <div class="field">
+        <%= f.label :genre_id, "genre" %><br>
+        <%= select :genre_id,:genre,Item.genre_ids.keys.to_a %>
+        <!--   <%= select :genre_id,:genre,Item.genre_ids.values.to_a %> -->
+      </div>
+      <div class="field">
+        <%= f.label :artist_id, "artist" %><br>
+        <%= f.collection_select :artist_id, Artist.all, :id, :name %>
+      </div>
+      <div class="field">
+        <%= f.label :stock, "stock" %><br>
+        <%= f.text_field :stock %>
+      </div>
+    </div>
+
+    <div class="new-item-right ">
+      <div class="field">
+        <%= f.label :title, "title" %><br>
+        <%= f.text_field :title %>
+      </div>
+
+      <h3>Songs</h3>
+      <div id="discs">
+        <%= f.fields_for :discs do |disc| %>
+        <%= render 'disc_fields', f: disc %>
+        <% end %>
+        <div id="links">
+          <%= link_to_add_association 'add disc',f, :discs, class: "btn btn-primary" %><br>
+        </div>
+
+        <%= f.submit "Update", class: "btn btn-warning" %>
+        <%= link_to "delete ", admin_item_path(@item), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger " %>
+      </div>
+      <% end %>
+    </div>
+  </div>
