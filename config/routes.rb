@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/show'
   get 'users/edit'
+  get 'items/search'
 
     devise_for :admins, controllers: {
     sessions:      'admins/sessions',
