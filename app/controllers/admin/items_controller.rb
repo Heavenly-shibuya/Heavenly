@@ -5,8 +5,6 @@ class Admin::ItemsController < ApplicationController
     @disc = @item.discs
     # @song = @item.songs
     # @cart = Cart.new
-
-
     @current_stock_array = []
     @item.stock.times do |stock|
     if stock < 10
@@ -22,6 +20,14 @@ class Admin::ItemsController < ApplicationController
   end
 
   def edit
+    @item =Item.find(params[:id])
+  end
+
+  def destroy
+    item =Item.find(params[:id])
+    item.delete
+    # 後で変更の必要あり？
+    redirect_to new_admin_item_path
   end
 
   def new
@@ -42,10 +48,11 @@ class Admin::ItemsController < ApplicationController
   def stock_edit
   end
 
+  private
 
   def item_params
     params.require(:item).permit(:title, :label, :genre_id, :artist_id, :price, :stock, :item_image,
      discs_attributes: [:id, :disc_name, :item_id, :_destroy,
-       songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
+    　songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
   end
 end
