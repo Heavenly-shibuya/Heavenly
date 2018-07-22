@@ -3,7 +3,7 @@ class Admin::ItemsController < ApplicationController
     @item =Item.find(params[:id])
     @artist = @item.artist
     @disc = @item.discs
-    # @song = @item.songs
+    @song = @item.songs
     # @cart = Cart.new
     @current_stock_array = []
     @item.stock.times do |stock|
@@ -39,7 +39,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to  admin_item_path(@item.id)
+    redirect_to  new_admin_item_path
   end
 
   def stock

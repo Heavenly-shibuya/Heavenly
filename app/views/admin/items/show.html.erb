@@ -49,16 +49,18 @@
                   <!-- カートアイコン画像 -->
                   <img src="/itemimg/cart.png">
                 </div>
-                在庫数:<%= @item.stock %>
                 <!-- item数の選択 -->
                 <div class="stock-form">
                   <%= form_for @item do |f| %>
+                  <span>在庫数: </span>
+                  <%= @item.stock %><br>
                   <%= f.label :stock, "数量" %>
-                  <%= f.select :stock, @current_stock_array %>
+                  <%= f.select :stock, @current_stock_array %><br>
+                  <div class="row ">
+                    <%= f.submit "カートに入れる", class:"btn btn-warning btn-block col-xs-12" %>
+                  </div>
                   <% end %>
-                  <%= link_to admin_carts_items_path do %>
-                  <i class="fas fa-cart-arrow-down btn btn-warning btn-block col-xs-12"> カートに入れる</i>
-                  <% end %>
+
                 </div>
               </div>
             </div>
@@ -85,7 +87,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% @item.songs.each do |song| %>
+                  <% @song.each do |song| %>
                   <tr>
                     <th class="text-center"><%= song.track_order %></th>
                     <td><%= song.title %></td>
@@ -96,11 +98,11 @@
                 <% end %>
               </table>
 
-              <%= link_to admin_carts_items_path do %>
+              <%= link_to carts_items_path do %>
               <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i>
               <% end %>
-              <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
               <!-- レビュー表示 -->
+              <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
               <div class="review-box">
                 <p>Vivid colors,and she said,rain leavesはハードロック
                   特にcureless,rain leaves a scar,vivid colorsはイイ曲だね
@@ -127,18 +129,6 @@
               <div class="review-box"><p>ラルクが好きなので、全部集める為の一つとして買いました。このアルバムには毎日聴きたくなるような曲は少なく、後回しにしていて、やっと買いました。買えてとても良かったです。</p></div>
               <div class="review-box"><p>heavenlyは、綺麗な曲が多いのでとても好きなアルバムです。</p></div>
               <div class="review-box"><p>このアルバムは、原石のよう。hydeの声が、とても自然でよい。曲を感じて表情を変えて歌えるのは彼の魅力だと思うのですが、ヘヴンリーでは作り込みすぎず、自然体で表現していて豊かな広がりを感じました。still i'm~ は、当時の彼らの心境が伝わってきます。春のざらっとした風と、まだ冷たさの残る空。心は未来を期待している。前２作では、彼らの内向的でやや閉鎖ぎみな見方が色濃く出ていましたが、ここでは伝えようと開いていく前向きな姿勢を感じられて、どこか透明な憂いを感じます。vivid~ の切実さや、後の風にきえないでなど、この頃の彼らにしかない魅力があります。ラルクの音楽には、ひとり窓辺で空を見上げるような孤独感がありますが、いつもどこか遠いところにある暖かな何かを求めているように思います。ガラス玉や静かの海での持つ世界観に共感できるものがあると、きっと惹かれるのでは。。若さ故の希望と苦悩、きらめきと危うさを感じます。そしてhydeの妖艶さがみずみずしい。何かに向かって進むときに響いてくる、また、いつかの日を懐かしむような。素敵なアルバムです。</p></div>
-              <!-- form_for部分を入れる -->
-              <div class="review-up-box">
-                <h3><strong>レビュー投稿</strong></h3>
-                <form>
-                  <div class="form-group">
-                    <textarea placeholder="レビュー本文入力欄" rows="8" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-default pull-right">送信</button>
-                  </div>
-                </form>
-              </div>
             </div>
           </div>
         </div>

@@ -1,12 +1,38 @@
 class ItemsController < ApplicationController
   def show
+    @item =Item.find(params[:id])
+    @artist = @item.artist
+    @disc = @item.discs
+    @song = @item.songs
+    @review = Review.new
+    # @cart = Cart.new
+
+
+    @current_stock_array = []
+    @item.stock.times do |stock|
+      if stock < 10
+      #quantityが10未満かどうか
+      @current_stock_array << [stock + 1, stock + 1]
+        #quantityは0からスタートしているので、1足した数を入れる
+        #配列の左側がsubmitが押された時に渡される値、右側が表示される値
+      else
+        break
+        #ループを抜ける
+      end
+    end
   end
 
-  
+
   def update
   	@item =Item.find(params[:id])
   	@item.update(item_params)
-  	redirect_to admin_item_path(@item.id)
+  	redirect_to admin_items_path
+  end
+
+  def search
+    @items = Item.page(params[:page]).reverse_order.search(params[:search])
+    @artists = Artist.page(params[:page]).reverse_order.search(params[:search])
+    @songs = Song.page(params[:page]).reverse_order.search(params[:search])
   end
 
   private
@@ -16,11 +42,4 @@ class ItemsController < ApplicationController
      discs_attributes: [:id, :disc_name, :item_id, :_destroy,
        songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
   end
-  
-  def search
-  	@items = Item.page(params[:page]).reverse_order.search(params[:search])
-  	@artists = Artist.page(params[:page]).reverse_order.search(params[:search])
-  	@songs = Song.page(params[:page]).reverse_order.search(params[:search])
-  end
-
 end

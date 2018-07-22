@@ -1,7 +1,8 @@
 class NewsPostsController < ApplicationController
+
 	def index
-		@newsall = NewsPost.all
-		# News_post.all.page(params[:page]).reverse_order
+		# @newsall = NewsPost.all
+		@newsall = NewsPost.all.page(params[:page])
 	end
 
 	def show
