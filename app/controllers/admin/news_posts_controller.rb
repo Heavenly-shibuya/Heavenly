@@ -1,7 +1,6 @@
 class Admin::NewsPostsController < ApplicationController
 	def index
-		@newsall = NewsPost.all
-		# News_post.page(params[:page]).reverse_order
+		@newsall = NewsPost.page(params[:page]).per(5)
 	end
 
 	def show
@@ -19,7 +18,7 @@ class Admin::NewsPostsController < ApplicationController
 	def create
 		@news = NewsPost.new(news_post_params)
 		@news.save
-		flash[:notice] = "News was successfully created."
+		# flash[:notice] = "News was successfully created."
 		redirect_to admin_news_post_path(@news)
 	end
 
@@ -27,7 +26,7 @@ class Admin::NewsPostsController < ApplicationController
 		news = NewsPost.find(params[:id])
 		news.delete
 		@newsall = NewsPost.all
-		flash[:notice] = "News was successfully destroyed."
+		# flash[:notice] = "News was successfully destroyed."
 		redirect_to admin_news_posts_path
 	end
 

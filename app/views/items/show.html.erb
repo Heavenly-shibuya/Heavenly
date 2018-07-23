@@ -49,13 +49,14 @@
                   <!-- カートアイコン画像 -->
                   <img src="/itemimg/cart.png">
                 </div>
+                <!-- 後で消す -->
                 在庫数:<%= @item.stock %>
                 <!-- item数の選択 -->
                 <div class="stock-form">
-                  <%= form_for @item do |f| %>
+                  <%= form_for @cart do |f| %>
                   <%= f.label :stock, "数量" %>
                   <%= f.select :stock, @current_stock_array %>
-                  <%= f.submit "更新" %>
+                  <%= f.submit "更新  " %>
                   <% end %>
                   <%= link_to carts_items_path do %>
                   <i class="fas fa-cart-arrow-down btn btn-warning btn-block col-xs-12"> カートに入れる</i>
@@ -74,7 +75,7 @@
               <div class="title-list">
                 <table class="table">
                   <thead>
-                    <% @disc.each do |disc| %>
+                    <% @discs.each do |disc| %>
                     <tr>
                       <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
                       <th></th>
@@ -106,7 +107,7 @@
               <!-- form_for部分を入れる -->
               <div class="review-up-box">
                 <h3><strong>レビュー投稿</strong></h3>
-                <%= form_for(@review, url:items_path) do |f| %>
+                <%= form_for(@review) do |f| %>
                 <form>
                   <div class="row">
                     <%= f.text_area :body, class:"form-control col-xs-12", placeholder: "レビュー本文入力欄" %>

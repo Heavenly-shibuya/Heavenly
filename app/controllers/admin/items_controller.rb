@@ -2,8 +2,9 @@ class Admin::ItemsController < ApplicationController
   def show
     @item =Item.find(params[:id])
     @artist = @item.artist
-    @disc = @item.discs
+    @discs = @item.discs
     @song = @item.songs
+    # @song = @item.songs.where(disc_id: @disc)
     # @cart = Cart.new
     @current_stock_array = []
     @item.stock.times do |stock|
@@ -39,7 +40,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to  new_admin_item_path
+    redirect_to  admin_item_path(@item.id)
   end
 
   def stock
@@ -52,7 +53,6 @@ class Admin::ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:title, :label, :genre_id, :artist_id, :price, :stock, :item_image,
-     discs_attributes: [:id, :disc_name, :item_id, :_destroy,
-    　songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
+     discs_attributes: [:id, :disc_name, :item_id, :_destroy,songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
   end
 end

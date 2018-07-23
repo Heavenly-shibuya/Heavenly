@@ -22,11 +22,10 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def update
   	@item =Item.find(params[:id])
   	@item.update(item_params)
-  	redirect_to admin_items_path
+  	redirect_to admin_item_path(@item.id)
   end
 
   def search
@@ -41,5 +40,9 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:title, :label, :genre_id, :artist_id, :price, :stock, :item_image,
      discs_attributes: [:id, :disc_name, :item_id, :_destroy,
        songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
+  end
+
+  def review_params
+    params.require(:review).permit(:item_id,:user_id, :body)
   end
 end
