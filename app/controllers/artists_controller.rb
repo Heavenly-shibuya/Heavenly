@@ -1,4 +1,7 @@
 class ArtistsController < ApplicationController
+
+# before_action :authenticate_user!, only: [:index, :show, :update]
+
   def index
     @artist = Artist.all.page(params[:page])
   end

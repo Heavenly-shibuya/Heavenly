@@ -2,17 +2,18 @@ class ItemsController < ApplicationController
   def show
   end
 
-  def search
-  	@items = Item.page(params[:page]).reverse_order.search(params[:search])
-  	@artists = Artist.page(params[:page]).reverse_order.search(params[:search])
-  	@songs = Song.page(params[:page]).reverse_order.search(params[:search])
-  end
 
 
   def update
   	@item =Item.find(params[:id])
   	@item.update(item_params)
   	redirect_to admin_item_path(@item.id)
+  end
+
+  def search
+    @items = Item.page(params[:page]).reverse_order.search(params[:search])
+    @artists = Artist.page(params[:page]).reverse_order.search(params[:search])
+    @songs = Song.page(params[:page]).reverse_order.search(params[:search])
   end
 
   private
