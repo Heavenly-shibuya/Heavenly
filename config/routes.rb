@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   resources :users, :genres, :artists, :news_posts, :order_items, :reviews, :messages, :delivery_addresss, :items
   resources :favorites, :only => [:index]
   resources :carts_items, :only => [:index, :edit]
-  resources :orders, :omly => [:index]
+  resources :orders, :only => [:index]
+  resources :order_items, :only => [:index, :show]
   end
 
   resources :genres

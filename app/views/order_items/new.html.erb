@@ -15,10 +15,13 @@
      <div class="main-content">
        <div class="buy-item-content">
          <div class="buy-massege">
-          <p>購入が確定しました！</p>
+          <span>購入が確定しました！</span>
          </div>
            <div class="top-btn">
-            <a href="#" class="square_btn">トップページへ戻る</a>
+            <%= link_to "トップページへ戻る", genres_path, class: 'square_btn' %>
+           </div>
+           <div class="top-btn">
+            <%= link_to "MYページへ戻る", user_path(current_user.id), class: 'square_btn' %>
            </div>
         </div>
        </div>

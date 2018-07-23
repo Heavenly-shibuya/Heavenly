@@ -1,19 +1,12 @@
 <div class="nested-fields form-inline">
   <div class="form-group">
-
-   
   	<table>
-  		<!-- <tr class="song-title">
-              <th>曲順</th>
-              <th>曲名</th>
-              <th>時間</th>
-              <th></th>
-            </tr> -->
+
 	  		<td><%= f.number_field :track_order, placeholder: "曲順" %></td>
 	  		<td><%= f.text_field :title, placeholder: "曲名" %></td>
 	  		<td><%= f.text_field :time, placeholder: "時間" %></td>
 	  		<td><%= link_to_remove_association "remove song", f, class: "btn btn-danger" %></td>
-  		</tr>
+
   	</table>
   </div>
 </div>
