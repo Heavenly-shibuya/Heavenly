@@ -1,25 +1,17 @@
 <div class="nested-fields well well-compact">
   <div class="form-group">
-
-      <%= f.label :disc %>
-      <%= f.text_field :disc_name %>
-      <%= link_to_remove_association "remove disc", f, class: "btn btn-danger disc-remove" %>
-
-
+    <%= f.label :disc %>
+    <%= f.text_field :disc_name %>
+    <%= link_to_remove_association "remove disc", f, class: "btn btn-danger disc-remove" %>
     <div class="songs">
         <table>
-            <!-- <tr class="song-title">
-              <th>曲順</th>
-              <th>曲名</th>
-              <th>時間</th>
-              <th></th>
-            </tr> -->
-              <%= f.fields_for :songs do |song| %>
-                  <%= render 'song_fields', f: song %>
+          <%= f.fields_for :songs do |song| %>
+            <%= render 'song_fields', f: song %>
         </table>
-      <%end%>
-    <div class="links">
-     <%= link_to_add_association "add song", f, :songs, class: "btn btn-primary" %>
-   </div>
-  </div>
-</div>
+          <%end%>
+        <div class="links">
+          <%= link_to_add_association "add song", f, :songs, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
