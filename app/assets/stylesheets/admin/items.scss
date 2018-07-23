@@ -68,3 +68,54 @@ th {
   padding: 0;
   width: 500px;
 }
+
+/*-----index*/
+
+.index-item-pic {
+  float: left;
+  padding: 20px 10px 20px 0;
+  height: 100%;
+}
+
+.index-item-date {
+  margin-top: 45px;
+}
+
+.index-item-table {
+  margin-top: 10px;
+}
+
+.index-item-table th {
+  padding: 0 20px 0 0;
+  color: #dacd86;
+  font-size: 20px
+}
+
+.index-item-table td {
+  padding: 10px 10px 5px 0;
+  color: white;
+  font-size: 16px
+}
+
+
+.index-content {
+  border-bottom: 1px solid gray;
+}
+
+.index-content:last-child {
+  border-bottom: none;
+}
+
+.pagenation-index {
+  margin:10px 20px 0px 30px ;
+}
+
+.index-main-content {
+  width: 80%;
+  height: 800px;
+  padding: 20px;
+  border: 3px solid #444444;
+  float: left;
+  overflow: scroll;
+  background-color: #222222;
+}
