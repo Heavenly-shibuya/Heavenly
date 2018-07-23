@@ -2,8 +2,8 @@ class ItemsController < ApplicationController
   def show
     @item =Item.find(params[:id])
     @artist = @item.artist
-    @disc = @item.discs
-    @song = @item.songs
+    @discs = @item.discs
+    @songs = @item.songs
     @review = Review.new
     # @cart = Cart.new
 

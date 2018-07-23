@@ -49,18 +49,9 @@
                   <!-- カートアイコン画像 -->
                   <img src="/itemimg/cart.png">
                 </div>
-                <!-- item数の選択 -->
                 <div class="stock-form">
-                  <%= form_for @item do |f| %>
                   <span>在庫数: </span>
                   <%= @item.stock %><br>
-                  <%= f.label :stock, "数量" %>
-                  <%= f.select :stock, @current_stock_array %><br>
-                  <div class="row ">
-                    <%= f.submit "カートに入れる", class:"btn btn-warning btn-block col-xs-12" %>
-                  </div>
-                  <% end %>
-
                 </div>
               </div>
             </div>
@@ -87,7 +78,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <% @song.each do |song| %>
+                  <% @songs.each do |song| %>
                   <tr>
                     <th class="text-center"><%= song.track_order %></th>
                     <td><%= song.title %></td>

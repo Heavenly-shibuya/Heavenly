@@ -3,7 +3,7 @@ class Admin::ItemsController < ApplicationController
     @item =Item.find(params[:id])
     @artist = @item.artist
     @discs = @item.discs
-    @song = @item.songs
+    @songs = @item.songs
     # @song = @item.songs.where(disc_id: @disc)
     # @cart = Cart.new
     @current_stock_array = []
