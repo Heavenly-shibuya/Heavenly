@@ -1,4 +1,7 @@
 class DeliveryAddressesController < ApplicationController
+
+# before_action :authenticate_user!, only: [:index, :new, :edit, :update, :destroy]
+
   def new
     @delivery_address = DeliveryAddress.new
   end

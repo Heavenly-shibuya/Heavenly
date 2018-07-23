@@ -29,16 +29,36 @@
       <div class="head"><span class="head-title"><strong>Heavenly Music&nbsp;&nbsp;</strong></span></div>
       <div id="head-content">
         <div class="responsib-menu">
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">HOME</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">NEWS</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">ABOUT</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">ARTISTS</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">MESSAGE</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">CART</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">LOGOUT</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">LOGIN</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">SIGN IN</a></div>
-          <div class="responsib-item"><a href="#" style="text-decoration: none;">退会</a></div>
+          <div class="responsib-item">
+            <%= link_to "HOME", genres_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "NEWS", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "ABOUT", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "MESSAGE", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "CART", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "LOGIN", new_user_session_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "SIGN UP", new_user_registration_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "退会", news_posts_path, class: "responsib-item" %>
+          </div>
         </div>
       </div>
 
