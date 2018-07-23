@@ -1,8 +1,26 @@
 class ItemsController < ApplicationController
   def show
+    @item =Item.find(params[:id])
+    @artist = @item.artist
+    @discs = @item.discs
+    @songs = @item.songs
+    @review = Review.new
+    # @cart = Cart.new
+
+
+    @current_stock_array = []
+    @item.stock.times do |stock|
+      if stock < 10
+      #quantityが10未満かどうか
+      @current_stock_array << [stock + 1, stock + 1]
+        #quantityは0からスタートしているので、1足した数を入れる
+        #配列の左側がsubmitが押された時に渡される値、右側が表示される値
+      else
+        break
+        #ループを抜ける
+      end
+    end
   end
-
-
 
   def update
   	@item =Item.find(params[:id])
@@ -24,4 +42,7 @@ class ItemsController < ApplicationController
        songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
   end
 
+  def review_params
+    params.require(:review).permit(:item_id,:user_id, :body)
+  end
 end
