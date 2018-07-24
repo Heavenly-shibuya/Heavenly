@@ -87,8 +87,14 @@
                 <% end %>
               </table>
 
-              <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"fas fa-shopping-cart btn btn-danger btn-lg btn-block" %>
-<!--               <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i> -->
+              <% if @item.stock > 0 %>
+              <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-lg btn-block" %>
+              <% else @item.stock == 0 %>
+              <div class="item-show-button">
+                <i class="fas fa-shopping-cart"> 在庫がありません</i>
+              </div>
+              <% end %>
+              <!--               <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i> -->
               <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
               <!-- レビュー表示 -->
               <div class="review-box">
