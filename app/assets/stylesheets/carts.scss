@@ -1,12 +1,17 @@
-.cart-table {
+.carts-table {
 	color: #EEEEEE;
-	font-size: 14px;
+	font-size: 16px;
 }
-.cart-table .table > thead > tr > th,
-.cart-table .table > thead > tr > td,
-.cart-table .table > tbody > tr > th,
-.cart-table .table > tbody > tr > td,
-.cart-table .table > tfoot > tr > th,
-.cart-table .table > tfoot > tr > td {
-  vertical-align: middle;
+.carts-table .table > thead > tr > th,
+.carts-table .table > thead > tr > td,
+.carts-table .table > tbody > tr > th,
+.carts-table .table > tbody > tr > td,
+.carts-table .table > tfoot > tr > th,
+.carts-table .table > tfoot > tr > td {
+	vertical-align: middle;
+	text-align: center;
+}
+.osiharai {
+	font-size: 35px;
+	font-family: verdana;
 }
