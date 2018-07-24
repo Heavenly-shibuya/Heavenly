@@ -1,16 +1,19 @@
 class ItemsController < ApplicationController
   def show
     @item =Item.find(params[:id])
+
+    @items = Item.select_shop
+    respond_to do |format|
+    	format.html
+    	format.json{render :xml => @item}
+    end
     @artist = @item.artist
-    @discs = @item.discs
-    @songs = @item.songs
-    @review = Review.new
+    @disc = @item.discs
+    # @song = @item.songs
     # @cart = Cart.new
-
-
     @current_stock_array = []
     @item.stock.times do |stock|
-      if stock < 10
+    if stock < 10
       #quantityが10未満かどうか
       @current_stock_array << [stock + 1, stock + 1]
         #quantityは0からスタートしているので、1足した数を入れる

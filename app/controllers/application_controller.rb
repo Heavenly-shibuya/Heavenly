@@ -23,6 +23,15 @@ class ApplicationController < ActionController::Base
 	# devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
 	# devise_parameter_sanitizer.permit(:account_update, keys: [:name])
 	end
+
+  private
+  def current_cart
+    Cart.find(session[:cart_id])
+    rescue ActiveRecord::RecordNotFound
+      cart = Cart.create
+      session[:cart_id] = cart.id
+      cart
+  end
 end
 
 

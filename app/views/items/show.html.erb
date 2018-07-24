@@ -53,57 +53,84 @@
             </div>
           </div>
         </div>
-      <!-- 右サイド -->
-      <div class="content-right col-sm-8">
-        <div class="row">
-          <div class="col-sm-11">
-            <!-- itemタイトル名 -->
-            <div class="music-title"><h2><strong><%= @item.title %></strong></h2></div>
-            <div class="title-list">
-              <table class="table">
-                <thead>
-                  <% @discs.each do |disc| %>
-                  <tr>
-                    <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
-                    <th></th>
-                    <th></th>
+
+        <!-- 右サイド -->
+        <div class="content-right col-sm-8">
+          <div class="row">
+            <div class="col-sm-11">
+              <!-- itemタイトル名 -->
+              <div class="music-title"><h2><strong><%= @item.title %></strong></h2></div>
+              <div class="title-list">
+                <table class="table">
+                  <thead>
+                    <% @disc.each do |disc| %>
+                    <tr>
+                      <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    <th><p class="text-center">track</p></th>
+                    <th><p class="text-center">曲名</p></th>
+                    <th class="col-sm-2"><p class="text-center"> 時間</p></th>
                   </tr>
-                  <th><p class="text-center">track</p></th>
-                  <th><p class="text-center">曲名</p></th>
-                  <th class="col-sm-2"><p class="text-center"> 時間</p></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @songs.each do |song| %>
-                <tr>
-                  <th class="text-center"><%= song.track_order %></th>
-                  <td><%= song.title %></td>
-                  <td><%= song.time %></td>
-                </tr>
-                <% end %>
-              </tbody>
-              <% end %>
-            </table>
+                </thead>
 
-            <%= link_to carts_items_path do %>
-            <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i>
-            <% end %>
-            <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
-            <!-- レビューeachを入れる -->
-
-            <!-- form_for部分を入れる -->
-            <div class="review-up-box">
-              <h3><strong>レビュー投稿</strong></h3>
-              <%= form_for(@review) do |f| %>
-              <form>
-                <div class="row">
-                  <%= f.text_area :body, class:"form-control col-xs-12", placeholder: "レビュー本文入力欄" %>
-                </div>
-                <div class="row">
-                  <%= f.submit 'レビュー送信', class:"btn btn-primary col-xs-12" %>
-                </div>
+                <tbody>
+                  <% @item.songs.each do |song| %>
+                  <tr>
+                    <th class="text-center"><%= song.track_order %></th>
+                    <td><%= song.title %></td>
+                    <td><%= song.time %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
                 <% end %>
-              </form>
+              </table>
+
+              <%= button_to'カートに入れる' carts_item_path(@items.id) %>
+<!--               <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i> -->
+            
+              <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
+              <!-- レビュー表示 -->
+              <div class="review-box">
+                <p>Vivid colors,and she said,rain leavesはハードロック
+                  特にcureless,rain leaves a scar,vivid colorsはイイ曲だね
+                  俺自身もheavenlyにハマるまでは、ちょっと時間かかったから
+                  良さがわかるまで、ちょっと時間がかかるアルバムかもしれない
+                  まあ、個人差あるけど
+                  あと個人的に夏の憂鬱は、このアルバムに入ってるヤツのほうが好き
+                  ギターソロとかも、こっちのほうがイイ気がする。少数派だと思うけど
+
+                  ちなみに、ラルクのオリアルでラスト曲がアップテンポなのは、このアルバムとsmileだけ
+                それぞれ、rain leavesとspirit dreamsだからな</p>
+              </div>
+              <div class="review-box"><p>実はこれが初ﾗﾙｸなんです。
+                以前と今声が全然違うので懐かしいです。
+                歌詞を初めて見た時はどうやったらこんないいの書けるの〜
+                と思っていました。
+                どんどん変わっていくﾗﾙｸにいつもワクワクしています。
+                昔からのファンなので今のﾗﾙｸのような
+                人に幸せを与えられて影響を与えられるようなそんな作品作ってほしいです。
+                あんまりこのCDは聞く機会がないのですが
+                原因はなんだか貴重に思えてしまうからです。
+                声が違うので。。。
+              声が変わった。。。</p></div>
+              <div class="review-box"><p>ラルクが好きなので、全部集める為の一つとして買いました。このアルバムには毎日聴きたくなるような曲は少なく、後回しにしていて、やっと買いました。買えてとても良かったです。</p></div>
+              <div class="review-box"><p>heavenlyは、綺麗な曲が多いのでとても好きなアルバムです。</p></div>
+              <div class="review-box"><p>このアルバムは、原石のよう。hydeの声が、とても自然でよい。曲を感じて表情を変えて歌えるのは彼の魅力だと思うのですが、ヘヴンリーでは作り込みすぎず、自然体で表現していて豊かな広がりを感じました。still i'm~ は、当時の彼らの心境が伝わってきます。春のざらっとした風と、まだ冷たさの残る空。心は未来を期待している。前２作では、彼らの内向的でやや閉鎖ぎみな見方が色濃く出ていましたが、ここでは伝えようと開いていく前向きな姿勢を感じられて、どこか透明な憂いを感じます。vivid~ の切実さや、後の風にきえないでなど、この頃の彼らにしかない魅力があります。ラルクの音楽には、ひとり窓辺で空を見上げるような孤独感がありますが、いつもどこか遠いところにある暖かな何かを求めているように思います。ガラス玉や静かの海での持つ世界観に共感できるものがあると、きっと惹かれるのでは。。若さ故の希望と苦悩、きらめきと危うさを感じます。そしてhydeの妖艶さがみずみずしい。何かに向かって進むときに響いてくる、また、いつかの日を懐かしむような。素敵なアルバムです。</p></div>
+              <!-- form_for部分を入れる -->
+              <div class="review-up-box">
+                <h3><strong>レビュー投稿</strong></h3>
+                <form>
+                  <div class="form-group">
+                    <textarea placeholder="レビュー本文入力欄" rows="8" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-default pull-right">送信</button>
+                  </div>
+                </form>
+              </div>
+
             </div>
           </div>
         </div>
@@ -112,4 +139,7 @@
   </div>
 </div>
 </div>
+
+
 </div>
+
