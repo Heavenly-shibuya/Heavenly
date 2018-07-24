@@ -9,6 +9,8 @@
         <div class="user-show-image"></div>
         <br>
         <div id="user-edit" class="col-xs-10 btn btn-primary">イメージ選択</div>
+        <%= link_to "退会", destroy_users_path, method: :delete, "data-confirm" => "本当に退会しますか？",class: "btn btn-danger user-edit-btn" %>
+
       </div>
 
       <div class="col-xs-5"><br><br><br></div>

@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def show
     @item =Item.find(params[:id])
+
     @items = Item.select_shop
     respond_to do |format|
     	format.html
@@ -24,8 +25,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
-
   def update
   	@item =Item.find(params[:id])
   	@item.update(item_params)
@@ -46,4 +45,7 @@ class ItemsController < ApplicationController
        songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
   end
 
+  def review_params
+    params.require(:review).permit(:item_id,:user_id, :body)
+  end
 end

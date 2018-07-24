@@ -49,21 +49,11 @@
                   <!-- カートアイコン画像 -->
                   <img src="/itemimg/cart.png">
                 </div>
-                在庫数:<%= @item.stock %>
-                <!-- item数の選択 -->
-                <div class="stock-form">
-                  <%= form_for @item do |f| %>
-                  <%= f.label :stock, "数量" %>
-                  <%= f.select :stock, @current_stock_array %>
-                  <% end %>
-                  <%= link_to carts_items_path do %>
-                  <i class="fas fa-cart-arrow-down btn btn-warning btn-block col-xs-12"> カートに入れる</i>
-                  <% end %>
-                </div>
               </div>
             </div>
           </div>
         </div>
+
         <!-- 右サイド -->
         <div class="content-right col-sm-8">
           <div class="row">
@@ -140,6 +130,7 @@
                   </div>
                 </form>
               </div>
+
             </div>
           </div>
         </div>
@@ -148,3 +139,7 @@
   </div>
 </div>
 </div>
+
+
+</div>
+
