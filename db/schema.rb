@@ -179,12 +179,9 @@ ActiveRecord::Schema.define(version: 2018_07_23_112058) do
     t.string "zip"
     t.string "address"
     t.string "tel"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
     t.datetime "deleted_at"
-
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
