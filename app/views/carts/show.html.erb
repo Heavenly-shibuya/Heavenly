@@ -33,9 +33,9 @@
                     <%= item.item.item_image %>
                   </td>
                   <td><%= item.item.title %></td>
-                  <td><%= item.item.price %>円</td>
+                  <td><%= (item.item.price).to_i %>円</td>
                   <td>数量：<%= item.quantity %>個</td>
-                  <td>小計<%= item.item.price %>円</td>
+                  <td>小計<%= (item.total_price).to_i %>円</td>
                     <td><span class="btn btn-success">編集</span>
                     <span class="btn btn-danger">削除</span>
                   </td>
@@ -46,7 +46,7 @@
           </div>
 
             <div class="col-xs-3 col-xs-offset-7">
-              <div class="goukei"><span>合計&nbsp;&nbsp;&nbsp;6480円</span></div>
+              <div class="goukei"><span>合計&nbsp;&nbsp;&nbsp;<%= (@cart.total_price).to_i %>円</span></div>
             </div>
             <br>
             <br>
