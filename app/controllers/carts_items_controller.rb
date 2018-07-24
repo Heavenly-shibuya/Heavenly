@@ -33,16 +33,11 @@ class CartsItemsController < ApplicationController
   def create
   	@cart = current_cart
   	item = Item.find(params[:item_id])
-  	@cart_item = @cart.cart_items.build(item: item)
+    @cart_item = @cart.add_item(item.id)
+  	# 変更前 @cart_item = @cart.cart_items.build(item: item)
 
-  	# respond_to do |format|
-	@cart_item.save
+    @cart_item.save
     redirect_to cart_path(@cart)
-  			# format.json {render :show, status:, :created, location: @cart_item }
-  		# else
-  		# 	format.html {render :new}
-  		# 	format.json {render json: @cart_item.errors, status: :unprocessable_entity}
-  		# end
   end
 
   def destroy
