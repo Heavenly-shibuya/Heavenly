@@ -7,4 +7,16 @@ class User < ApplicationRecord
 
   has_many :delivery_addresses
 
+  def soft_delete
+    update(deleted_at: Time.now)
+  end
+
+  def active_for_authentication?
+    !deleted_at
+  end
+
+  def inactive_message
+    !deleted_at ? super : :deleted_account
+  end
+
 end

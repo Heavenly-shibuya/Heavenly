@@ -1,10 +1,8 @@
 <div class="user-show-container">
-  <div class="row">
-      <div class="col-xs-2 col-xs-offset-2">
+  <div class="user-main clearfix">
+      <div class="col-xs-2 col-xs-offset-2 user-profile">
         <div class="user-show-image"></div>
-        <br>
-        <!-- <div class="col-xs-10 btn btn-primary">profile編集</div> -->
-        <%=link_to "profile編集",edit_user_path(@user), class: "col-xs-10 btn btn-primary" %>
+        <%= link_to "profile編集", edit_user_path(@user), class: "btn btn-primary user-edit-btn" %>
       </div>
         <div class="col-xs-3">
           <div class="user-title">
