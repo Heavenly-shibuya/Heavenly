@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'carts/index'
+  get 'carts/show'
   get 'admins/index'
   get 'admins/show'
   get 'admins/edit'
@@ -32,7 +34,9 @@ Rails.application.routes.draw do
   resources :genres
   resources :artists
   resources :news_posts
-  resources :items
+  resources :items do
+    resources :carts_items
+  end
 
   resources :messages
   resources :users
@@ -42,7 +46,7 @@ Rails.application.routes.draw do
   resources :favorites, :only => [:index]
   resources :delivery_addresses
   resources :reviews, :only => [:index, :show]
-  resources :carts_items, :only => [:index, :show, :edit]
+  resources :carts, :only => [:index, :show, :edit]
 
 
 
