@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   resources :favorites, :only => [:index]
   resources :delivery_addresses
   resources :reviews, :only => [:index, :show]
-  resources :carts, :only => [:index, :show, :edit]
+  resources :carts, :only => [:index, :show, :edit, :destroy]
 
 
 
