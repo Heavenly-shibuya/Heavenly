@@ -1,7 +1,9 @@
 <div class="user-show-container">
   <div class="user-main clearfix">
-      <div class="col-xs-2 col-xs-offset-2 user-profile">
-        <div class="user-show-image"></div>
+      <div class="col-xs-3 col-xs-offset-1 user-profile">
+        <div class="user-edit-show-image">
+          <%= attachment_image_tag @user, :profile_image, :fill, 230, 230, format: 'jpg', class: "user-edit-pic" %>
+        </div>
         <%= link_to "profile編集", edit_user_path(@user), class: "btn btn-primary user-edit-btn" %>
       </div>
         <div class="col-xs-3">

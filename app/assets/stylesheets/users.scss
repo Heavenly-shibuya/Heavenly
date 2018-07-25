@@ -57,7 +57,7 @@
 }
 .user-edit-container {
   width: 100%;
-  height: 750px;
+  height: 900px;
   background-color: #222222;
   border-top: 3px solid #444444;
   border-bottom: 3px solid #444444;
@@ -113,13 +113,13 @@
   text-align: right;
   display: block;
 }
+
 .user-show-image {
   width: 150px;
   height: 150px;
   border-radius: 90px;
   margin-top: 50px;
   margin: 0 auto;
-  background-image: url(/sample-author8.jpg);
   background-size: cover;
   margin-bottom: 10px;
 }
@@ -195,6 +195,39 @@ padding-bottom: 15px;
   margin-top: 10px;
 }
 
+.user-pic {
+  border-radius: 180px;
+  margin: 0 0 15px 10px;
+}
+
+.user-pic img {
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.user-edit-pic img {
+  width:100%;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.user-edit-show-image {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.user-edit-date {
+  color: white;
+  margin-top: 30px;
+}
+
+.user-edit-show-image img {
+  border-radius: 180px;
+}
+
 .footer {
   text-align: center;
   width: 100%;
@@ -204,3 +237,16 @@ padding-bottom: 15px;
   border-top: 12px solid #ff8c00;
   line-height: 168px;
 }
+
+
+.user-destroy-btn {
+  float: right;
+  margin-top: 30px;
+}
+
+.user-edit-form-btn {
+  margin-top: 30px;
+}
+
+
+
