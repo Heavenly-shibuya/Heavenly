@@ -1,3 +1,4 @@
+
 class CartsItemsController < ApplicationController
 	before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
 
@@ -33,20 +34,19 @@ class CartsItemsController < ApplicationController
   def create
   	@cart = current_cart
   	item = Item.find(params[:item_id])
-  	@cart_item = @cart.cart_items.build(item: item)
+    @cart_item = @cart.add_item(item.id)
+  	# 変更前 @cart_item = @cart.cart_items.build(item: item)
 
 
-  @cart_item.save
+    @cart_item.save
     redirect_to cart_path(@cart)
 
   end
 
   def destroy
     @cart_item.destroy
-    respond_to do |format|
-      format.html { redirect_to cart_items_url, notice: 'cart item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to cart_url(@cart_item.cart_id)
+    flash[:notice] = 'cart item was successfully destroyed.'
   end
 
 
@@ -59,3 +59,4 @@ class CartsItemsController < ApplicationController
       params.require(:cart_item).permit(:item_id, :cart_id)
     end
 end
+
