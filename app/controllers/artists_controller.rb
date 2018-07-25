@@ -3,6 +3,7 @@ class ArtistsController < ApplicationController
 # before_action :authenticate_user!, only: [:index, :show, :update]
 
   def index
+    # @user = User.find(current_user[:id])
     @artist = Artist.all.page(params[:page])
   end
 
