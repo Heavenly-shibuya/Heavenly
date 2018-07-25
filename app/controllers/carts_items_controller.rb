@@ -1,3 +1,4 @@
+
 class CartsItemsController < ApplicationController
 	before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
 
@@ -58,3 +59,4 @@ class CartsItemsController < ApplicationController
       params.require(:cart_item).permit(:item_id, :cart_id)
     end
 end
+
