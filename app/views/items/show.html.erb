@@ -49,6 +49,8 @@
                   <!-- カートアイコン画像 -->
                   <img src="/itemimg/cart.png">
                 </div>
+                                  <span>在庫数: </span>
+                  <%= @item.stock %><br>
               </div>
             </div>
           </div>
@@ -63,7 +65,7 @@
               <div class="title-list">
                 <table class="table">
                   <thead>
-                    <% @disc.each do |disc| %>
+                    <% @discs.each do |disc| %>
                     <tr>
                       <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
                       <th></th>
@@ -76,7 +78,7 @@
                 </thead>
 
                 <tbody>
-                  <% @item.songs.each do |song| %>
+                  <% disc.songs.each do |song| %>
                   <tr>
                     <th class="text-center"><%= song.track_order %></th>
                     <td><%= song.title %></td>
@@ -87,9 +89,14 @@
                 <% end %>
               </table>
 
-              <%= button_to 'カートに入れる',  item_carts_items_path(@item) %>
-<!--               <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i> -->
-            
+              <% if @item.stock > 0 %>
+              <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-lg btn-block" %>
+              <% else @item.stock == 0 %>
+              <div class="item-show-button">
+                <i class="fas fa-shopping-cart"> 在庫がありません</i>
+              </div>
+              <% end %>
+              <!--               <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i> -->
               <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
               <!-- レビュー表示 -->
               <div class="review-box">
@@ -130,7 +137,6 @@
                   </div>
                 </form>
               </div>
-
             </div>
           </div>
         </div>
@@ -139,7 +145,5 @@
   </div>
 </div>
 </div>
-
-
 </div>
 
