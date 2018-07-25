@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :delivery_addresses
 
+attachment :profile_image
+
   def soft_delete
     update(deleted_at: Time.now)
   end

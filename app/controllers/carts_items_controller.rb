@@ -37,8 +37,10 @@ class CartsItemsController < ApplicationController
     @cart_item = @cart.add_item(item.id)
   	# 変更前 @cart_item = @cart.cart_items.build(item: item)
 
+
     @cart_item.save
     redirect_to cart_path(@cart)
+
   end
 
   def destroy

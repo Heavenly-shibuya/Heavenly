@@ -22,3 +22,4 @@ private
       params.require(:artist).permit(:top_image, :artist_image, :body, :name)
     end
 end
+
