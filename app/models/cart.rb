@@ -2,14 +2,15 @@ class Cart < ApplicationRecord
 	has_many :cart_items, dependent: :destroy
 
 	# 追記部分
-	def add_item(item_id)
+	def add_item(item_id, quantity)
 
 		current_item = cart_items.find_by_item_id(item_id)
 
 		if current_item
-			current_item.quantity += 1
+
+			current_item.quantity += quantity.to_i
 		else
-			current_item = cart_items.build(item_id: item_id)
+			current_item = cart_items.build(item_id: item_id, quantity: quantity.to_i)
 		end
 		current_item
 
