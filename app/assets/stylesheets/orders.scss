@@ -1,3 +1,34 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.order-title {
+  text-align: left;
+  padding-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: white;
+  font-family: verdana;
+  font-size: 35px;
+
+}
+.order-title h3 {
+  margin: 20px 20px 20px 60px;
+  font-size: 40px;
+  text-align: center;
+  border-bottom: 3px solid gray;
+}
+.order-title h4 {
+  margin: 20px 100px 10px;
+  font-size: 20px;
+  text-align: center;
+}
+.order-table {
+	color: #EEEEEE;
+	font-size: 16px;
+}
+.order-table .table > thead > tr > th,
+.order-table .table > thead > tr > td,
+.order-table .table > tbody > tr > th,
+.order-table .table > tbody > tr > td,
+.order-table .table > tfoot > tr > th,
+.order-table .table > tfoot > tr > td {
+	vertical-align: middle;
+	text-align: center;
+}
