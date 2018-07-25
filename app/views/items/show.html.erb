@@ -90,7 +90,10 @@
               </table>
 
               <% if @item.stock > 0 %>
-              <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-lg btn-block" %>
+                <%= form_tag item_carts_items_path(@item), method: :post do %>
+                <%= number_field_tag :quantity, class: "serch_box" %>
+                <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-lg btn-block" %>
+              <% end %>
               <% else @item.stock == 0 %>
               <div class="item-show-button">
                 <i class="fas fa-shopping-cart"> 在庫がありません</i>
