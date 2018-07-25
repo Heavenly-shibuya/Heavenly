@@ -52,6 +52,9 @@
                 <div class="stock-form">
                   <span>在庫数: </span>
                   <%= @item.stock %><br>
+                  <% if @item.stock == 0 %>
+                  <%= link_to '在庫を追加してください',  edit_admin_item_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-block" %>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -79,7 +82,7 @@
                 </thead>
 
                 <tbody>
-                  <% @songs.each do |song| %>
+                  <% disc.songs.each do |song| %>
                   <tr>
                     <th class="text-center"><%= song.track_order %></th>
                     <td><%= song.title %></td>
@@ -89,10 +92,6 @@
                 </tbody>
                 <% end %>
               </table>
-
-              <%= link_to carts_items_path do %>
-              <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i>
-              <% end %>
               <!-- レビュー表示 -->
               <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
               <div class="review-box">

@@ -13,82 +13,48 @@
    </div>
    <div class="main-content">
     <div class="cart-item-title"><h3><strong>カート一覧</strong></h3></div>
-      <div class="containar">
+      <div class="containar-fluid">
         <div class="row">
           <div class="col-xs-10 col-xs-offset-1">
-            <table class="table cart-table">
+            <div class="carts-table">
+            <table class="table">
+              <thead>
+                <th></th>
+                <th>商品名</th>
+                <th>価格</th>
+                <th>数量</th>
+                <th>小計</th>
+                <th></th>
+              </thead>
               <tbody>
                 <% @cart.cart_items.each do |item| %>
                 <tr>
                   <td>
-                    <p class="cart-item-image"></p>
+                    <%= item.item.item_image %>
                   </td>
-                  <td><%=item.item.title %></td>
-                  <td>
-                    <p><%=item.item.price%></p>
-                    <p>小計  2160</p>
-                  </td>
-                  <td>
-                    <!-- <p class="btn btn-success">編集</p> -->
-                    <br>
-                    <p class="btn btn-danger">削除</p>
+                  <td><%= item.item.title %></td>
+                  <td><%= (item.item.price).to_i %>円</td>
+                  <td>数量：<%= item.quantity %>個</td>
+                  <td><%= (item.total_price).to_i %>円</td>
+                    <td><span class="btn btn-success">編集</span>
+                    <span class="btn btn-danger">削除</span>
                   </td>
                 </tr>
               </tbody>
+              <% end %>
             </table>
-            <% end %>
-
-
-           <table class="table cart-table">
-              <tbody>
-                <tr>
-                  <td>
-                    <p class="cart-item-image"></p>
-                  </td>
-                  <td>cd詳細タイトル</td>
-                  <td>
-                    <p>2 X 1080</p>
-                    <p>小計  2160</p>
-                  </td>
-                  <td>
-<!--                     <p class="btn btn-success">編集</p> -->
-                    <br>
-                    <p class="btn btn-danger">削除</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-
-           <table class="table cart-table">
-              <tbody>
-                <tr>
-                  <td>
-                    <p class="cart-item-image"></p>
-                  </td>
-                  <td>cd詳細タイトル</td>
-                  <td>
-                    <p>2 X 1080</p>
-                    <p>小計  2160</p>
-                  </td>
-                  <td>
-                    <!-- <p class="btn btn-success">編集</p> -->
-                    <br>
-                    <p class="btn btn-danger">削除</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-
-            <div class="col-xs-3 col-xs-offset-7">
-              <div class="goukei"><span>合計&nbsp;&nbsp;&nbsp;6480円</span></div>
+          </div>
+            <div class="col-xs-2">
+            <%= button_to 'カートを空にする', @cart, method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-default" %>
+          </div>
+            <div class="col-xs-3 col-xs-offset-5">
+              <div class="goukei"><span>合計&nbsp;&nbsp;&nbsp;<%= (@cart.total_price).to_i %>円</span></div>
             </div>
             <br>
             <br>
             <br>
-            <div class="col-xs-5 col-xs-offset-3">
-              <div class="btn btn-success col-xs-12"><span class="osiharai">お支払方法へ<span></div>
+            <div class="col-xs-4 col-xs-offset-4">
+              <div class="osiharai btn btn-success btn-lg btn-block"><span>お支払方法へ</span></div>
             </div>
           </div>
         </div>
