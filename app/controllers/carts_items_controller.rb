@@ -8,7 +8,7 @@ class CartsItemsController < ApplicationController
   end
 
   def show
-  	  	@cart_items = CartItem.all
+  	@cart_items = CartItem.all
   end
 
   def edit
