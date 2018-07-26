@@ -1,70 +1,45 @@
-<div class="user-edit-container">
+<div class="user-edit-container clearfix">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
       <div class="title">
         <span><strong>Profile Edit</strong></span>
       </div>
     </div>
-      <div class="col-xs-2 col-xs-offset-2">
-        <div class="user-show-image"></div>
-        <br>
-        <div id="user-edit" class="col-xs-10 btn btn-primary">イメージ選択</div>
-        <%= link_to "退会", destroy_users_path, method: :delete, "data-confirm" => "本当に退会しますか？",class: "btn btn-danger user-edit-btn" %>
+
+    <div class="col-xs-12 col-ms-12 user-edit-date">
+      <div class= "user-pic col-xs-3 col-sm-3 col-xs-offset-2 col-sm-offset-2">
+          <%= attachment_image_tag @user, :profile_image, :fill, 230, 230, format: 'jpg', class: "user-pic" %>
+
+              <%= form_for(@user) do |f| %>
+              <%= f.attachment_field :profile_image %>
 
       </div>
 
-      <div class="col-xs-5"><br><br><br></div>
+      <div class="user-prof col-xs-5 col-sm-5">
+            <h5>ユーザー名</h5>
+            <%= f.text_field :name, class: "form-control" %>
+            <h5>メールアドレス</h5>
+            <%= f.email_field :email, class: "form-control" %>
+            <h5>姓</h5>
+            <%= f.text_field :last_name, class: "form-control" %>
+            <h5>姓（フリガナ）</h5>
+            <%= f.text_field :last_name_furi, class: "form-control" %>
+            <h5>名</h5>
+            <%= f.text_field :first_name, class: "form-control" %>
+            <h5>名（フリガナ）</h5>
+            <%= f.text_field :first_name_furi, class: "form-control" %>
+            <h5>郵便番号</h5>
+            <%= f.text_field :zip, class: "form-control" %>
+            <h5>住所</h5>
+            <%= f.text_field :address, class: "form-control" %>
+            <h5>電話番号</h5>
+            <%= f.text_field :tel, class: "form-control" %>
+            <%= f.submit value: "更新", class: "btn btn-warning btn-block user-edit-form-btn" %>
+            <% end %>
 
-        <div class="col-xs-6">
-          <div class="profile-content">
-            <div class="col-xs-9 col-xs-offset-1 user-profile-containar"">
-              <div class="profile-info">
-                 <%= form_for(@user) do |f| %>
-                <ul>
-                  <li>user-name: <!-- &nbsp;&nbsp;&nbsp; --> <%= f.text_field :name %></li>
-                  <li>mail: <!-- &nbsp;&nbsp;&nbsp; --> <%= f.email_field :email %></li>
-                  <li>last_name: <!-- &nbsp;&nbsp;&nbsp; --> <%= f.text_field :last_name %></li>
-                  <li>last_name_furi: &nbsp;&nbsp;&nbsp; <%= f.text_field :last_name_furi %></li>
-                  <li>first_name: &nbsp;&nbsp;&nbsp; <%= f.text_field :first_name %></li>
-                  <li>irst_name_furi: &nbsp;&nbsp;&nbsp; <%= f.text_field :first_name_furi %></li>
-                  <li>zip: &nbsp;&nbsp;&nbsp; <%= f.text_field :zip %></li>
-                  <li>addres: &nbsp;&nbsp;&nbsp; <%= f.text_field :address %></li>
-                  <li>tel: &nbsp;&nbsp;&nbsp; <%= f.text_field :tel %></li>
-                </ul>
-              <br>
-                <!-- <div class="col-xs-3 col-xs-offset-9 btn btn-primary">submit</div> -->
-                <%= f.submit "Update User", class: "col-xs-4 col-xs-offset-8 btn btn-primary"%>
-                <% end %>
-            </div>
-          </div>
+            <%= link_to "退会", destroy_users_path, method: :delete, "data-confirm" => "本当に退会しますか？",class: "btn btn-danger text-right user-destroy-btn" %>
         </div>
       </div>
     </div>
+  </div>
 </div>
-
-<!--  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
-    t.string "name"
-    t.string "last_name"
-    t.string "last_name_furi"
-    t.string "first_name"
-    t.string "first_name_furi"
-    t.text "profile_image_id"
-    t.integer "delivery_address_id"
-    t.string "zip"
-    t.string "address"
-    t.string "tel"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end -->

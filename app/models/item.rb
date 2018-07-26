@@ -8,8 +8,10 @@ class Item < ApplicationRecord
   has_many :songs, through: :discs
   has_many :cart_items
   before_destroy :referenced_by_cart_item
+
   enum genre_id:{jpop: 0,hiphop:1,レゲエ:2,RB:3, jazz:4,ロック:5,ELECTRONIC:6,KPOP:7,オルタナティブ:8}
 
+    attachment :profile_image
     attachment :item_image
 
 

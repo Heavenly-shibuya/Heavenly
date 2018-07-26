@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+
+<!-- -----ヘッダー -->
+
   <head>
     <title>Heavenlymusic</title>
     <%= csrf_meta_tags %>
@@ -13,9 +16,6 @@
     <header>
       <div class="head-serch">
         <div class="serch">
-<!--           <form id="serch_form" action="" method="get">
-          <input id="serch_box" name="s" type="text"  placeholder="キーワードを入力" >
-          <input id="serch_btn" type="submit" value="検索" ><a href="#"></a></form> -->
           <%= form_tag items_search_path, method: :get do %>
           <%= text_field_tag :search, params[:search], class: "serch_box" %>
           <%= submit_tag "search", class: "serch_btn" %>
@@ -61,41 +61,57 @@
 
 
     </header>
-    <%= yield %>
 
 <!-- サイドバー↓ -->
-
-    <!-- <div class="sidebar">
+<% if user_signed_in? %>
+  <div class="sidebar">
     <div class="user-content">
       <div class="user-image">
+        <%= attachment_image_tag @user, :profile_image, :fill, 230, 230, format: 'jpg', class: "user-pic" %>
       </div>
       <div class="user-profile">
-          <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-          <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+        <!-- <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a> -->
+        <%= link_to "MY PROFILE", user_path(current_user), class: "my-side" %>
+        <a class="my-side" href="#" style="text-decoration: none;">CART</a>
+        <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+        <%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side"%>
+        <!-- <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a> -->
       </div>
     </div>
-   </div> -->
+  </div>
+<% else %>
+  <div class="sidebar">
+    <div class="user-content">
+      <div class="notlogin-image"></div>
+      <div class="user-profile">
+          <a class="my-side" href="#" style="text-decoration: none;">SIGN UP</a>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= yield %>
 
 
+<!-- -----フッター -->
     <footer>
-    <div class="footer-container">
-      <div class="footer-nav">
-        <ul>
-          <li><a href="#">MY PROFILE</a></li>
-          <li><a href="#">CART</a></li>
-          <li><a href="#">MESSAGE</a></li>
-          <li><a href="#">ARTISTS</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">NEWS</a></li>
-          <li><a href="#">LOGOUT</a></li>
-        </ul>
+      <div class="footer-container">
+        <div class="footer-nav">
+          <ul>
+            <li><a href="#">MY PROFILE</a></li>
+            <li><a href="#">CART</a></li>
+            <li><a href="#">MESSAGE</a></li>
+            <li><a href="#">ARTISTS</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">LOGOUT</a></li>
+          </ul>
+        </div>
+        <span class="copyright"><p>©︎ Heavenly music</p></span>
       </div>
-      <span class="copyright"><p>©︎ Heavenly music</p></span>
-    </div>
     </footer>
   </body>
 </html>
+

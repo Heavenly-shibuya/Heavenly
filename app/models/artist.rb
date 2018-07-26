@@ -1,6 +1,7 @@
 class Artist < ApplicationRecord
   attachment :top_image
   attachment :artist_image
+  # attachment :item_image
   has_many :items
 
       def self.search(search)

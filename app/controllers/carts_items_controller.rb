@@ -39,6 +39,7 @@ class CartsItemsController < ApplicationController
     @cart_item.save
     item.save
     redirect_to cart_path(@cart)
+
   end
 
   def destroy

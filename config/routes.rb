@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :users
   resources :admins
-
+  resources :orders
   resources :order_items
   resources :favorites, :only => [:index]
   resources :delivery_addresses
