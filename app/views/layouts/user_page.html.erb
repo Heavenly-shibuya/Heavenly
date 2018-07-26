@@ -62,53 +62,11 @@
 
     </header>
 
-<!-- サイドバー↓ -->
-<% if user_signed_in? %>
-  <div class="sidebar">
-    <div class="user-content">
-      <div class="user-image">
-          <% if current_user.profile_image == nil %>
-          <%= image_tag '/user2.png', class: "user-nopic-side" %>
-          <% else %>
-          <%= attachment_image_tag current_user, :profile_image, :fill, 180, 180, format: 'jpg', class: "user-pic-side" %>
-          <% end %>
-        </div>
-      <div class="user-profile">
-        <%= link_to "MY PROFILE", user_path(current_user), class: "my-side", style: "text-decoration: none;" %>
-        <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-        <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-        <%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side", style: "text-decoration: none;"%>
-      </div>
-    </div>
-  </div>
-<% elsif admin_signed_in? %>
-<div class="sidebar">
-    <div class="user-content">
-      <div class="admin-image"></div>
-      <div class="user-profile">
-        <a class="my-side" href="#" style="text-decoration: none;">ADMIN</a>
-        <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-        <%= link_to " LOGOUT", destroy_admin_session_path, method: :delete, class: "my-side", style: "text-decoration: none;"%>
-      </div>
-    </div>
-  </div>
-<% else %>
-  <div class="sidebar">
-    <div class="user-content">
-      <div class="notlogin-image"></div>
-      <div class="user-profile">
-          <%= link_to "SIGN UP", new_user_registration_path, class: "my-side", style: "text-decoration: none;"%>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <%= yield %>
 
 
 <!-- -----フッター -->
     <footer>
-      <% if user_signed_in? %>
         <div class="footer-container">
           <div class="footer-nav">
             <ul>
@@ -125,33 +83,6 @@
           </div>
           <span class="copyright"><p>©︎ Heavenly music</p></span>
         </div>
-      <% elsif admin_signed_in? %>
-        <div class="footer-container">
-          <div class="footer-nav">
-            <ul>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-            </ul>
-          </div>
-          <span class="copyright"><p>管理者アカウントでログイン中</p></span>
-        </div>
-      <% else %>
-        <div class="footer-container">
-          <div class="footer-nav">
-            <ul>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-              <li>&nbsp;&nbsp;</li>
-            </ul>
-          </div>
-          <span class="copyright"><p>©︎ Heavenly music</p></span>
-        </div>
-      <% end %>
     </footer>
   </body>
 </html>

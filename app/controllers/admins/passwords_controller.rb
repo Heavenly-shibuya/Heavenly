@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Admins::PasswordsController < Devise::PasswordsController
-  # GET /resource/password/new
+
+  layout 'sign_in_up'
   # def new
   #   super
   # end

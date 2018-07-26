@@ -1,4 +1,7 @@
 class Admin::NewsPostsController < ApplicationController
+  before_action :correct_user
+  before_action :authenticate_admin!
+
 	def index
 		@newsall = NewsPost.page(params[:page]).per(5)
 	end
@@ -36,4 +39,10 @@ class Admin::NewsPostsController < ApplicationController
 	def news_post_params
 		params.require(:news_post).permit(:title, :body, :news_image)
 	end
+
+	def correct_user
+    if user_signed_in?
+       redirect_to genres_path
+    end
+  end
 end

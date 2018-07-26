@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<!-- -----ヘッダー -->
+
+  <head>
+    <title>Heavenlymusic</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="head"><span class="head-title"><strong>Heavenly Music</strong></span></div>
+    </header>
+
+
+<%= yield %>
+
+
+<!-- -----フッター -->
+    <footer>
+        <div class="footer-container">
+          <div class="footer-nav">
+            <ul>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+            </ul>
+          </div>
+          <span class="copyright"><p>©︎ Heavenly music</p></span>
+        </div>
+    </footer>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

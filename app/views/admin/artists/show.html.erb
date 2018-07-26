@@ -1,61 +1,49 @@
 <body>
  <div class="content clearfix">
-   <div class="sidebar">
-    <div class="user-content">
-      <div class="user-image">
-      </div>
-      <div class="user-profile">
-          <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-          <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
-      </div>
-    </div>
-   </div>
-     <div class="main-content crearfix">
-       <div class="sb-content">
+   <div class="main-content crearfix">
+     <div class="sb-content">
 
-        <!-- ヘッダー -->
-        <div class="col-sm-12 artist-head" >
-          <%= attachment_image_tag @artist, :top_image, :fill, 950, 650, format: 'jpg' %>
+      <!-- ヘッダー -->
+      <div class="col-sm-12 artist-head" >
+        <%= attachment_image_tag @artist, :top_image, :fill, 950, 650, format: 'jpg' %>
+      </div>
+
+      <!-- アーティスト名 -->
+      <div class="artist-title"><p><%= @artist.name %></p></div>
+
+      <!-- アーティスト -->
+      <div class="artist-left-content">
+        <div class="artist-profile-pic">
+          <%= attachment_image_tag @artist, :artist_image, :fill, 200, 200, format: 'jpg', class: "artist-profile-pic" %>
+          </div>
+          <div class="artist-profile-text">
+              <span>ARTIST PROFILE</span>
+              <%= link_to "編集", edit_admin_artist_path(@artist.id), class: "btn btn-success edit-btn" %>
+              <%= link_to "削除", admin_artist_path(@artist.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger dalete-btn"%>
+          </div>
+          <div class="artist-profile-text">
+              <%= @artist.body %></p>
+          </div>
         </div>
 
-        <!-- アーティスト名 -->
-        <div class="artist-title"><p><%= @artist.name %></p></div>
+      <div class=a2222>
+        <div class=a1111>
 
-        <!-- アーティスト -->
-        <div class="artist-left-content">
-          <div class="artist-profile-pic">
-            <%= attachment_image_tag @artist, :artist_image, :fill, 200, 200, format: 'jpg', class: "artist-profile-pic" %>
-            </div>
-            <div class="artist-profile-text">
-                <span>ARTIST PROFILE</span>
-                <%= link_to "編集", edit_admin_artist_path(@artist.id), class: "btn btn-success edit-btn" %>
-                <%= link_to "削除", admin_artist_path(@artist.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger dalete-btn"%>
-            </div>
-            <div class="artist-profile-text">
-                <%= @artist.body %></p>
+
+            <% @items.each do |item| %>
+            <div class="artist-right-content">
+            <%= link_to edit_admin_artist_path(@artist.id) do %>
+
+            <%= attachment_image_tag item, :item_image, :fill, 200, 200, format: 'jpg', class: "artist-cd" %>
+
+            <% end %>
+
+            <div class="artist-cd-text">
+             <div class="artist-cd-name"><p><%= item.title %></p></div>
             </div>
           </div>
 
-        <div class=a2222>
-          <div class=a1111>
-
-
-              <% @items.each do |item| %>
-              <div class="artist-right-content">
-              <%= link_to edit_admin_artist_path(@artist.id) do %>
-
-              <%= attachment_image_tag item, :item_image, :fill, 200, 200, format: 'jpg', class: "artist-cd" %>
-
-              <% end %>
-
-              <div class="artist-cd-text">
-               <div class="artist-cd-name"><p><%= item.title %></p></div>
-              </div>
-            </div>
-
-             <% end %>
+           <% end %>
 
 
           </div>
