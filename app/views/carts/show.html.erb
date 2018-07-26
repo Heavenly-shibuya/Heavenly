@@ -37,9 +37,6 @@
               <% end %>
             </table>
           </div>
-            <div class="col-xs-2">
-            <%= button_to 'カートを空にする', @cart, method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-default" %>
-          </div>
             <div class="col-xs-3 col-xs-offset-5">
               <div class="goukei"><span>合計&nbsp;&nbsp;&nbsp;<%= (@cart.total_price).to_i %>円</span></div>
             </div>
