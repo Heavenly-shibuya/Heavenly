@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
     @item =Item.find(params[:id])
     @artist = @item.artist
     @discs = @item.discs
+    @review = Review.new
 
     # @current_stock_array = []
     # @item.stock.times do |stock|
