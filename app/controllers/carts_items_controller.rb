@@ -5,7 +5,6 @@ class CartsItemsController < ApplicationController
 # before_action :authenticate_user!, only: [:index, :edit]
 
   def index
-  	@cart_items = CartItem.all
   end
 
   def show
@@ -35,14 +34,19 @@ class CartsItemsController < ApplicationController
   	@cart = current_cart
   	item = Item.find(params[:item_id])
     @cart_item = @cart.add_item(item.id, params[:quantity])
-  	# 変更前 @cart_item = @cart.cart_items.build(item: item)
-
+  	@cart_item_stock =  params[:quantity]
+  	item.stock -= @cart_item_stock.to_i
     @cart_item.save
+    item.save
     redirect_to cart_path(@cart)
 
   end
 
   def destroy
+  	item = Item.find(params[:item_id])
+    @cart_item = CartItem.find_by(cart_id:current_cart, item_id: item.id)
+    @cart_item.item.stock += @cart_item.quantity.to_i
+    @cart_item.item.save
     @cart_item.destroy
     redirect_to cart_url(@cart_item.cart_id)
     flash[:notice] = 'cart item was successfully destroyed.'
