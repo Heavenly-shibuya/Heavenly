@@ -1,5 +1,6 @@
 class Cart < ApplicationRecord
 	has_many :cart_items, dependent: :destroy
+	has_many :orders
 
 	# 追記部分
 	def add_item(item_id, quantity)

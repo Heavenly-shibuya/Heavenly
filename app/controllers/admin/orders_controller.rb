@@ -1,4 +1,7 @@
 class Admin::OrdersController < ApplicationController
+  before_action :correct_user
+  before_action :authenticate_admin!
+
   def index
   end
 
@@ -21,6 +24,13 @@ class Admin::OrdersController < ApplicationController
   def create
   	# @order = Order.new(order_params)
   	# @order.save
+  end
+
+  private
+  def correct_user
+    if user_signed_in?
+       redirect_to genres_path
+    end
   end
 
 end

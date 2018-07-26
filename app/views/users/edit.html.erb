@@ -1,5 +1,5 @@
 <div class="user-edit-container clearfix">
-  <div class="row">
+  <div class="row-edit">
     <div class="col-xs-8 col-xs-offset-2">
       <div class="title">
         <span><strong>Profile Edit</strong></span>
@@ -8,14 +8,20 @@
 
     <div class="col-xs-12 col-ms-12 user-edit-date">
       <div class= "user-pic col-xs-3 col-sm-3 col-xs-offset-2 col-sm-offset-2">
+          <% if current_user.profile_image == nil %>
+          <%= image_tag '/user2.png', class: "user-pic" %>
+          <% else %>
           <%= attachment_image_tag @user, :profile_image, :fill, 230, 230, format: 'jpg', class: "user-pic" %>
-
-              <%= form_for(@user) do |f| %>
-              <%= f.attachment_field :profile_image %>
-
+          <% end %>
       </div>
 
+
+
+
+
       <div class="user-prof col-xs-5 col-sm-5">
+            <%= form_for(@user) do |f| %>
+            <%= f.attachment_field :profile_image %>
             <h5>ユーザー名</h5>
             <%= f.text_field :name, class: "form-control" %>
             <h5>メールアドレス</h5>
@@ -34,7 +40,7 @@
             <%= f.text_field :address, class: "form-control" %>
             <h5>電話番号</h5>
             <%= f.text_field :tel, class: "form-control" %>
-            <%= f.submit value: "更新", class: "btn btn-warning btn-block user-edit-form-btn" %>
+            <%= f.submit "更新", class: "btn btn-warning btn-block user-edit-form-btn" %>
             <% end %>
 
             <%= link_to "退会", destroy_users_path, method: :delete, "data-confirm" => "本当に退会しますか？",class: "btn btn-danger text-right user-destroy-btn" %>

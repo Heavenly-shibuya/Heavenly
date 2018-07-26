@@ -1,4 +1,7 @@
 class Admin::ItemsController < ApplicationController
+  before_action :correct_user
+  before_action :authenticate_admin!
+
   def show
     @item =Item.find(params[:id])
     @artist = @item.artist
@@ -57,4 +60,18 @@ class Admin::ItemsController < ApplicationController
     params.require(:item).permit(:title, :label, :genre_id, :artist_id, :price, :stock, :item_image,
      discs_attributes: [:id, :disc_name, :item_id, :_destroy, songs_attributes:[:id, :title, :track_order, :disc_id, :time, :_destroy]])
   end
+
+  def correct_user
+    if user_signed_in?
+        redirect_to genres_path
+    end
+  end
 end
+
+
+
+
+
+
+
+
