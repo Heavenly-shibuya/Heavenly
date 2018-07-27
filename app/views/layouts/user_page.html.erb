@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<!-- -----ヘッダー -->
+
+  <head>
+    <title>Heavenlymusic</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="head-serch">
+        <div class="serch">
+          <%= form_tag items_search_path, method: :get do %>
+          <%= text_field_tag :search, params[:search], class: "serch_box" %>
+          <%= submit_tag "search", class: "serch_btn" %>
+          <% end %>
+        </div>
+      </div>
+      <input id="head-input" type="checkbox" class="head-unshown">
+      <label id="head-open" for="head-input"><span></span></label>
+      <label class="head-unshown" id="head-close" for="head-input"></label>
+
+      <div class="head"><span class="head-title"><strong>Heavenly Music&nbsp;&nbsp;</strong></span></div>
+      <div id="head-content">
+        <div class="responsib-menu">
+          <div class="responsib-item">
+            <%= link_to "HOME", genres_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "NEWS", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "ABOUT", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "MESSAGE", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "CART", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "LOGIN", new_user_session_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "SIGN UP", new_user_registration_path, class: "responsib-item" %>
+          </div>
+        </div>
+      </div>
+
+
+    </header>
+
+<%= yield %>
+
+
+<!-- -----フッター -->
+    <footer>
+        <div class="footer-container">
+          <div class="footer-nav">
+            <ul>
+              <li><%= link_to "MY PROFILE", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "CART", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "MESSAGE", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "ARTISTS", artists_path(current_user), class: "my-side" %></li>
+            </ul>
+            <ul>
+              <li><%= link_to "ABOUT", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "NEWS", news_posts_path(current_user), class: "my-side" %></li>
+              <li><%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side"%></li>
+            </ul>
+          </div>
+          <span class="copyright"><p>©︎ Heavenly music</p></span>
+        </div>
+    </footer>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

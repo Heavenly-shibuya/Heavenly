@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+
+<!-- -----ヘッダー -->
+
   <head>
     <title>Heavenlymusic</title>
     <%= csrf_meta_tags %>
@@ -8,8 +11,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="ScrollTrigger.min.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function(){ScrollTrigger.init();});</script>
   </head>
   <body>
+    <script src="heavenlymusic.js"></script>
     <header>
       <div class="head-serch">
         <div class="serch">
@@ -58,41 +64,112 @@
 
 
     </header>
-    <%= yield %>
 
 <!-- サイドバー↓ -->
-
-    <!-- <div class="sidebar">
+<% if user_signed_in? %>
+  <div class="sidebar">
     <div class="user-content">
       <div class="user-image">
-      </div>
+          <% if current_user.profile_image == nil %>
+          <%= image_tag '/user2.png', class: "user-nopic-side" %>
+          <% else %>
+          <%= attachment_image_tag current_user, :profile_image, :fill, 180, 180, format: 'jpg', class: "user-pic-side" %>
+          <% end %>
+        </div>
       <div class="user-profile">
-          <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-          <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+        <%= link_to "MY PROFILE", user_path(current_user), class: "my-side", style: "text-decoration: none;" %>
+        <a class="my-side" href="#" style="text-decoration: none;">CART</a>
+        <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+        <%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side", style: "text-decoration: none;"%>
       </div>
     </div>
-   </div> -->
+  </div>
+<% elsif admin_signed_in? %>
+<div class="sidebar">
+    <div class="user-content">
+      <div class="admin-image"></div>
+      <div class="user-profile">
+        <%= link_to "ADMIN", admin_path(current_admin), class: "my-side", style: "text-decoration: none;" %>
+        <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+        <%= link_to " LOGOUT", destroy_admin_session_path, method: :delete, class: "my-side", style: "text-decoration: none;"%>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="sidebar">
+    <div class="user-content">
+      <div class="notlogin-image"></div>
+      <div class="user-profile">
+          <%= link_to "SIGN UP", new_user_registration_path, class: "my-side", style: "text-decoration: none;"%>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= yield %>
 
 
+<!-- -----フッター -->
     <footer>
-    <div class="footer-container">
-      <div class="footer-nav">
-        <ul>
-          <li><a href="#">MY PROFILE</a></li>
-          <li><a href="#">CART</a></li>
-          <li><a href="#">MESSAGE</a></li>
-          <li><a href="#">ARTISTS</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">NEWS</a></li>
-          <li><a href="#">LOGOUT</a></li>
-        </ul>
-      </div>
-      <span class="copyright"><p>©︎ Heavenly music</p></span>
-    </div>
+      <% if user_signed_in? %>
+        <div class="footer-container">
+          <div class="footer-nav">
+            <ul>
+              <li><%= link_to "MY PROFILE", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "CART", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "MESSAGE", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "ARTISTS", artists_path(current_user), class: "my-side" %></li>
+            </ul>
+            <ul>
+              <li><%= link_to "ABOUT", user_path(current_user), class: "my-side" %></li>
+              <li><%= link_to "NEWS", news_posts_path(current_user), class: "my-side" %></li>
+              <li><%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side"%></li>
+            </ul>
+          </div>
+          <span class="copyright"><p>©︎ Heavenly music</p></span>
+        </div>
+      <% elsif admin_signed_in? %>
+        <div class="footer-container">
+          <div class="footer-nav">
+            <ul>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+            </ul>
+          </div>
+          <span class="copyright"><p>管理者アカウントでログイン中</p></span>
+        </div>
+      <% else %>
+        <div class="footer-container">
+          <div class="footer-nav">
+            <ul>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+              <li>&nbsp;&nbsp;</li>
+            </ul>
+          </div>
+          <span class="copyright"><p>©︎ Heavenly music</p></span>
+        </div>
+      <% end %>
     </footer>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

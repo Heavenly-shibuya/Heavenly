@@ -1,29 +1,16 @@
-
 <body>
  <div class="content clearfix">
-   <div class="sidebar">
-    <div class="user-content">
-      <div class="user-image">
-      </div>
-      <div class="user-profile">
-          <!-- <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a> -->
-          <%= link_to "MY PROFILE", user_path(current_user), class: "my-side" %>
-          <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-          <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-          <!-- <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a> -->
-          <%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side"%>
-      </div>
-    </div>
-   </div>
    <div class="main-content">
     <div class="title"><h3><strong>Genre</strong></h3></div>
       <div class="item-content">
+
         <div class="portfolio-item">
           <div class="portfolio-item-content">
             <img class="portfolio-image" src="/icon_124452_128.png">
             <div class="item-text">J-POP</div>
           </div>
         </div>
+
         <div class="portfolio-item">
           <div class="portfolio-item-content">
              <img class="portfolio-image" src="/icon_143142_128.png">

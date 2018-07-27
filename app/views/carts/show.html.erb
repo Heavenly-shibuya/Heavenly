@@ -1,20 +1,10 @@
 
 <div class="content clearfix">
-   <div class="sidebar">
-    <div class="user-content">
-      <div class="user-image">
-      </div>
-      <div class="user-profile">
-          <a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">CART</a>
-          <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-          <a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
-      </div>
-    </div>
-   </div>
    <div class="main-content">
     <% if notice %>
+    <div class="flash">
       <p id="notice"><%= notice %></p>
+    </div>
     <% end %>
 
     <div class="cart-item-title"><h3><strong>カート一覧</strong></h3></div>
@@ -48,9 +38,6 @@
               </tbody>
               <% end %>
             </table>
-          </div>
-            <div class="col-xs-2">
-            <%= button_to 'カートを空にする', @cart, method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-default" %>
           </div>
             <div class="col-xs-3 col-xs-offset-5">
               <div class="goukei"><span>合計&nbsp;&nbsp;&nbsp;<%= (@cart.total_price).to_i %>円</span></div>

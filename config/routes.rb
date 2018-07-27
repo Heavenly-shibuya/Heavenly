@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :news_posts
   resources :items do
     resources :carts_items
+    resource :reviews, only: [:create, :destroy]
   end
 
   resources :messages
