@@ -27,7 +27,7 @@
     <%= f.text_field :zip, value: @user.zip, class: "form-control" %>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="color:black">
     <label>住所</label>
     <%= f.collection_select :delivery_address_id, @derively, :id, :address %>
     </div>
@@ -36,6 +36,8 @@
     <label>電話番号</label>
     <%= f.text_field :tel, value: @user.tel, class: "form-control" %>
     </div>
+
+
 
 
     <!-- 注文状況 -->

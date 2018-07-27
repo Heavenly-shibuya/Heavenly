@@ -1,5 +1,4 @@
 <div class="clearfix">
-	<!-- main -->
 	<div class="order-main-content">
 		<div class="container">
 			<div class="row">
@@ -35,7 +34,8 @@
 										<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
 										<td><%= order.last_name %><%= order.first_name %></td>
 										<td><%= order.status %></td>
-										<td><%= order.delivery_address %></td>
+										<td><%= order.address %></td>
+
 										<td><%= link_to '詳細', order, class:"btn btn-default" %></td>
 										<td><%= link_to '編集', edit_order_path(order), class:"btn btn-success" %></td>
 										<% end %>
