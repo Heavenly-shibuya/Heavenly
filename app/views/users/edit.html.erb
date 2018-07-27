@@ -21,6 +21,7 @@
 
       <div class="user-prof col-xs-5 col-sm-5">
             <%= form_for(@user) do |f| %>
+            <h5>プロフィール画像</h5>
             <%= f.attachment_field :profile_image %>
             <h5>ユーザー名</h5>
             <%= f.text_field :name, class: "form-control" %>
