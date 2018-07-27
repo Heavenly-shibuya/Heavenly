@@ -1,17 +1,4 @@
 <div class="clearfix">
-	<div class="sidebar">
-		<div class="user-content">
-			<div class="user-image">
-			</div>
-			<div class="user-profile">
-				<a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
-				<a class="my-side" href="#" style="text-decoration: none;">CART</a>
-				<a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
-				<a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
-			</div>
-		</div>
-	</div>
-	<!-- main -->
 	<div class="order-main-content">
 		<div class="container">
 			<div class="row">
@@ -46,7 +33,7 @@
 										<td><%= "(.total_price).to_i" %>円</td>
 										<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
 										<td><%= order.last_name %><%= order.first_name %></td>
-										<td><% order.status %></td>
+										<td><%= order.status %></td>
 										<td><%= order.address %></td>
 										<td><%= link_to '詳細', order, class:"btn btn-default" %></td>
 										<td><%= link_to '編集', edit_order_path(order), class:"btn btn-success" %></td>
