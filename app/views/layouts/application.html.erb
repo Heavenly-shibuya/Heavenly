@@ -11,8 +11,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="ScrollTrigger.min.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function(){ScrollTrigger.init();});</script>
   </head>
   <body>
+    <script src="heavenlymusic.js"></script>
     <header>
       <div class="head-serch">
         <div class="serch">
@@ -86,7 +89,7 @@
     <div class="user-content">
       <div class="admin-image"></div>
       <div class="user-profile">
-        <a class="my-side" href="#" style="text-decoration: none;">ADMIN</a>
+        <%= link_to "ADMIN", admin_path(current_admin), class: "my-side", style: "text-decoration: none;" %>
         <a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
         <%= link_to " LOGOUT", destroy_admin_session_path, method: :delete, class: "my-side", style: "text-decoration: none;"%>
       </div>

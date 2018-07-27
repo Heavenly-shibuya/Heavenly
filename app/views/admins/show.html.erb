@@ -1,36 +1,28 @@
+<script src="ScrollTrigger.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function(){ScrollTrigger.init();});</script>
 
 <div class="admin-show-container">
-  <div class="row">
-<br>
-<br>
-
-        <div class="col-xs-5 col-xs-offset-3">
-          <div class="user-title">
-            <span><strong>Admin Profile info</strong></span>
-          </div>
-          <br>
-          <br>
-          <br>
-        </div>
-        <div class="col-xs-5 col-xs-offset-3 admin-profile-containar">
-          <div class="profile-content">
-            <div class="col-xs-8 col-xs-offset-2">
-          <div class="profile-info">
-            <ul>
-              <li>name:</li>
-              <li>mail:&nbsp;&nbsp;&nbsp; <%= @admin.email %></li>
-
-            </ul>
-            <br>
-           <div class="col-xs-2 col-xs-offset-10 btn btn-primary">編集</div>
-          </div>
-        </div>
-        </div>
+  <div class="main-content">
+    <div class="row admin-main">
+      <div class="col-xs-12 col-sm-12">
+        <div class="user-title">
+        <span><strong>Admin Profile info</strong></span>
         </div>
 
+        <div class="col-xs-5 col-sm-5">
+          <div data-scroll class="aaa">コンテンツ</div>
+          <div data-scroll="">コンテンツ</div>
+          <div data-scroll="">コンテンツ</div>
+        <div class="col-xs-8 col-xs-offset-2">
+        <div class="profile-info">
+        <ul>
+          <li><%= @admin.email %></li>
+        </ul>
+        </div>
+        </div>
+        </div>
       </div>
     </div>
-      </div>
-       </div>
+  </div>
 </div>
 
