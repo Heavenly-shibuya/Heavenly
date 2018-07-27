@@ -1,2 +1,103 @@
-<h1>Admin::Orders#index</h1>
-<p>Find me in app/views/admin/orders/index.html.erb</p>
+<div class="clearfix">
+	<div class="sidebar">
+		<div class="user-content">
+			<div class="user-image">
+			</div>
+			<div class="user-profile">
+				<a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">CART</a>
+				<a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+			</div>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="order-show-main">
+		<div class="container order-item-containar">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="title"style="margin-bottom: 30px;"><h3><strong>注文一覧</strong></h3></div>
+					<!-- 注文１ -->
+					<div style="margin: 35px 0;">
+						<div class="table-responsive">
+							<table class="table">
+								<!-- 購入者情報 -->
+								<thead>
+									<tr>
+										<th>注文ID</th>
+										<th>注文日</th>
+										<th>購入者</th>
+										<th>ステータス</th>
+										<th>支払い方法</th>
+										<th>電話番号</th>
+										<th>郵便番号</th>
+										<th>送付先</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% @orders.each do |order| %>
+									<tr><td><%= order.id %></td>
+
+										<td>
+											<% order.cart_items.each do |item| %>
+											商品名：<%= item.item.title %>
+											数量：<%= item.quantity %>
+											小計：<%= (item.total_price).to_i %>円<br>
+											<% end %>
+										</td>
+										<td>2018/07/15</td>
+										<td><%= order.last_name %><%= order.first_name %></td>
+										<td>商品準備中</td>
+										<td><%= order.payment %></td>
+										<td><%= order.zip %></td>
+										<td><%= order.address %></td>
+									</tbody>
+								</table>
+							</div>
+							<!-- 購入商品情報 -->
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>商品名</th>
+											<th>価格</th>
+											<th>数量</th>
+											<th>小計</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>heavenly</td>
+											<td>2425円</td>
+											<td>1</td>
+											<td>2425円</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>Tierra</td>
+											<td>2396円</td>
+											<td>2</td>
+											<td>4792円</td>
+										</tr>
+										<tr>
+											<td>True</td>
+											<td>2136円</td>
+											<td>3</td>
+											<td>6408円</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td style="text-align: right;"><strong>合計</strong> 13625円</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<a class="btn btn-default" href="#" role="button" style="margin: 10px 0;"></span>Buy Historyへ</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

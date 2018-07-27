@@ -1,0 +1,62 @@
+<div class="clearfix">
+	<div class="sidebar">
+		<div class="user-content">
+			<div class="user-image">
+			</div>
+			<div class="user-profile">
+				<a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">CART</a>
+				<a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+			</div>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="order-show-content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="order-show-title"><h2><strong class="order-show-border">注文内容</strong></h2></div>
+					<div class="table-responsive order-show-table">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>商品名</th>
+									<th>金額</th>
+									<th>数量</th>
+									<th>小計</th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @order.cart_items.each do |item| %>
+								<tr>
+									<td><%= item.item.title %></td>
+									<td><%= item.item.price %>円</td>
+									<td><%= item.quantity %></td>
+									<td><%= (item.total_price).to_i %>円</td>
+								</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+					<div class="row">
+						<div class="order-show-title"><h2><strong class="order-show-border">注文者情報</strong></h2></div>
+						<div class="order-show-info">
+							<p>注文ID：<%= @order.id %></p>
+							<p>注文状況：<%= @order.status %></p>
+							<p>注文日：<%= @order.created_at.strftime('%Y/%m/%d') %></p>
+							<p>氏名：<%= @order.last_name %><%= @order.first_name %></p>
+							<p>支払い方法：<%= @order.payment %></p>
+							<p>電話番号：<%= @order.tel %></p>
+							<p>郵便番号：<%= @order.zip %></p>
+							<p>送付先：<%= @order.address %></p>
+							<div class="order-show-button">
+					<%= link_to '注文一覧へ', orders_path , class:"btn btn-default btn-block" %>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

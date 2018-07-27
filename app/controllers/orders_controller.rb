@@ -1,5 +1,17 @@
 class OrdersController < ApplicationController
+	before_action :set_order, only: [:show, :edit, :update]
+
 	def index
+		@orders = Order.all
+		# @user = @orders.user
+	end
+
+	def edit
+	end
+
+	def update
+		@order.update(order_params)
+		redirect_to @order
 	end
 
 	def show
@@ -7,6 +19,7 @@ class OrdersController < ApplicationController
 
 	def new
 		@cart = current_cart
+
 		if @cart.cart_items.empty?
 			flash[:notice] = "Cart is empty"
 			redirect_to orders_path
@@ -14,36 +27,30 @@ class OrdersController < ApplicationController
 		end
 
 		@order = Order.new
+		@user = current_user
 
 	end
 
-end
+	def create
+		@order = Order.new(order_params)
+		@order.user_id = current_user.id
+		@order.add_items(current_cart)
 
-def create
-	@order = Order.new(order_params)
-	@order.add_items(current_curt)
-	if @order.save
-		Cart.destroy(session[:cart_id])
-		session[:cart_id] = nil
-      # 購入確定ページにする
-      redirect_to items_path
-  end
+		if @order.save
+			Cart.destroy(session[:cart_id])
+			session[:cart_id] = nil
+			redirect_to orders_path
 
-  def edit
-  end
+		end
+	end
 
-  def create
-  	@order = Order.new(order_params)
-  	@order.save
-  end
+	private
 
-  private
+	def set_order
+		@order = Order.find(params[:id])
+	end
 
-  def set_order
-  	@order = Order.find(params[:id])
-  end
-
-  def order_params
-  	params.require(:order).permit(:payment, :last_name, :last_name_furi, :first_name, :first_name_furi, :zip, :address, :tel )
-  end
+	def order_params
+		params.require(:order).permit(:payment, :last_name, :last_name_furi, :first_name, :first_name_furi, :zip, :address, :tel, :user_id )
+	end
 end
