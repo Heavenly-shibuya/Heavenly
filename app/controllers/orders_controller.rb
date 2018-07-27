@@ -29,6 +29,8 @@ class OrdersController < ApplicationController
 		@order = Order.new
 		@user = current_user
 
+    @derively = DeliveryAddress.where(user_id: @user.id)
+
 	end
 
 	def create
