@@ -29,6 +29,8 @@ class OrdersController < ApplicationController
 		@order = Order.new
 		@user = current_user
 
+    @derively = DeliveryAddress.where(user_id: @user.id)
+
 	end
 
 	def create
@@ -51,6 +53,6 @@ class OrdersController < ApplicationController
 	end
 
 	def order_params
-		params.require(:order).permit(:payment, :last_name, :last_name_furi, :first_name, :first_name_furi, :zip, :address, :tel, :user_id )
+		params.require(:order).permit(:payment, :last_name, :last_name_furi, :first_name, :first_name_furi, :zip, :address, :tel, :user_id, :delivery_address, :status )
 	end
 end
