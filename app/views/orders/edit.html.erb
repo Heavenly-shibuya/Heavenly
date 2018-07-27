@@ -1,0 +1,34 @@
+<div class="clearfix">
+	<div class="sidebar">
+		<div class="user-content">
+			<div class="user-image">
+			</div>
+			<div class="user-profile">
+				<a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">CART</a>
+				<a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+			</div>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="order-show-content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="order-show-title"><h2><strong class="order-show-border">注文状況の編集</strong></h2></div>
+					<div class="row">
+						<div class="order-show-info">
+
+							<%= render 'edit_form', order: @order %>
+
+							<div class="order-show-button">
+					<%= link_to '注文一覧へ', orders_path , class:"btn btn-default btn-block" %>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

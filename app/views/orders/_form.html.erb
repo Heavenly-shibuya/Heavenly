@@ -1,0 +1,54 @@
+<%= form_for(order) do |f| %>
+
+<% if order.errors.any? %>
+<div id="error_explanation">
+  <h2>エラーが<%= order.errors.count %>件あります。お客様情報を入力して下さい。</h2>
+
+  <ul>
+    <% order.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+    <div class="form-group">
+    <label>姓</label>
+    <%= f.text_field :last_name, value: @user.last_name %>
+  </div>
+
+    <div class="form-group">
+    <label>名</label>
+    <%= f.text_field :first_name, value: @user.first_name %>
+  </div>
+
+    <div class="form-group">
+    <label>郵便番号</label>
+    <%= f.text_field :zip, value: @user.zip %>
+    </div>
+
+    <div class="form-group">
+    <label>住所</label>
+    <%= f.text_field :address, value: @user.address %>
+    </div>
+
+    <div class="form-group">
+    <label>電話番号</label>
+    <%= f.text_field :tel, value: @user.tel %>
+    </div>
+
+
+    <!-- 注文状況 -->
+    <%= f.hidden_field :status, :value => "商品準備中" %>
+
+<div class="order-title"><h4><strong>支払い方法 <span class="payment-box">
+  <%= f.select(:payment, [['選択して下さい', ''],['現金', '現金'],['クレジットカード', 'クレジットカード'],['代金引換', '代金引換'],['コンビニ払い', 'コンビニ払い'],['銀行振込', '銀行振込']]) %>
+</span></strong></h4></div>
+
+<br>
+
+<div class="actions col-xs-12">
+  <%= f.submit '注文を確定する', class:"btn btn-default btn-block" %>
+</div>
+
+<% end %>

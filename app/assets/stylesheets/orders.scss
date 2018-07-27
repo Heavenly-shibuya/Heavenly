@@ -1,25 +1,39 @@
+// index
+.order-main-content {
+	color: white;
+	width: 80%;
+	height: 800px;
+	padding-bottom: 20px;
+	float: right;
+	border: 3px solid #444444;
+	background-color: #222222;
+	overflow: scroll;
+}
+.order-main-content .row {
+	padding: 0 30px ;
+}
 .order-title {
   text-align: left;
-  padding-top: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding: 20px 20px 0;
   color: white;
   font-family: verdana;
   font-size: 35px;
 
 }
 .order-title h3 {
-  margin: 20px 20px 20px 60px;
+  margin: 0 20px;
   font-size: 40px;
   text-align: center;
   border-bottom: 3px solid gray;
+  margin-bottom: 30px;
 }
 .order-title h4 {
-  margin: 20px 100px 10px;
+  margin: 40px 100px 25px;
   font-size: 20px;
   text-align: center;
 }
 .order-table {
+	padding: 0 10px;
 	color: #EEEEEE;
 	font-size: 16px;
 }
@@ -31,4 +45,66 @@
 .order-table .table > tfoot > tr > td {
 	vertical-align: middle;
 	text-align: center;
+	font-size: 14px;
+}
+.form-box {
+	padding: 0 5%;
+}
+.form-box label {
+	color: white;
+}
+.order-address {
+	// color: white;
+}
+.payment-box {
+	color: black;
+}
+.order-main-content .actions {
+	margin: 30px 0;
+	padding: 0 20%;
+}
+// show
+.order-show-content {
+	color: white;
+	width: 80%;
+	height: 800px;
+	padding-bottom: 20px;
+	float: right;
+	border: 3px solid #444444;
+	background-color: #222222;
+	overflow: scroll;
+}
+.order-show-title {
+  text-align: center;
+  padding: 20px 20px;
+  // color: white;
+}
+.order-show-border {
+	border-bottom: 3px solid gray;
+}
+.order-show-title h2 {
+  margin: 30px 0;
+  font-size: 30px;
+}
+.order-show-table {
+	padding: 0 15%;
+	color: #EEEEEE;
+}
+.order-show-table .table > thead > tr > th,
+.order-show-table .table > thead > tr > td,
+.order-show-table .table > tbody > tr > th,
+.order-show-table .table > tbody > tr > td,
+.order-show-table .table > tfoot > tr > th,
+.order-show-table .table > tfoot > tr > td {
+	vertical-align: middle;
+	text-align: center;
+	font-size: 18px;
+}
+.order-show-info {
+	width: 350px;
+	margin: 0 auto;
+	font-size: 18px;
+}
+.order-show-button {
+	margin: 60px 30px 50px;
 }

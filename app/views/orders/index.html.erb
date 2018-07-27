@@ -1,2 +1,62 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<div class="clearfix">
+	<div class="sidebar">
+		<div class="user-content">
+			<div class="user-image">
+			</div>
+			<div class="user-profile">
+				<a class="my-side" href="#" style="text-decoration: none;">MY PROFILE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">CART</a>
+				<a class="my-side" href="#" style="text-decoration: none;">MESSAGE</a>
+				<a class="my-side" href="#" style="text-decoration: none;">LOGOUT</a>
+			</div>
+		</div>
+	</div>
+	<!-- main -->
+	<div class="order-main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="order-title"><h3><strong>注文一覧</strong></h3></div>
+						<div class="table-responsive order-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="col-sm-1">注文ID</th>
+										<th class="col-sm-5">購入内容</th>
+										<th class="col-sm-1">合計</th>
+										<th class="col-sm-1">注文日</th>
+										<th class="col-sm-1">購入者</th>
+										<th class="col-sm-1">ステータス</th>
+										<th class="col-sm-1">送付先</th>
+										<th></th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<% @orders.each do |order| %>
+									<tr><td><%= order.id %></td>
+
+										<td>
+											<% order.cart_items.each do |item| %>
+											商品名：<%= item.item.title %>
+											数量：<%= item.quantity %>個
+											　小計：<%= (item.total_price).to_i %>円<br>
+											<% end %>
+										</td>
+										<td><%= "(.total_price).to_i" %>円</td>
+										<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+										<td><%= order.last_name %><%= order.first_name %></td>
+										<td><% order.status %></td>
+										<td><%= order.address %></td>
+										<td><%= link_to '詳細', order, class:"btn btn-default" %></td>
+										<td><%= link_to '編集', edit_order_path(order), class:"btn btn-success" %></td>
+										<% end %>
+									</tbody>
+								</table>
+							</div>
+						<a class="btn btn-default" href="#" role="button" style="margin: 10px 0;">マイページへ</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

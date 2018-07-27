@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :delivery_addresses
+  has_many :orders
   has_many :reviews, dependent: :destroy
 
 attachment :profile_image

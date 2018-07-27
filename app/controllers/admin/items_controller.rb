@@ -67,11 +67,3 @@ class Admin::ItemsController < ApplicationController
     end
   end
 end
-
-
-
-
-
-
-
-
