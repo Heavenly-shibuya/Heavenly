@@ -27,14 +27,14 @@
 											<% order.cart_items.each do |item| %>
 											商品名：<%= item.item.title %>
 											数量：<%= item.quantity %>個
-											　小計：<%= (item.total_price).to_i %>円<br>
+											小計：<%= (item.total_price).to_i %>円<br>
 											<% end %>
 										</td>
 										<td><%= "(.total_price).to_i" %>円</td>
 										<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
 										<td><%= order.last_name %><%= order.first_name %></td>
 										<td><%= order.status %></td>
-										<td><%= order.address %></td>
+										<td><%= order.order_delivery %></td>
 
 										<td><%= link_to '詳細', order, class:"btn btn-default" %></td>
 										<td><%= link_to '編集', edit_order_path(order), class:"btn btn-success" %></td>
