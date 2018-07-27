@@ -1,45 +1,47 @@
 <div class="news-index">
   <div class="clearfix">
-    <!-- main -->
+  <!-- main -->
     <div class="container-fluid">
       <div class="row">
         <div class="delivery-address-main">
-          <div class="delivery-address-title"><h3><strong>Delivery Address</strong></h3></div>
+        <div class="delivery-address-title"><h3><strong>Delivery Address</strong></h3></div>
           <div class="delivery-address-content clearfix">
 
-              <% number = 1 %>
+            <% number = 1 %>
             <% @delivery_address.each do |f| %>
 
-                  <div class="delivery-address-text">
-                    <h3 class="delivery-address-date">登録住所<%= number %></h3>
+            <div class="delivery-address-text">
+            <h3 class="delivery-address-date">登録住所<%= number %></h3>
 
-                      <table class="delivery-address-table" style="table-layout:fixed;width:100%;">
-                        <tr>
-                          <th style="width:10%;">姓</th>
-                          <th style="width:10%;">名</th>
-                          <th style="width:15%;">郵便番号</th>
-                          <th style="width:25%;">住所</th>
-                          <th style="width:15%;">電話番号</th>
-                          <th style="width:15%;"></th>
-                        </tr>
-                        <tr>
-                          <td class="delivery-address-name"><%= f.last_name %></td>
-                          <td class="delivery-address-quantity"><%= f.first_name %></td>
-                          <td class="delivery-address-price"><%= f.zip %></td>
-                          <td class="delivery-address-quantity"><%= f.address %></td>
-                          <td class="delivery-price"><%= f.tel %></td>
-                          <td class="delivery-btn-content">
-                            <%= link_to "編集", edit_delivery_address_path(f.id), class: "btn btn-success edit-btn" %>
-                            <%= link_to "削除", delivery_address_path(f.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger dalete-btn"%>
-                          </td>
-                        </tr>
-                      </table>
+            <table class="delivery-address-table" style="table-layout:fixed;width:100%;">
+              <tr>
+                <th style="width:10%;">姓</th>
+                <th style="width:10%;">名</th>
+                <th style="width:15%;">郵便番号</th>
+                <th style="width:25%;">住所</th>
+                <th style="width:15%;">電話番号</th>
+                <th style="width:15%;"></th>
+              </tr>
+                <tr>
+                <td class="delivery-address-name"><%= f.last_name %></td>
+                <td class="delivery-address-quantity"><%= f.first_name %></td>
+                <td class="delivery-address-price"><%= f.zip %></td>
+                <td class="delivery-address-quantity"><%= f.address %></td>
+                <td class="delivery-price"><%= f.tel %></td>
+                <td class="delivery-btn-content">
+                <%= link_to "編集", edit_delivery_address_path(f.id), class: "btn btn-success edit-btn" %>
+                <%= link_to "削除", delivery_address_path(f.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger dalete-btn"%>
+                </td>
+                </tr>
+            </table>
 
-                    </div>
+            </div>
 
-                    <% number += 1 %>
+            <% number += 1 %>
             <% end %>
 
+          </div>
+        </div>
       </div>
     </div>
   </div>
