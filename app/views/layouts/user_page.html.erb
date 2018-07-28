@@ -42,12 +42,6 @@
             <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
-            <%= link_to "MESSAGE", news_posts_path, class: "responsib-item" %>
-          </div>
-          <div class="responsib-item">
-            <%= link_to "CART", news_posts_path, class: "responsib-item" %>
-          </div>
-          <div class="responsib-item">
             <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
@@ -71,8 +65,6 @@
           <div class="footer-nav">
             <ul>
               <li><%= link_to "MY PROFILE", user_path(current_user), class: "my-side" %></li>
-              <li><%= link_to "CART", user_path(current_user), class: "my-side" %></li>
-              <li><%= link_to "MESSAGE", user_path(current_user), class: "my-side" %></li>
               <li><%= link_to "ARTISTS", artists_path(current_user), class: "my-side" %></li>
             </ul>
             <ul>
