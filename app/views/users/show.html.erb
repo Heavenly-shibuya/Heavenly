@@ -1,24 +1,24 @@
 <div class="user-show-container">
   <div class="user-main clearfix">
-      <div class="col-xs-3 col-xs-offset-1 user-profile">
-        <div class="user-edit-show-image">
-          <% if current_user.profile_image == nil %>
-          <%= image_tag '/user2.png' %>
-          <% else %>
-          <%= attachment_image_tag @user, :profile_image, :fill, 230, 230, format: 'jpg', class: "user-edit-pic" %>
-          <% end %>
-        </div>
-        <%= link_to "profile編集", edit_user_path(@user), class: "btn btn-primary user-edit-btn" %>
+    <div class="col-xs-3 col-xs-offset-1 user-profile">
+    <div class="user-edit-show-image">
+      <% if current_user.profile_image == nil %>
+      <%= image_tag '/user2.png' %>
+      <% else %>
+      <%= attachment_image_tag @user, :profile_image, :fill, 230, 230, format: 'jpg', class: "user-edit-pic" %>
+      <% end %>
+    </div>
+    <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-primary user-edit-btn" %>
+    </div>
+    <div class="col-xs-3">
+      <div class="user-title">
+      <span><strong>プロフィール</strong></span>
       </div>
-        <div class="col-xs-3">
-          <div class="user-title">
-            <span><strong>Profile info</strong></span>
-          </div>
-          <br>
-        </div>
-        <div class="col-xs-6 user-profile-containar">
-          <div class="profile-content">
-            <div class="col-xs-9 col-xs-offset-1">
+      <br>
+    </div>
+    <div class="col-xs-6 user-profile-containar">
+      <div class="profile-content">
+        <div class="col-xs-9 col-xs-offset-1">
           <div class="profile-info">
             <ul>
               <li>name: &nbsp;&nbsp;&nbsp; <%= @user.name %></li>
@@ -26,76 +26,22 @@
               <li>tel: &nbsp;&nbsp;&nbsp; <%= @user.tel %></li>
               <li>addres: &nbsp;&nbsp;&nbsp; <%= @user.address %></li>
             </ul>
-            <br>
-          </div>
-        </div>
-        </div>
-        </div>
-        <div class="col-xs-3">
-          <div class="title">
-            <span><strong>Buy Hisyory</strong></span>
-          </div>
           <br>
+          </div>
         </div>
-        <div class="col-xs-6 col-xs-offset-4 user-profile-containar">
-          <div class="profile-content">
-            <div class="col-xs-12">
-          <div class="profile-info">
-            <div class="buy-item">
-          </div>
-            <div class="buy-item">
-          </div>
-            <div class="buy-item">
-          </div>
-          <div class="buy-item">
-          </div>
-            <br>
-            <div class="col-xs-2 col-xs-offset-10 btn btn-primary">一覧</div>
-        </div>
-        </div>
-        </div>
-      </div>
-
-        <div class="col-xs-3 col-xs-offset-4">
-          <div class="title">
-            <span><strong>My Favorite</strong></span>
-          </div>
-          <br>
-        </div>
-        <div class="col-xs-6 col-xs-offset-4 user-profile-containar">
-          <div class="profile-content">
-            <div class="col-xs-12">
-          <div class="profile-info">
-            <div class="buy-item">
-          </div>
-            <div class="buy-item">
-          </div>
-            <div class="buy-item">
-          </div>
-          <div class="buy-item">
-          </div>
-            <br>
-            <div class="col-xs-2 col-xs-offset-10 btn btn-primary">一覧</div>
-        </div>
-        </div>
-        </div>
-      </div>
-
-
-      <div class="field">
-
-      </div>
-
-      <div class="field">
-
-      </div>
-
-
-
-      <div class="button">
-
       </div>
     </div>
+    <div class="col-xs-3">
+      <div class="title">
+      <span><strong>各種ページ</strong></span>
       </div>
-       </div>
+    <br>
+    </div>
+    <div class="col-xs-6 col-xs-offset-4 user-profile-containar">
+      <div class="profile-content">
+            <%= link_to "新規住所登録", new_delivery_address_path, class: "btn btn-info user-btn" %>
+            <%= link_to "購入履歴", orders_path(current_user), class: "btn btn-warning user-btn" %>
+      </div>
+    </div>
+  </div>
 </div>

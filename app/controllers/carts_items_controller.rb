@@ -1,5 +1,5 @@
-
 class CartsItemsController < ApplicationController
+  before_action :authenticate_user!
 	before_action :set_cart_item, only: [:show, :edit, :update, :destroy]
 
 # before_action :authenticate_user!, only: [:index, :edit]
@@ -54,12 +54,12 @@ class CartsItemsController < ApplicationController
 
 
   private
-    def set_cart_item
-      @cart_item = CartItem.find(params[:id])
-    end
+  def set_cart_item
+    @cart_item = CartItem.find(params[:id])
+  end
 
-    def cart_item_params
-      params.require(:cart_item).permit(:item_id, :cart_id)
-    end
+  def cart_item_params
+    params.require(:cart_item).permit(:item_id, :cart_id)
+  end
 end
 
