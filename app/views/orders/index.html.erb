@@ -33,23 +33,12 @@
 										数量：<%= item.quantity %>個
 										小計：<%= (item.total_price).to_i %>円<br>
 										<% end %>
-									</td>
-									<td><%= (order.totals_price).to_i %>円</td>
-									<td><%= order.last_name %><%= order.first_name %></td>
-									<td><%= order.status %></td>
-									<td><%= order.order_delivery %></td>
 
-									<td><%= link_to '詳細', order, class:"btn btn-default" %>
-										<%= link_to '編集', edit_order_path(order), class:"btn btn-success" %>
-										<%= link_to '削除', order, method: :delete, data: {confirm: '削除しますか？'}, class:"btn btn-danger" %></td>
-									</tr>
-									<% end %>
-								</tbody>
-							</table>
-						</div>
-						<div class="order-button">
-							<%= link_to 'マイページへ', user_path(@user.id) , class:"btn btn-default btn-lg pull-right" %>
-						</div>
+									</tbody>
+								</table>
+							</div>
+						<%= link_to "マイページへ", user_path(current_user), class: "btn btn-default" %>
+
 					</div>
 				</div>
 			</div>

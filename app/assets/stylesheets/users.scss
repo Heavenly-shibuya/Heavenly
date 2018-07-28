@@ -53,11 +53,10 @@
   border-top: 3px solid #444444;
   border-bottom: 3px solid #444444;
   overflow: scroll;
-  height: 1200px;
 }
 .user-edit-container {
   width: 100%;
-  height: 900px;
+  height: 950px;
   background-color: #222222;
   border-top: 3px solid #444444;
   border-bottom: 3px solid #444444;
@@ -247,5 +246,6 @@ padding-bottom: 15px;
   margin-top: 30px;
 }
 
-
-
+.user-btn {
+  margin: 10px;
+}
