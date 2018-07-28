@@ -2,6 +2,11 @@
 	<div class="order-show-content">
 		<div class="container-fluid">
 			<div class="row">
+
+				<% if notice %>
+				<p id="notice"><%= notice %></p>
+				<% end %>
+
 				<div class="col-sm-12">
 					<div class="order-show-title"><h2><strong class="order-show-border">注文内容</strong></h2></div>
 					<div class="table-responsive order-show-table">
@@ -38,10 +43,10 @@
 							<p>郵便番号：<%= @order.zip %></p>
 							<p>送付先：<%= @order.address %></p>
 							<div class="order-show-button">
-					<%= link_to '注文一覧へ', orders_path , class:"btn btn-default btn-block" %>
+								<%= link_to '注文一覧へ', orders_path , class:"btn btn-default btn-block" %>
+							</div>
 						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 		</div>

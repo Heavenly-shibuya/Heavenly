@@ -2,12 +2,12 @@
         <div class="order-main-content">
           <div class="containar-fluid">
             <div class="row">
+
             <% if notice %>
             <p id="notice"><%= notice %></p>
             <% end %>
 
               <div class="order-title"><h3><strong>購入確認</strong></h3></div>
-
                     <div class="order-title"><h4><strong>カートに入っている商品</strong></h4></div>
                     <div class="col-xs-12">
                       <div class="order-table">
@@ -35,14 +35,13 @@
                         </table>
                       </div>
                       <div class="col-xs-3 col-xs-offset-7">
-                        <div class="goukei"><span>合計&nbsp;&nbsp;&nbsp;<%= (@cart.total_price).to_i %>円</span></div>
+                        <div class="goukei"><span>合計<%= (@cart.total_price).to_i %>円</span></div>
                       </div>
                       <div class="col-xs-2 ">
                         <%= link_to 'カートへ', @cart, class:"btn btn-default btn-block" %>
                       </div>
                     </div>
                   </div>
-
                   <div class="order-title"><h4><strong>配送先情報</strong></h4></div>
 
                   <%= render 'form', order: @order %>

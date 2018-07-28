@@ -4,15 +4,6 @@ class ItemsController < ApplicationController
     @artist = @item.artist
     @discs = @item.discs
     @review = Review.new
-
-    # @current_stock_array = []
-    # @item.stock.times do |stock|
-    # if stock < 10
-    #   @current_stock_array << [stock + 1, stock + 1]
-    #   else
-    #     break
-    #   end
-    # end
   end
 
   def update
