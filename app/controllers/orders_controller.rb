@@ -1,10 +1,13 @@
 class OrdersController < ApplicationController
+
   before_action :authenticate_user!
 	before_action :set_order, only: [:show, :edit, :update]
 
+
 	def index
-		@orders = Order.all
-		# @user = @orders.user
+		# @orders = Order.page(params[:page]).reverse.order.per(10)
+		@user = current_user
+		@orders = Order.where(user_id: @user.id)
 	end
 
 	def edit
@@ -12,6 +15,7 @@ class OrdersController < ApplicationController
 
 	def update
 		@order.update(order_params)
+		flash[:notice] = "OrderStatus was successfully Updated."
 		redirect_to @order
 	end
 
@@ -23,14 +27,14 @@ class OrdersController < ApplicationController
 
 		if @cart.cart_items.empty?
 			flash[:notice] = "Cart is empty"
-			redirect_to orders_path
+			redirect_to items_path
 			return
 		end
 
 		@order = Order.new
 		@user = current_user
 
-    @derively = DeliveryAddress.where(user_id: @user.id)
+		@derively = DeliveryAddress.where(user_id: @user.id)
 
 	end
 
@@ -45,6 +49,12 @@ class OrdersController < ApplicationController
 			redirect_to orders_path
 
 		end
+	end
+
+	def destroy
+		@order.destroy
+		flash[:notice] = "Order was successfully destroyed."
+		redirect_to orders_path
 	end
 
 	private

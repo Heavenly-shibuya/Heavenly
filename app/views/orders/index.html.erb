@@ -2,47 +2,43 @@
 	<div class="order-main-content">
 		<div class="container">
 			<div class="row">
+
+				<% if notice %>
+				<p id="notice"><%= notice %></p>
+				<% end %>
+
 				<div class="col-sm-12">
 					<div class="order-title"><h3><strong>注文一覧</strong></h3></div>
-						<div class="table-responsive order-table">
-							<table class="table">
-								<thead>
-									<tr>
-										<th class="col-sm-1">注文ID</th>
-										<th class="col-sm-5">購入内容</th>
-										<th class="col-sm-1">合計</th>
-										<th class="col-sm-1">注文日</th>
-										<th class="col-sm-1">購入者</th>
-										<th class="col-sm-1">ステータス</th>
-										<th class="col-sm-1">送付先</th>
-										<th></th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-									<% @orders.each do |order| %>
-									<tr><td><%= order.id %></td>
-
-										<td>
-											<% order.cart_items.each do |item| %>
-											商品名：<%= item.item.title %>
-											数量：<%= item.quantity %>個
-											小計：<%= (item.total_price).to_i %>円<br>
-											<% end %>
-										</td>
-										<td><%= "(.total_price).to_i" %>円</td>
-										<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
-										<td><%= order.last_name %><%= order.first_name %></td>
-										<td><%= order.status %></td>
-										<td><%= order.order_delivery %></td>
-
-										<td><%= link_to '詳細', order, class:"btn btn-default" %></td>
-										<td><%= link_to '編集', edit_order_path(order), class:"btn btn-success" %></td>
+					<div class="table-responsive order-table">
+						<table class="table">
+							<thead>
+								<tr>
+									<th class="col-sm-1 order-id">注文ID</th>
+									<th class="col-sm-1">注文日</th>
+									<th class="col-sm-5">購入内容</th>
+									<th class="col-sm-1">合計</th>
+									<th class="col-sm-1">氏名</th>
+									<th class="col-sm-1">注文状況</th>
+									<th class="col-sm-2">送付先</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @orders.each do |order| %>
+								<tr><td><%= order.id %></td>
+									<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+									<td>
+										<% order.cart_items.each do |item| %>
+										商品名：<%= item.item.title %>
+										数量：<%= item.quantity %>個
+										小計：<%= (item.total_price).to_i %>円<br>
 										<% end %>
+
 									</tbody>
 								</table>
 							</div>
 						<%= link_to "マイページへ", user_path(current_user), class: "btn btn-default" %>
+
 					</div>
 				</div>
 			</div>

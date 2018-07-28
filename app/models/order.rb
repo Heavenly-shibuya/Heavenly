@@ -10,8 +10,7 @@ class Order < ApplicationRecord
 		end
 	end
 
-	# 合計
-	def total_price
+	def totals_price
 		cart_items.to_a.sum{ |item| item.total_price}
 	end
 end

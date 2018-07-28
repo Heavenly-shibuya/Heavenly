@@ -1,7 +1,16 @@
 <%= form_for(order) do |f| %>
 
-注文状況：<%= f.select(:status,[['注文受付', '注文受付'],['商品準備中', '商品準備中'],['出荷済み', '出荷済み']]) %>
+	<form>
+	  <div class="form-group edit-form-box">
+	    <label>注文状況：</label>
+	    <%= f.select(:status,[['注文受付', '注文受付'],['商品準備中', '商品準備中'],['出荷済み', '出荷済み']]) %>
+	  </div>
 
-  <%= f.submit '注文を更新する', class:"btn btn-default" %>
+	  <div class="order-edit-button">
+	    <%= f.submit '更新する', class:"btn btn-success" %>
+	    <%= link_to '注文一覧へ', orders_path , class:"btn btn-default" %>
+	  </div>
+
+	</form>
 
 <% end %>
