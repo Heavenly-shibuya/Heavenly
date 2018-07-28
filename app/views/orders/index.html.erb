@@ -8,7 +8,7 @@
 				<% end %>
 
 				<div class="col-sm-12">
-					<div class="order-title"><h3><strong>注文一覧</strong></h3></div>
+					<div class="order-title"><h3><strong>購入履歴</strong></h3></div>
 					<div class="table-responsive order-table">
 						<table class="table">
 							<thead>
@@ -34,13 +34,17 @@
 										小計：<%= (item.total_price).to_i %>円<br>
 										<% end %>
 
+									<td><%= link_to '詳細', order, class:"btn btn-default" %>
+									</td>
+								</tr>
+								<% end %>
 									</tbody>
 								</table>
 							</div>
 						<%= link_to "マイページへ", user_path(current_user), class: "btn btn-default" %>
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
