@@ -5,18 +5,32 @@
   background-color: #222222;
 }
 
-.aaa {
-  height:100px;
-  width: 100px;
-  background-color: red;
+.user-index-table {
+  color: white;
+  margin-top: 20px;
 }
 
-.invisible {
-  transition: opacity 0.5s ease;
-  opacity: 0.0;
+.user-index-sabtable td {
+  border-bottom: 1px solid gray;
+  padding: 10px 0 10px 0;
 }
 
-.visible {
-  transition: opacity 0.5s ease;
-  opacity: 1.0;
+.user-nopic-index {
+  width: 60px;
+  height:60px;
 }
+
+.user-index-title {
+  color: #fff;
+  border-bottom: 2px solid gray;
+  font-size: 30px;
+  margin-top: 10px;
+  text-shadow: 1px -1px 0 rgba(0,0,0,1);
+}
+
+/*.user-pic-index {
+  width: 60px;
+  height: 180px;
+  border-radius: 90px;
+  margin-top: 15px;
+}*/

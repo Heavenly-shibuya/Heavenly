@@ -4,6 +4,7 @@ class AdminsController < ApplicationController
 
   def show
   	@admin = Admin.find(params[:id])
+    @user = User.all
   end
 
   def edit
