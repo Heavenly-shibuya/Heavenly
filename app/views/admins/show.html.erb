@@ -31,7 +31,7 @@
                 <td><%= f.address %></td>
                 <td><%= f.tel %></td>
                 <td><%= link_to "編集", edit_admin_user_path(f.id), class: "btn btn-success" %></td>
-                <td><%= link_to "強制退会", destroy_users_path, method: :delete, "data-confirm" => "本当に退会させますか？",class: "btn btn-danger text-right" %></td>
+                <td><%= link_to "強制退会", admin_user_path(f.id), method: :delete, "data-confirm" => "本当に退会させますか？",class: "btn btn-danger text-right" %></td>
                 </tr>
               <% end %>
           </table>

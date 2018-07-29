@@ -1,10 +1,9 @@
 class AdminsController < ApplicationController
   def index
+  	@user = User.all
   end
 
   def show
-  	@admin = Admin.find(params[:id])
-    @user = User.all
   end
 
   def edit

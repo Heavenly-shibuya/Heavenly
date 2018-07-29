@@ -15,15 +15,15 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to admin_user_path(@user.id)
+    redirect_to edit_admin_user_path(@user.id)
   end
 
   def destroy
-    # @user = current_user
-    # @user.soft_delete
-    # sign_out(@user)
-    # redirect_to new_user_registration_path
-    # flash[:notice] = '退会が完了しました。'
+    @user = User.find(params[:id])
+    @user.soft_delete
+    sign_out(@user)
+    redirect_to admins_index_path
+    flash[:notice] = '強制退会させました'
   end
 
   private
@@ -31,6 +31,10 @@ class Admin::UsersController < ApplicationController
     if user_signed_in?
       redirect_to genres_path
     end
+  end
+
+  def user_params
+      params.require(:user).permit(:name,:email,:last_name,:last_name_furi,:first_name,:first_name_furi,:delivery_address_id,:zip,:address,:tel,:profile_image)
   end
 
 end
