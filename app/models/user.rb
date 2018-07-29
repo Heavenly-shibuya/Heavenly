@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :delivery_addresses
   has_many :orders
   has_many :reviews, dependent: :destroy
+  # belongs_to :admin
 
 attachment :profile_image
 

@@ -17,6 +17,50 @@
   <body>
     <script src="heavenlymusic.js"></script>
     <header>
+
+<% if user_signed_in? %>
+      <div class="head-serch">
+        <div class="serch">
+          <%= form_tag items_search_path, method: :get do %>
+          <%= text_field_tag :search, params[:search], class: "serch_box" %>
+          <%= submit_tag "search", class: "serch_btn" %>
+          <% end %>
+        </div>
+      </div>
+      <input id="head-input" type="checkbox" class="head-unshown">
+      <label id="head-open" for="head-input"><span></span></label>
+      <label class="head-unshown" id="head-close" for="head-input"></label>
+
+      <div class="head">
+         <span class="login-name"><%= current_user.name %>でログイン中!</span>
+        <span class="head-title-login"><strong>Heavenly Music&nbsp;&nbsp;</strong></span>
+      </div>
+      <div id="head-content">
+        <div class="responsib-menu">
+          <div class="responsib-item">
+            <%= link_to "HOME", genres_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "NEWS", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "ABOUT", news_posts_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "LOGIN", new_user_session_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "SIGN UP", new_user_registration_path, class: "responsib-item" %>
+          </div>
+        </div>
+      </div>
+<% else %>
       <div class="head-serch">
         <div class="serch">
           <%= form_tag items_search_path, method: :get do %>
@@ -55,6 +99,7 @@
           </div>
         </div>
       </div>
+<% end %>
 
 
     </header>
@@ -64,7 +109,7 @@
   <div class="sidebar">
     <div class="user-content">
       <div class="user-image">
-          <% if current_user.profile_image == nil %>
+          <% if current_user.profile_image_id == "0" %>
           <%= image_tag '/user2.png', class: "user-nopic-side" %>
           <% else %>
           <%= attachment_image_tag current_user, :profile_image, :fill, 180, 180, format: 'jpg', class: "user-pic-side" %>

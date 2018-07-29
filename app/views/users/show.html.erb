@@ -2,7 +2,7 @@
   <div class="user-main clearfix">
     <div class="col-xs-3 col-xs-offset-1 user-profile">
     <div class="user-edit-show-image">
-      <% if current_user.profile_image == nil %>
+      <% if @user.profile_image_id == "0" %>
       <%= image_tag '/user2.png' %>
       <% else %>
       <%= attachment_image_tag @user, :profile_image, :fill, 230, 230, format: 'jpg', class: "user-edit-pic" %>
