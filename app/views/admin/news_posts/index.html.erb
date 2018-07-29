@@ -1,9 +1,15 @@
-<!-- main -->
 <div class="container-fluid">
   <div class="row">
     <div class="news-main">
+
+      <% if notice %>
+      <p id="notice"><%= notice %></p>
+      <% end %>
+      
       <div class="title"><h3><strong>NEWS</strong></h3></div>
+
       <% @newsall.each do |news| %>
+
       <div class="news-content clearfix">
         <div class="row">
           <div class="col-xs-12 col-sm-2">
@@ -23,7 +29,9 @@
         </div>
         <% end %>
         <div class="pagenation">
+
          <%= paginate @newsall, class: "pagenate" %>
+
        </div>
      </div>
    </div>
