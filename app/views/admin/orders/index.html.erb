@@ -13,19 +13,18 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="col-sm-1 order-id">注文ID</th>
 									<th class="col-sm-1">注文日</th>
 									<th class="col-sm-5">購入内容</th>
 									<th class="col-sm-1">合計</th>
 									<th class="col-sm-1">氏名</th>
 									<th class="col-sm-1">注文状況</th>
-									<th class="col-sm-2">送付先</th>
+									<th class="col-sm-3">送付先</th>
 									<th></th>
 								</tr>
 							</thead>
 							<tbody>
 								<% @orders.each do |order| %>
-								<tr><td><%= order.id %></td>
+								<tr>
 									<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
 									<td>
 										<% order.cart_items.each do |item| %>
@@ -39,9 +38,9 @@
 									<td><%= order.status %></td>
 									<td><%= order.order_delivery %></td>
 
-									<td><%= link_to '詳細', order, class:"btn btn-default" %>
-										<%= link_to '編集', edit_order_path(order), class:"btn btn-success" %>
-										<%= link_to '削除', order, method: :delete, data: {confirm: '削除しますか？'}, class:"btn btn-danger" %></td>
+									<td><%= link_to '詳細', admin_order_path(order), class:"btn btn-default" %>
+										<%= link_to '編集', edit_admin_order_path(order), class:"btn btn-success" %>
+										<%= link_to '削除', admin_order_path(order), method: :delete, data: {confirm: '削除しますか？'}, class:"btn btn-danger" %></td>
 									</tr>
 									<% end %>
 								</tbody>

@@ -11,7 +11,8 @@ class NewsPostsController < ApplicationController
 	def update
 		news = NewsPost.find(params[:id])
 		news.update(news_post_params)
-		redirect_to edit_admin_news_post_path(news.id)
+		flash[:notice] = "News was successfully Updated."
+		redirect_to admin_news_post_path(news.id)
 	end
 
 	private

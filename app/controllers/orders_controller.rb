@@ -1,25 +1,25 @@
 class OrdersController < ApplicationController
 
-  before_action :authenticate_user!
-	before_action :set_order, only: [:show, :edit, :update]
-
+	before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
 	def index
-		# @orders = Order.page(params[:page]).reverse.order.per(10)
+		# @orders = Order.page(params[:page]).per(10)
 		@user = current_user
-		@orders = Order.where(user_id: @user.id)
-	end
-
-	def edit
+		@orders = Order.page(params[:page]).where(user_id: @user.id).reverse_order
 	end
 
 	def update
+		@order = Order.find(params[:id])
 		@order.update(order_params)
 		flash[:notice] = "OrderStatus was successfully Updated."
-		redirect_to @order
+		redirect_to admin_order_path(@order)
+	end
+
+	def buy
 	end
 
 	def show
+		@order = Order.find(params[:id])
 	end
 
 	def new
@@ -46,24 +46,14 @@ class OrdersController < ApplicationController
 		if @order.save
 			Cart.destroy(session[:cart_id])
 			session[:cart_id] = nil
-			redirect_to orders_path
+			redirect_to buy_order_path
 
 		end
 	end
 
-	def destroy
-		@order.destroy
-		flash[:notice] = "Order was successfully destroyed."
-		redirect_to orders_path
-	end
-
 	private
 
-	def set_order
-		@order = Order.find(params[:id])
-	end
-
 	def order_params
-		params.require(:order).permit(:payment, :last_name, :last_name_furi, :first_name, :first_name_furi, :zip, :address, :tel, :user_id, :status, :order_delivery )
+		params.require(:order).permit(:payment, :last_name, :first_name, :zip, :address, :tel, :user_id, :status, :order_delivery )
 	end
 end

@@ -17,38 +17,36 @@ Rails.application.routes.draw do
 
   delete 'users/:id/edit/destroy' => 'users#destroy', as: 'destroy_users'
 
-    devise_for :admins, controllers: {
+  devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
     registrations: 'admins/registrations'
   }
-    devise_for :users, controllers: {
+  devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
 
   namespace :admin do
-  resources :users, :genres, :artists, :news_posts, :order_items, :reviews, :messages, :delivery_addresss, :items
-  resources :favorites, :only => [:index]
-  resources :carts_items, :only => [:index, :edit]
-  resources :orders, :only => [:index]
-  resources :order_items, :only => [:index, :show]
+    resources :users, :genres, :artists, :news_posts, :reviews, :delivery_addresss, :items
+    resources :favorites, :only => [:index]
+    resources :carts_items, :only => [:index, :edit]
+    resources :orders, :only => [:index, :edit, :show, :destroy]
   end
 
   resources :genres
   resources :artists
-  resources :news_posts
+  resources :news_posts, only: [:index, :show, :update]
   resources :items do
     resources :carts_items
     resource :reviews, only: [:create, :destroy]
   end
 
-  resources :messages
   resources :users
   resources :admins
-  resources :orders
-  resources :order_items
+  resources :orders, :only => [:index, :update, :show, :new, :create]
+  get 'order/buy', to: 'orders#buy', as: 'buy_order'
   resources :favorites, :only => [:index]
   resources :delivery_addresses
   resources :reviews, :only => [:index, :show]

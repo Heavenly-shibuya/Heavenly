@@ -13,19 +13,18 @@
 						<table class="table">
 							<thead>
 								<tr>
-									<th class="col-sm-1 order-id">注文ID</th>
 									<th class="col-sm-1">注文日</th>
 									<th class="col-sm-5">購入内容</th>
 									<th class="col-sm-1">合計</th>
 									<th class="col-sm-1">氏名</th>
 									<th class="col-sm-1">注文状況</th>
-									<th class="col-sm-2">送付先</th>
+									<th class="col-sm-3">送付先</th>
 									<th></th>
 								</tr>
 							</thead>
 							<tbody>
 								<% @orders.each do |order| %>
-								<tr><td><%= order.id %></td>
+								<tr>
 									<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
 									<td>
 										<% order.cart_items.each do |item| %>
@@ -34,15 +33,24 @@
 										小計：<%= (item.total_price).to_i %>円<br>
 										<% end %>
 
+									</td>
+									<td><%= (order.totals_price).to_i %>円</td>
+									<td><%= order.last_name %><%= order.first_name %></td>
+									<td><%= order.status %></td>
+									<td><%= order.order_delivery %></td>
+
 									<td><%= link_to '詳細', order, class:"btn btn-default" %>
 									</td>
 								</tr>
 								<% end %>
-									</tbody>
-								</table>
-							</div>
-						<%= link_to "マイページへ", user_path(current_user), class: "btn btn-default" %>
+							</tbody>
+						</table>
+						<div class="order-pagenation">
+							<%= paginate @orders %>
+						</div>
 					</div>
+					<%= link_to "マイページへ", user_path(current_user), class: "btn btn-default" %>
+					<%= link_to "トップページへ", genres_path, class: "btn btn-default" %>
 				</div>
 			</div>
 		</div>
