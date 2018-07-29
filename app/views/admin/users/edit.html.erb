@@ -13,10 +13,10 @@
 
 
       <div class="user-prof col-xs-6 col-sm-6">
-            <%= form_for(@user, url: admin_users_path) do |f| %>
+            <%= form_for(@user, url: admin_user_path) do |f| %>
             <h5>プロフィール画像</h5>
             <%= f.attachment_field :profile_image %>
-            <h5>ユーザー名</h5>
+            <h5>ユーザー名</h5> 
             <%= f.text_field :name, class: "form-control" %>
             <h5>メールアドレス</h5>
             <%= f.email_field :email, class: "form-control" %>

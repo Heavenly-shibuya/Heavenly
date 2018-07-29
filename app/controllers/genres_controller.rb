@@ -5,5 +5,6 @@ class GenresController < ApplicationController
   end
 
   def show
+  	@genre = Item.where(genre_id: params[:para])
   end
 end

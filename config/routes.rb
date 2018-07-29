@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   resources :delivery_addresses
   resources :reviews, :only => [:index, :show]
   resources :carts, :only => [:index, :show, :edit, :destroy]
-
+  get'genre/1'
 
 
 end
