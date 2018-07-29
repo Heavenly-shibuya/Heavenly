@@ -1,6 +1,6 @@
 class Admin::NewsPostsController < ApplicationController
-  before_action :correct_user
-  before_action :authenticate_admin!
+	before_action :correct_user
+	before_action :authenticate_admin!
 
 	def index
 		@newsall = NewsPost.page(params[:page]).per(5)
@@ -21,7 +21,7 @@ class Admin::NewsPostsController < ApplicationController
 	def create
 		@news = NewsPost.new(news_post_params)
 		@news.save
-		# flash[:notice] = "News was successfully created."
+		flash[:notice] = "News was successfully created."
 		redirect_to admin_news_post_path(@news)
 	end
 
@@ -29,7 +29,7 @@ class Admin::NewsPostsController < ApplicationController
 		news = NewsPost.find(params[:id])
 		news.delete
 		@newsall = NewsPost.all
-		# flash[:notice] = "News was successfully destroyed."
+		flash[:notice] = "News was successfully destroyed."
 		redirect_to admin_news_posts_path
 	end
 
@@ -41,8 +41,8 @@ class Admin::NewsPostsController < ApplicationController
 	end
 
 	def correct_user
-    if user_signed_in?
-       redirect_to genres_path
-    end
-  end
+		if user_signed_in?
+			redirect_to genres_path
+		end
+	end
 end
