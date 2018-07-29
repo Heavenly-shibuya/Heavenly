@@ -1,5 +1,4 @@
 <div class="clearfix">
-  <!-- main -->
   <div class="item-show-main">
     <div class="container-fluid">
       <div class="row">
@@ -40,9 +39,7 @@
                 <div class="stock-form">
                   <span>在庫数: </span>
                   <%= @item.stock %><br>
-                  <% if @item.stock == 0 %>
-                  <%= link_to '在庫を追加してください',  edit_admin_item_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-block" %>
-                  <% end %>
+                  <%= link_to '在庫を追加する',  edit_admin_item_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-block" %>
                 </div>
               </div>
             </div>
@@ -81,38 +78,11 @@
                 <% end %>
               </table>
               <!-- レビュー表示 -->
-              <div class="music-title"><h3><strong>ユーザーレビュー</strong></h3></div>
-              <div class="review-box">
-                <p>Vivid colors,and she said,rain leavesはハードロック
-                  特にcureless,rain leaves a scar,vivid colorsはイイ曲だね
-                  俺自身もheavenlyにハマるまでは、ちょっと時間かかったから
-                  良さがわかるまで、ちょっと時間がかかるアルバムかもしれない
-                  まあ、個人差あるけど
-                  あと個人的に夏の憂鬱は、このアルバムに入ってるヤツのほうが好き
-                  ギターソロとかも、こっちのほうがイイ気がする。少数派だと思うけど
 
-                  ちなみに、ラルクのオリアルでラスト曲がアップテンポなのは、このアルバムとsmileだけ
-                それぞれ、rain leavesとspirit dreamsだからな</p>
-              </div>
-              <div class="review-box"><p>実はこれが初ﾗﾙｸなんです。
-                以前と今声が全然違うので懐かしいです。
-                歌詞を初めて見た時はどうやったらこんないいの書けるの〜
-                と思っていました。
-                どんどん変わっていくﾗﾙｸにいつもワクワクしています。
-                昔からのファンなので今のﾗﾙｸのような
-                人に幸せを与えられて影響を与えられるようなそんな作品作ってほしいです。
-                あんまりこのCDは聞く機会がないのですが
-                原因はなんだか貴重に思えてしまうからです。
-                声が違うので。。。
-              声が変わった。。。</p></div>
-              <div class="review-box"><p>ラルクが好きなので、全部集める為の一つとして買いました。このアルバムには毎日聴きたくなるような曲は少なく、後回しにしていて、やっと買いました。買えてとても良かったです。</p></div>
-              <div class="review-box"><p>heavenlyは、綺麗な曲が多いのでとても好きなアルバムです。</p></div>
-              <div class="review-box"><p>このアルバムは、原石のよう。hydeの声が、とても自然でよい。曲を感じて表情を変えて歌えるのは彼の魅力だと思うのですが、ヘヴンリーでは作り込みすぎず、自然体で表現していて豊かな広がりを感じました。still i'm~ は、当時の彼らの心境が伝わってきます。春のざらっとした風と、まだ冷たさの残る空。心は未来を期待している。前２作では、彼らの内向的でやや閉鎖ぎみな見方が色濃く出ていましたが、ここでは伝えようと開いていく前向きな姿勢を感じられて、どこか透明な憂いを感じます。vivid~ の切実さや、後の風にきえないでなど、この頃の彼らにしかない魅力があります。ラルクの音楽には、ひとり窓辺で空を見上げるような孤独感がありますが、いつもどこか遠いところにある暖かな何かを求めているように思います。ガラス玉や静かの海での持つ世界観に共感できるものがあると、きっと惹かれるのでは。。若さ故の希望と苦悩、きらめきと危うさを感じます。そしてhydeの妖艶さがみずみずしい。何かに向かって進むときに響いてくる、また、いつかの日を懐かしむような。素敵なアルバムです。</p></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

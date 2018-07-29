@@ -1,5 +1,4 @@
 <div class="clearfix">
-  <!-- main -->
   <div class="item-show-main">
     <div class="container-fluid">
       <div class="row">
@@ -37,65 +36,63 @@
                   <!-- カートアイコン画像 -->
                   <img src="/itemimg/cart.png">
                 </div>
-                                  <span>在庫数: </span>
-                  <%= @item.stock %><br>
+                <span>在庫数: </span>
+                <%= @item.stock %><br>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 右サイド -->
-        <div class="content-right col-sm-8">
-          <div class="row">
-            <div class="col-sm-11">
-              <!-- itemタイトル名 -->
-              <div class="music-title"><h2><strong><%= @item.title %></strong></h2></div>
-              <div class="title-list">
-                <table class="table">
-                  <thead>
-                    <% @discs.each do |disc| %>
-                    <tr>
-                      <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
-                      <th></th>
-                      <th></th>
+          <!-- 右サイド -->
+          <div class="content-right col-sm-8">
+            <div class="row">
+              <div class="col-sm-11">
+                <!-- itemタイトル名 -->
+                <div class="music-title"><h2><strong><%= @item.title %></strong></h2></div>
+                <div class="title-list">
+                  <table class="table">
+                    <thead>
+                      <% @discs.each do |disc| %>
+                      <tr>
+                        <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      <th><p class="text-center">track</p></th>
+                      <th><p class="text-center">曲名</p></th>
+                      <th class="col-sm-2"><p class="text-center"> 時間</p></th>
                     </tr>
-                    <th><p class="text-center">track</p></th>
-                    <th><p class="text-center">曲名</p></th>
-                    <th class="col-sm-2"><p class="text-center"> 時間</p></th>
-                  </tr>
-                </thead>
+                  </thead>
 
-                <tbody>
-                  <% disc.songs.each do |song| %>
-                  <tr>
-                    <th class="text-center"><%= song.track_order %></th>
-                    <td><%= song.title %></td>
-                    <td><%= song.time %></td>
-                  </tr>
+                  <tbody>
+                    <% disc.songs.each do |song| %>
+                    <tr>
+                      <th class="text-center"><%= song.track_order %></th>
+                      <td><%= song.title %></td>
+                      <td><%= song.time %></td>
+                    </tr>
+                    <% end %>
+                  </tbody>
                   <% end %>
-                </tbody>
-                <% end %>
-              </table>
-
-              <% if @item.stock > 0 %>
+                </table>
+                <% if @item.stock > 0 %>
                 <%= form_tag item_carts_items_path(@item), method: :post do %>
-                <%= number_field_tag :quantity, class: "serch_box" %>
-                <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-lg btn-block" %>
-              <% end %>
-              <% else @item.stock == 0 %>
-              <div class="item-show-button">
+                <%= number_field_tag :quantity %>
+                <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"btn btn-warning" %>
+                <% end %>
+                <% else @item.stock == 0 %>
                 <i class="fas fa-shopping-cart"> 在庫がありません</i>
+                <% end %>
+
+                <%= render 'reviews/review', item: @item %>
+
+                </div>
               </div>
-              <% end %>
-              <!--               <i class="fas fa-shopping-cart btn btn-danger btn-lg btn-block"> カートへ</i> -->
-              <%= render 'reviews/review', item: @item %>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>
 

@@ -3,6 +3,7 @@
 	color: white;
 }
 .news-main {
+	float: right;
 	width: 80%;
 	height: 800px;
 	padding: 0 20px;
@@ -11,10 +12,7 @@
 	overflow: scroll;
 }
 .news-content {
-	margin: 20px 0;
-}
-.image-box {
-	margin-bottom: 20px;
+	margin: 40px 0;
 }
 .news-caption {
 	color: white;

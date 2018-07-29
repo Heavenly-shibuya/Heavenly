@@ -4,12 +4,13 @@ class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @orders = Order.page(params[:page]).per(10)
+    @orders = Order.page(params[:page]).reverse_order
     @user = current_admin
   end
 
   def edit
     @order = Order.find(params[:id])
+    @derively = DeliveryAddress.where(user_id: @user.id)
   end
 
   def show
@@ -26,7 +27,7 @@ class Admin::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:payment, :last_name, :first_name, :zip, :address, :tel, :user_id, :status, :order_delivery )
+    params.require(:order).permit(:payment, :last_name, :first_name, :zip, :tel, :user_id, :status, :order_delivery )
   end
 
   def correct_user

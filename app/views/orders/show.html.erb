@@ -23,6 +23,12 @@
 									<td><%= (item.total_price).to_i %>円</td>
 								</tr>
 								<% end %>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>合計 <%= (@order.totals_price).to_i %>円</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
