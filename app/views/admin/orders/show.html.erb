@@ -28,13 +28,23 @@
 									<td><%= (item.total_price).to_i %>円</td>
 								</tr>
 								<% end %>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>合計 <%= (@order.totals_price).to_i %>円</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
+
+					<div class="order-show-button">
+						<%= link_to '注文一覧へ', orders_path , class:"btn btn-default btn-block" %>
+					</div>
+
 					<div class="row">
-						<div class="order-show-title"><h2><strong class="order-show-border">注文者情報</strong></h2></div>
+						<div class="order-show-title"><h2><strong class="order-show-border">注文情報</strong></h2></div>
 						<div class="order-show-info">
-							<p>注文ID：<%= @order.id %></p>
 							<p>注文状況：<%= @order.status %></p>
 							<p>注文日：<%= @order.created_at.strftime('%Y/%m/%d') %></p>
 							<p>氏名：<%= @order.last_name %><%= @order.first_name %></p>
@@ -43,7 +53,7 @@
 							<p>郵便番号：<%= @order.zip %></p>
 							<p>送付先：<%= @order.order_delivery %></p>
 							<div class="order-show-button">
-								<%= link_to '注文一覧へ', admin_orders_path , class:"btn btn-default btn-block" %>
+								<%= link_to '注文編集へ', edit_admin_order_path(@order.id) , class:"btn btn-success btn-block" %>
 							</div>
 						</div>
 					</div>

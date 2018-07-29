@@ -14,7 +14,7 @@
 							<thead>
 								<tr>
 									<th class="col-sm-1">注文日</th>
-									<th class="col-sm-5">購入内容</th>
+									<th class="col-sm-5">内容</th>
 									<th class="col-sm-1">合計</th>
 									<th class="col-sm-1">氏名</th>
 									<th class="col-sm-1">注文状況</th>
@@ -49,8 +49,8 @@
 							<%= paginate @orders %>
 						</div>
 					</div>
-					<%= link_to "マイページへ", user_path(current_user), class: "btn btn-default" %>
-					<%= link_to "トップページへ", genres_path, class: "btn btn-default" %>
+					<%= link_to "マイページへ", user_path(current_user), class:"btn btn-default" %>
+					<%= link_to "トップページへ", genres_path, class:"btn btn-default" %>
 				</div>
 			</div>
 		</div>

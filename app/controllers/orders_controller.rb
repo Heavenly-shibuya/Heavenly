@@ -1,9 +1,8 @@
 class OrdersController < ApplicationController
 
-	before_action :authenticate_user!, only: [:index, :show, :new, :create]
+	before_action :authenticate_user!, only: [:index, :show, :new, :create, :buy]
 
 	def index
-		# @orders = Order.page(params[:page]).per(10)
 		@user = current_user
 		@orders = Order.page(params[:page]).where(user_id: @user.id).reverse_order
 	end
@@ -27,14 +26,14 @@ class OrdersController < ApplicationController
 
 		if @cart.cart_items.empty?
 			flash[:notice] = "Cart is empty"
-			redirect_to items_path
+			redirect_to genres_path
 			return
 		end
 
 		@order = Order.new
 		@user = current_user
 
-		@derively = DeliveryAddress.where(user_id: @user.id)
+		@delivery = DeliveryAddress.where(user_id: @user.id)
 
 	end
 
@@ -54,6 +53,6 @@ class OrdersController < ApplicationController
 	private
 
 	def order_params
-		params.require(:order).permit(:payment, :last_name, :first_name, :zip, :address, :tel, :user_id, :status, :order_delivery )
+		params.require(:order).permit(:payment, :last_name, :first_name, :zip, :tel, :user_id, :status, :order_delivery )
 	end
 end

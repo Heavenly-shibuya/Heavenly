@@ -11,6 +11,7 @@ class DeliveryAddressesController < ApplicationController
     delivery_address.user_id = current_user.id
     delivery_address.save
     redirect_to delivery_addresses_path
+    # redirect_to new_order_path
   end
 
   def index

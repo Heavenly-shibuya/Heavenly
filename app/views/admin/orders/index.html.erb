@@ -14,7 +14,7 @@
 							<thead>
 								<tr>
 									<th class="col-sm-1">注文日</th>
-									<th class="col-sm-5">購入内容</th>
+									<th class="col-sm-5">注文内容</th>
 									<th class="col-sm-1">合計</th>
 									<th class="col-sm-1">氏名</th>
 									<th class="col-sm-1">注文状況</th>
@@ -45,12 +45,17 @@
 									<% end %>
 								</tbody>
 							</table>
-						</div>
-						<div class="order-button">
-							<%= link_to '管理者ページへ', admins_path , class:"btn btn-default btn-lg pull-right" %>
+							<div class="order-pagenation">
+								<%= paginate @orders %>
+							</div>
 						</div>
 					</div>
+				</div>
+				<div class="order-button">
+					<%= link_to '管理者ページへ', admin_path(current_admin.id) , class:"btn btn-default" %>
+					<%= link_to "トップページへ", genres_path, class:"btn btn-default" %>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>

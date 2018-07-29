@@ -1,16 +1,44 @@
 <%= form_for(order) do |f| %>
 
-	<form>
-	  <div class="form-group edit-form-box">
-	    <label>注文状況：</label>
-	    <%= f.select(:status,[['注文受付', '注文受付'],['商品準備中', '商品準備中'],['出荷済み', '出荷済み']]) %>
-	  </div>
+<form>
+	<div class="form-group edit-form-box">
+		<label>注文状況：</label>
+		<%= f.select(:status,[['注文受付', '注文受付'],['商品準備中', '商品準備中'],['出荷済み', '出荷済み']]) %>
+	</div>
 
-	  <div class="order-edit-button">
-	    <%= f.submit '更新する', class:"btn btn-success" %>
-	    <%= link_to '注文一覧へ', admin_orders_path , class:"btn btn-default" %>
-	  </div>
+	<div class="form-group edit-form-group">
+		<label>姓</label>
+		<%= f.text_field :last_name, class: "form-control"%>
+	</div>
 
-	</form>
+	<div class="form-group edit-form-group">
+		<label>名</label>
+		<%= f.text_field :first_name, class: "form-control" %>
+	</div>
+
+	<div class="form-group edit-form-group">
+		<label>郵便番号</label>
+		<%= f.text_field :zip, class: "form-control" %>
+	</div>
+
+	<div class="form-group edit-form-group">
+		<label>住所</label>
+		<%= f.text_area :order_delivery, class: "form-control"%>
+	</div>
+
+	<div class="form-group edit-form-group">
+		<label>電話番号</label>
+		<%= f.text_field :tel, class: "form-control" %>
+	</div>
+
+	<div class="order-title"><h4><strong>支払い方法 <span class="payment-box">
+		<%= f.select(:payment, [['選択して下さい', ''],['現金', '現金'],['クレジットカード', 'クレジットカード'],['代金引換', '代金引換'],['コンビニ払い', 'コンビニ払い'],['銀行振込', '銀行振込']]) %>
+	</span></strong></h4></div>
+
+	<div class="order-edit-button">
+		<%= f.submit '更新する', class:"btn btn-success" %>
+		<%= link_to '注文一覧へ', admin_orders_path , class:"btn btn-default" %>
+	</div>
+</form>
 
 <% end %>

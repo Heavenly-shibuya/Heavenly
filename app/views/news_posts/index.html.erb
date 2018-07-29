@@ -1,24 +1,28 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="news-main">
-      <div class="title"><h3><strong>NEWS</strong></h3></div>
-      <% @newsall.each do |news| %>
-      <div class="news-content clearfix">
-        <div class="row">
-          <div class="col-xs-12 col-sm-offset-1 col-sm-2">
-            <%= link_to attachment_image_tag news, :news_image, :fill, 150, 150, class:"img-responsive" %>
-          </div>
-          <div class="news-caption col-xs-12 col-sm-8">
-            <strong>Title:<%= news.title %></strong>
-            <div style="margin-top: 10px;">
-              <%= truncate(news.body, length: 70) %>
-              <%= link_to "記事詳細へ", news_post_path(news.id) %>
+<div class="clearfix">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="news-main">
+        <div class="title"><h3><strong>NEWS</strong></h3></div>
+
+        <% @newsall.each do |news| %>
+
+        <div class="news-content clearfix">
+          <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+              <%= link_to attachment_image_tag news, :news_image, :fill, 150, 150, class:"img-responsive" %>
+            </div>
+            <div class="news-caption col-xs-12 col-sm-8">
+              <strong>Title:<%= news.title %></strong>
+              <div style="margin-top: 10px;">
+                <%= truncate(news.body, length: 70) %>
+                <%= link_to "記事詳細へ", news_post_path(news.id) %>
+              </div>
             </div>
           </div>
-        </div>
-        <% end %>
-        <div class="pagenation">
-         <%= paginate @newsall, class: "pagenate" %>
+          <% end %>
+          <div class="pagenation">
+           <%= paginate @newsall %>
+         </div>
        </div>
      </div>
    </div>
