@@ -1,7 +1,7 @@
     <div class="music-title">
         <h3><strong>ユーザーレビュー</strong></h3>
     </div>
-      <% @item.reviews.each do |review| %>
+      <% @item.reviews.reverse_order.limit(5).each do |review| %>
       <div class="review-box">
         <%= attachment_image_tag review.user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "", fallback: "user1.png", :size => "40x40" %>
         <%= review.user.name %><br>
@@ -9,23 +9,12 @@
         <%= review.created_at.strftime('%Y/%m/%d') %>
       </div>
       <% end %>
+<!--       <%= paginate @reviews, class: "pagenate" %> -->
 
       <div class="review-up-box">
         <h3><strong>レビュー投稿</strong></h3>
           <%= form_for [@item, @review] do |f| %>
-<!--               <%= f.hidden_field :item_id, value: @item.id %>
-              <div class="field" id="star">
-                <%= f.label :star %>
-                <%= f.hidden_field :star, id: :review_star %>
-              </div> -->
-              <%= f.text_field :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+              <%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
               <%= f.submit "送信", class: "btn btn-primary pull-right" %>
           <% end %>
-<!--           <script>
-          $('#star').raty({
-            size     : 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            scoreName: 'review[star]' });
-          </script> -->
       </div>
