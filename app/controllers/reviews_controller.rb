@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
   end
 
   def show
+  	@item =Item.find(params[:id])
+    @review = Review.new
   end
 
   def new

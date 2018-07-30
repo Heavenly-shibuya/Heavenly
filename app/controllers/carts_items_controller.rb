@@ -34,11 +34,16 @@ class CartsItemsController < ApplicationController
   	@cart = current_cart
   	item = Item.find(params[:item_id])
     @cart_item = @cart.add_item(item.id, params[:quantity])
-  	@cart_item_stock =  params[:quantity]
+    if item.stock.to_i - params[:quantity].to_i < 0
+    	redirect_to item_path(item.id)
+    	flash[:notice] = '在庫数の上限を超えています。'
+    else
+  	@cart_item_stock = params[:quantity]
   	item.stock -= @cart_item_stock.to_i
     @cart_item.save
     item.save
     redirect_to cart_path(@cart)
+  end
 
   end
 
