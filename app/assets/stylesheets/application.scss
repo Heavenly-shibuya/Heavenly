@@ -122,3 +122,12 @@ input {
   color: white;
   margin-right: 280px;
 }
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: black;
+  font: inherit;
+  margin: 0;
+}

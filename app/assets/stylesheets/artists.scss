@@ -161,14 +161,14 @@
   margin: 0 10px 0 25px;
 }
 
-.a1111 {
+.artist-item-right-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 20px;
 }
 
-.a1111::after {
+.artist-item-right-content::after {
   content:"";
   display: block;
   width: 30%;
