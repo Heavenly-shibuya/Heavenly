@@ -44,19 +44,42 @@
             <%= link_to "NEWS", news_posts_path, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
-            <%= link_to "ABOUT", news_posts_path, class: "responsib-item" %>
+            <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "responsib-item" %>
+          </div>
+        </div>
+      </div>
+<% elsif admin_signed_in? %>
+<div class="head-serch">
+        <div class="serch">
+          <%= form_tag items_search_path, method: :get do %>
+          <%= text_field_tag :search, params[:search], class: "serch_box" %>
+          <%= submit_tag "search", class: "serch_btn" %>
+          <% end %>
+        </div>
+      </div>
+      <input id="head-input" type="checkbox" class="head-unshown">
+      <label id="head-open" for="head-input"><span></span></label>
+      <label class="head-unshown" id="head-close" for="head-input"></label>
+
+      <div class="head">
+        <span class="head-title-login"><strong>Heavenly Music&nbsp;&nbsp;</strong></span>
+      </div>
+      <div id="head-content">
+        <div class="responsib-menu">
+          <div class="responsib-item">
+            <%= link_to "HOME", genres_path, class: "responsib-item" %>
+          </div>
+          <div class="responsib-item">
+            <%= link_to "NEWS", news_posts_path, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
             <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
             <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete, class: "responsib-item" %>
-          </div>
-          <div class="responsib-item">
-            <%= link_to "LOGIN", new_user_session_path, class: "responsib-item" %>
-          </div>
-          <div class="responsib-item">
-            <%= link_to "SIGN UP", new_user_registration_path, class: "responsib-item" %>
           </div>
         </div>
       </div>
@@ -81,9 +104,6 @@
           </div>
           <div class="responsib-item">
             <%= link_to "NEWS", news_posts_path, class: "responsib-item" %>
-          </div>
-          <div class="responsib-item">
-            <%= link_to "ABOUT", news_posts_path, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
             <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
@@ -126,7 +146,7 @@
     <div class="user-content">
       <div class="admin-image"></div>
       <div class="user-profile">
-        <%= link_to "ADMIN", admin_path(current_admin), class: "my-side", style: "text-decoration: none;" %>
+        <%= link_to "ADMIN", admins_path(current_admin), class: "my-side", style: "text-decoration: none;" %>
         <%= link_to " LOGOUT", destroy_admin_session_path, method: :delete, class: "my-side", style: "text-decoration: none;"%>
       </div>
     </div>
@@ -155,7 +175,6 @@
               <li><%= link_to "ARTISTS", artists_path(current_user), class: "my-side" %></li>
             </ul>
             <ul>
-              <li><%= link_to "ABOUT", user_path(current_user), class: "my-side" %></li>
               <li><%= link_to "NEWS", news_posts_path(current_user), class: "my-side" %></li>
               <li><%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side"%></li>
             </ul>

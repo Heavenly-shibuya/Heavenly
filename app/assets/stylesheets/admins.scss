@@ -24,13 +24,20 @@
   color: #fff;
   border-bottom: 2px solid gray;
   font-size: 30px;
-  margin-top: 10px;
+  margin-top: 50px;
   text-shadow: 1px -1px 0 rgba(0,0,0,1);
 }
 
-/*.user-pic-index {
-  width: 60px;
-  height: 180px;
-  border-radius: 90px;
-  margin-top: 15px;
-}*/
+.new-btn-table td {
+  color: white;
+  padding: 20px 0 20px 0;
+}
+
+.new-btn-block {
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+
+.new-btn-block .new-btn {
+  padding: 20px;
+}

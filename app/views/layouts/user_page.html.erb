@@ -36,9 +36,6 @@
             <%= link_to "NEWS", news_posts_path, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
-            <%= link_to "ABOUT", news_posts_path, class: "responsib-item" %>
-          </div>
-          <div class="responsib-item">
             <%= link_to "ARTISTS", artists_path, class: "responsib-item" %>
           </div>
           <div class="responsib-item">
@@ -68,7 +65,6 @@
               <li><%= link_to "ARTISTS", artists_path(current_user), class: "my-side" %></li>
             </ul>
             <ul>
-              <li><%= link_to "ABOUT", user_path(current_user), class: "my-side" %></li>
               <li><%= link_to "NEWS", news_posts_path(current_user), class: "my-side" %></li>
               <li><%= link_to " LOGOUT", destroy_user_session_path, method: :delete, class: "my-side"%></li>
             </ul>
