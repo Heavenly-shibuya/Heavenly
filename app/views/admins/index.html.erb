@@ -8,6 +8,29 @@
         <div class="user-title">
           <span><strong>管理者用ページ</strong></span></div>
 
+        <div class="col-xs-12 col-sm-12">
+          <div class="col-xs-1 col-sm-1"></div>
+          <div class="page-info col-xs-10 col-sm-10">
+            <div class="user-index-title"><p><strong>各種ページ</strong></p></div>
+            <table class="new-btn-table" style="table-layout:fixed;width:100%;">
+                <tr>
+                  <th style="width:25%;"></th>
+                  <th style="width:25%;"></th>
+                  <th style="width:25%;"></th>
+                  <th style="width:25%;"></th>
+                </tr>
+                <tr class="new-btn-block">
+                  <td><%= link_to "アーティスト投稿", new_admin_artist_path, class: "btn btn-primary new-btn" %></td>
+                  <td><%= link_to "CD登録", new_admin_item_path, class: "btn btn-info new-btn" %></td>
+                  <td><%= link_to "新規ニュース投稿", new_admin_news_post_path, class: "btn btn-warning new-btn" %></td>
+                  <td><%= link_to "注文一覧", admin_orders_path, class: "btn btn-default new-btn" %></td>
+                </tr>
+            </table>
+          </div>
+          <div class="col-xs-1 col-sm-1"></div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12">
         <div class="col-xs-1 col-sm-1"></div>
         <div class="profile-info col-xs-10 col-sm-10">
           <div class="user-index-title"><p><strong>ユーザー一覧</strong></p></div>
@@ -43,7 +66,11 @@
         </div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
 
