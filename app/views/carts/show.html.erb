@@ -27,7 +27,7 @@
                   <td>
                     <%= attachment_image_tag item.item, :item_image ,class:"img-responsive" %>
                   </td>
-                  <td><%= item.item.title %></td>
+                  <td class="link-color"><%= link_to "#{item.item.title}", item_path(item.item.id) %></td>
                   <td><%= (item.item.price).to_i %>円</td>
                   <td>数量：<%= item.quantity %>個</td>
                   <td><%= (item.total_price).to_i %>円</td>
