@@ -1,12 +1,11 @@
 <div class="container-fluid">
-  <div class="row">
+  
     <div class="news-show-main">
       <div class="title"><h3><strong>NEWS</strong></h3></div>
       <div class="news-content">
-        <div class="row">
           <%= attachment_image_tag @news, :news_image, class:"img-responsive col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-4" %>
-        </div>
-        <div class="row">
+        
+
           <div class="col-sm-offset-4 col-sm-8">
             <div class="news-show-title"><strong>Title:<%= @news.title %></strong></div>
             <div class="news-show-caption">
@@ -16,8 +15,8 @@
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
     </div>
-  </div>
+  
 </div>
