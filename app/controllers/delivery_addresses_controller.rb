@@ -2,39 +2,48 @@ class DeliveryAddressesController < ApplicationController
 
 # before_action :authenticate_user!, only: [:index, :new, :edit, :update, :destroy]
 
-  def new
-    @delivery_address = DeliveryAddress.new
-  end
+    def new
+      @delivery_address = DeliveryAddress.new
+    end
 
-  def create
-    delivery_address = DeliveryAddress.new(delivery_address_params)
-    delivery_address.user_id = current_user.id
-    delivery_address.save
-    redirect_to delivery_addresses_path
-    # redirect_to new_order_path
-  end
+    def create
+      delivery_address = DeliveryAddress.new(delivery_address_params)
+      delivery_address.user_id = current_user.id
+      delivery_address.save
 
-  def index
-    @delivery_address = DeliveryAddress.where(user_id: current_user.id)
-  end
+      @cart = current_cart
 
-  def edit
-    @delivery_address = DeliveryAddress.find(params[:id])
-  end
+      if @cart.cart_items.empty?
+        redirect_to delivery_addresses_path
+        return
+      end
 
-  def update
-    delivery_address = DeliveryAddress.find(params[:id])
-    delivery_address.update(delivery_address_params)
-    redirect_to delivery_addresses_path
-  end
+      redirect_to new_order_path
 
-  def destroy
-    delivery_address = DeliveryAddress.find(params[:id])
-    delivery_address.destroy
-    redirect_to delivery_addresses_path
-  end
+    end
 
-private
+    def index
+      @delivery_address = DeliveryAddress.where(user_id: current_user.id)
+    end
+
+    def edit
+      @delivery_address = DeliveryAddress.find(params[:id])
+    end
+
+    def update
+      delivery_address = DeliveryAddress.find(params[:id])
+      delivery_address.update(delivery_address_params)
+      redirect_to delivery_addresses_path
+    end
+
+    def destroy
+      delivery_address = DeliveryAddress.find(params[:id])
+      delivery_address.destroy
+      redirect_to delivery_addresses_path
+    end
+
+    private
+
     def delivery_address_params
       params.require(:delivery_address).permit(:last_name, :last_name_furi, :first_name, :first_name_furi, :zip, :address, :tel)
     end

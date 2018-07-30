@@ -9,9 +9,9 @@
       </div>
       <div class="row">
         <!-- 左サイド -->
-        <div class="content-left col-sm-4">
+        <div class="col-sm-4">
           <!-- item画像 -->
-          <%= attachment_image_tag @item, :item_image ,class:"img-responsive col-xs-offset-2 col-sm-offset-0 col-xs-8 col-sm-12" %><br>
+          <%= attachment_image_tag @item, :item_image ,class:"img-responsive col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-12" %><br>
           <div class="row">
             <div class="col-sm-12">
               <div class="music-info col-xs-12">
@@ -34,19 +34,27 @@
                 </div>
                 <div class="cart-box">
                   <!-- カートアイコン画像 -->
-                  <img src="/itemimg/cart.png">
+                  <!-- <img src="/itemimg/cart.png"> -->
                 </div>
                 <div class="stock-form">
+                  <% if @item.stock > 0 %>
                   <span>在庫数: </span>
                   <%= @item.stock %><br>
-                  <%= link_to '在庫を追加する',  edit_admin_item_path(@item), class:"fas fa-shopping-cart btn btn-warning btn-block" %>
+                  <% else @item.stock == 0 %>
+                  <i class="fas fa-shopping-cart"> 在庫がありません</i>
+                  <% end %>
+
+                  <div class="item-link">
+                    <%= link_to '在庫を追加する',  edit_admin_item_path(@item), class:"btn btn-success btn-block" %>
+                    <%= link_to '商品一覧へ',  admin_items_path, class:"btn btn-default btn-block" %>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <!-- 右サイド -->
-        <div class="content-right col-sm-8">
+        <div class="col-sm-8">
           <div class="row">
             <div class="col-sm-11">
               <!-- itemタイトル名 -->
@@ -63,22 +71,23 @@
                     <th><p class="text-center">track</p></th>
                     <th><p class="text-center">曲名</p></th>
                     <th class="col-sm-2"><p class="text-center"> 時間</p></th>
-                  </tr>
-                </thead>
+                  </thead>
 
-                <tbody>
-                  <% disc.songs.each do |song| %>
-                  <tr>
-                    <th class="text-center"><%= song.track_order %></th>
-                    <td><%= song.title %></td>
-                    <td><%= song.time %></td>
-                  </tr>
+                  <tbody>
+                    <% disc.songs.each do |song| %>
+                    <tr>
+                      <th class="text-center"><%= song.track_order %></th>
+                      <td><%= song.title %></td>
+                      <td><%= song.time %></td>
+                    </tr>
+                    <% end %>
+                  </tbody>
                   <% end %>
-                </tbody>
-                <% end %>
-              </table>
-              <!-- レビュー表示 -->
+                </table>
+                <!-- レビュー表示 -->
 
+
+              </div>
             </div>
           </div>
         </div>

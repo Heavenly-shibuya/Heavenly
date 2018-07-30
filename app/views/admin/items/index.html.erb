@@ -11,29 +11,29 @@
 
             <div class="index-content col-sm-12 col-md-12">
               <div class="index-item-pic col-sm-3 col-md-3">
-                <%= attachment_image_tag f, :item_image, :fill, 150, 150, format: 'jpg' %>
+                <%= attachment_image_tag f, :item_image, :fill, 170, 170, format: 'jpg' %>
               </div>
 
 
 
                 <div class="index-item-date col-sm-9 col-md-9">
 
-                  <table class="index-item-table" style="table-layout:fixed;width:100%;" >
+                  <table class="index-item-table table" style="table-layout:fixed;width:100%;" >
                           <tr>
                             <th style="width:30%;">商品名</th>
                             <th style="width:30%;">アーティスト名</th>
-                            <th style="width:10%;"></th>
                             <th style="width:15%;">在庫数</th>
-                            <th style="width:10%;"></th>
-                            <th style="width:10%;"></th>
+                            <th style="width:15%;"></th>
                           </tr>
                           <tr>
                             <td><%= f.title %></td>
                             <td><%= f.artist.name %></td>
-                            <td></td>
                             <td><%= f.stock %></td>
-                            <td><%= link_to "編集", edit_admin_item_path(f.id), class: "btn btn-success edit-btn" %></td>
-                            <td></td>
+                            <td>
+                              <%= link_to "詳細", admin_item_path(f.id), class:"btn btn-default btn-block" %>
+                              <%= link_to "編集", edit_admin_item_path(f.id), class:"btn btn-success btn-block" %>
+                                <%= link_to "delete ", admin_item_path(f.id), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger btn-block" %>
+                              </td>
                           </tr>
                     </table>
                 </div>
