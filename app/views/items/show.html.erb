@@ -9,9 +9,9 @@
       </div>
       <div class="row">
         <!-- 左サイド -->
-        <div class="content-left col-sm-4">
+        <div class="col-sm-4">
           <!-- item画像 -->
-          <%= attachment_image_tag @item, :item_image ,class:"img-responsive col-xs-offset-2 col-sm-offset-0 col-xs-8 col-sm-12" %><br>
+          <%= attachment_image_tag @item, :item_image ,class:"img-responsive col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-12" %><br>
           <div class="row">
             <div class="col-sm-12">
               <div class="music-info col-xs-12">
@@ -34,36 +34,37 @@
                 </div>
                 <div class="cart-box">
                   <!-- カートアイコン画像 -->
-                  <img src="/itemimg/cart.png">
+                  <!-- <img src="/itemimg/cart.png"> -->
                 </div>
                 <span>在庫数: </span>
                 <%= @item.stock %><br>
+                <div class="item-link">
+                  <%= link_to '商品一覧へ', items_path, class:"btn btn-default btn-block" %>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-          <!-- 右サイド -->
-          <div class="content-right col-sm-8">
-            <div class="row">
-              <div class="col-sm-11">
-                <!-- itemタイトル名 -->
-                <div class="music-title"><h2><strong><%= @item.title %></strong></h2></div>
-                <div class="title-list">
-                  <table class="table">
-                    <thead>
-                      <% @discs.each do |disc| %>
-                      <tr>
-                        <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
-                        <th></th>
-                        <th></th>
-                      </tr>
-                      <th><p class="text-center">track</p></th>
-                      <th><p class="text-center">曲名</p></th>
-                      <th class="col-sm-2"><p class="text-center"> 時間</p></th>
+        <!-- 右サイド -->
+        <div class="col-sm-8">
+          <div class="row">
+            <div class="col-sm-11">
+              <!-- itemタイトル名 -->
+              <div class="music-title"><h2><strong><%= @item.title %></strong></h2></div>
+              <div class="title-list">
+                <table class="table">
+                  <thead>
+                    <% @discs.each do |disc| %>
+                    <tr>
+                      <th class="col-sm-1">Disc:<%= disc.disc_name %></th>
+                      <th></th>
+                      <th></th>
                     </tr>
+                    <th><p class="text-center">track</p></th>
+                    <th><p class="text-center">曲名</p></th>
+                    <th class="col-sm-2"><p class="text-center"> 時間</p></th>
                   </thead>
-
                   <tbody>
                     <% disc.songs.each do |song| %>
                     <tr>
@@ -86,7 +87,6 @@
 
                 <%= render 'reviews/review', item: @item %>
 
-                </div>
               </div>
             </div>
           </div>

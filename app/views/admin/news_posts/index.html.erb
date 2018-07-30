@@ -1,6 +1,6 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="news-main">
+<div class="clearfix">
+  <div class="news-index-main">
+    <div class="container-fluid">
 
       <% if notice %>
       <p id="notice"><%= notice %></p>
@@ -10,7 +10,7 @@
 
       <% @newsall.each do |news| %>
 
-      <div class="news-content clearfix">
+      <div class="news-content">
         <div class="row">
           <div class="col-xs-12 col-sm-2">
             <%= link_to attachment_image_tag news, :news_image, :fill, 150, 150, class:"img-responsive" %>
@@ -27,13 +27,13 @@
             <%= link_to "delete ", admin_news_post_path(news.id), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger " %>
           </div>
         </div>
-        <% end %>
-        <div class="pagenation">
+      </div>
+      <% end %>
 
-         <%= paginate @newsall, class: "pagenate" %>
-
-       </div>
+      <div class="pagenation">
+       <%= paginate @newsall, class: "pagenate" %>
      </div>
+
    </div>
  </div>
 </div>

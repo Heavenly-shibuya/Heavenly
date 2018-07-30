@@ -9,16 +9,15 @@
 	background-color: #222222;
 	overflow: scroll;
 }
-.content-left {
-}
 .border-line {
     border-bottom: 1px solid white;
 }
 .music-info {
 	margin: 30px 0;
+  text-align: center;
 }
 .cart-box {
-	padding: 10px 15%;
+	padding: 30px 15% 0;
 }
 .stock-form {
   text-align: center;
@@ -27,8 +26,9 @@
 .stock-form {
   color: white;
 }
-.stock-form select{
-  color: black;
+.item-link {
+  margin: 30px 0;
+  padding: 0 30px;
 }
 .music-title {
 	margin: 50px 0 30px;
@@ -45,6 +45,11 @@
 	text-align: center;
 	margin: 0;
 }
+
+.index-item-table input {
+  width: 100%;
+}
+
 .review-box {
 	margin: 30px 0;
 	padding: 15px 30px;

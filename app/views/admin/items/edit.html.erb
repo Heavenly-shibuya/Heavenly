@@ -48,7 +48,8 @@
         </div>
 
         <%= f.submit "Update", class: "btn btn-warning" %>
-        <%= link_to "delete ", admin_item_path(@item), method: :delete, "data-confirm " => "Are you sure? ", class:"btn btn-danger " %>
+        <%= link_to "商品一覧へ", admin_items_path, class:"btn btn-default" %>
+
       </div>
       <% end %>
     </div>

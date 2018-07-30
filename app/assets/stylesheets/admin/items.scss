@@ -47,6 +47,10 @@ color: #EEEEEE;
 	float: left;
 	color: #EEEEEE;
 }
+// .btnbtn .btn-default {
+//   background-color: yellow;
+//   border-radius: 0;
+}
 .item-upimage {
 	width: 70%;
 }
@@ -73,14 +77,28 @@ th {
 
 .index-item-pic {
   float: left;
-  padding: 20px 10px 20px 0;
+  padding: 40px 10px 20px 0;
   height: 100%;
 }
 
 .index-item-date {
-  margin-top: 45px;
+  // margin-top: 45px;
 }
 
+.index-item-date .table > thead > tr > th,
+.index-item-date .table > thead > tr > td,
+.index-item-date .table > tbody > tr > th,
+.index-item-date .table > tbody > tr > td,
+.index-item-date .table > tfoot > tr > th,
+.index-item-date .table > tfoot > tr > td {
+
+  vertical-align: middle;
+  text-align: center;
+  border-top: 0;
+}
+.index-item-date .table > tbody > tr > td {
+  height: 130px;
+}
 .index-item-table {
   margin-top: 10px;
 }

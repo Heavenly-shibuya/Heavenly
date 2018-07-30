@@ -1,0 +1,54 @@
+<div class="news-index">
+  <div class="clearfix">
+    <!-- main -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="index-main-content">
+         <div class="order-item-title"><h3><strong>商品一覧</strong></h3></div>
+         <div class="item-index-content clearfix">
+
+          <% @items.each do |f| %>
+
+          <div class="index-content col-sm-12 col-md-12">
+            <div class="index-item-pic col-sm-3 col-md-3">
+              <%= attachment_image_tag f, :item_image, :fill, 150, 150, format: 'jpg' %>
+            </div>
+
+
+
+            <div class="index-item-date col-sm-9 col-md-9">
+
+              <table class="index-item-table table" style="table-layout:fixed;width:100%;" >
+                <tr>
+                  <th style="width:30%;">商品名</th>
+                  <th style="width:30%;">アーティスト名</th>
+                  <th style="width:15%;">価格</th>
+                  <th style="width:25%;"></th>
+                </tr>
+                <tr>
+                  <td><%= f.title %></td>
+                  <td><%= f.artist.name %></td>
+                  <td><%= f.price %>円</td>
+                  <td>
+                    <div class="btnbtn">
+                      <%= link_to "商品詳細", item_path(f.id), class:"btn btn-default" %>
+                    </div>
+
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <% end %>
+
+
+
+        </div>
+        <div class="pagenation-index">
+         <%= paginate @items, class: "pagenate" %>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
