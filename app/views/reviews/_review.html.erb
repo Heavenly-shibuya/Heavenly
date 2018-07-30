@@ -1,31 +1,26 @@
     <div class="music-title">
         <h3><strong>ユーザーレビュー</strong></h3>
     </div>
-      <% @item.reviews.each do |review| %>
+      <% @item.reviews.reverse_order.limit(5).each do |review| %>
       <div class="review-box">
-        <%= attachment_image_tag review.user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "", fallback: "user1.png", :size => "40x40" %>
+          <% if current_user.profile_image_id == "0" %>
+          <%= image_tag '/user2.png', class: "img-circle", :size => "50x50" %>
+          <% else %>
+        <%= attachment_image_tag review.user, :profile_image, :fill, 40, 40, format: 'jpeg', class: "img-circle", :size => "50x50" %>
+          <% end %>
+
         <%= review.user.name %><br>
         <p><%= review.body %></p><br>
         <%= review.created_at.strftime('%Y/%m/%d') %>
       </div>
       <% end %>
+      <%= link_to "すべて表示", review_path(@item.id), class: "btn btn-warning user-btn" %>
+
 
       <div class="review-up-box">
         <h3><strong>レビュー投稿</strong></h3>
           <%= form_for [@item, @review] do |f| %>
-<!--               <%= f.hidden_field :item_id, value: @item.id %>
-              <div class="field" id="star">
-                <%= f.label :star %>
-                <%= f.hidden_field :star, id: :review_star %>
-              </div> -->
-              <%= f.text_field :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+              <%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
               <%= f.submit "送信", class: "btn btn-primary pull-right" %>
           <% end %>
-<!--           <script>
-          $('#star').raty({
-            size     : 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            scoreName: 'review[star]' });
-          </script> -->
       </div>

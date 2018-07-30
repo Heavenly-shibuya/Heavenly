@@ -9,6 +9,8 @@ class ItemsController < ApplicationController
     @artist = @item.artist
     @discs = @item.discs
     @review = Review.new
+    @reviews = Review.page(params[:page]).per(5)
+
   end
 
   def update

@@ -2,6 +2,11 @@
   <div class="item-show-main">
     <div class="container-fluid">
       <div class="row">
+    <% if notice %>
+    <div class="flash">
+      <p id="notice"><%= notice %></p>
+    </div>
+    <% end %>
         <div class="col-sm-12" style="margin-bottom: 50px;">
           <!-- メイン画像 -->
           <%= attachment_image_tag @artist, :top_image ,class:"img-responsive" %>
@@ -41,6 +46,14 @@
                 <div class="item-link">
                   <%= link_to '商品一覧へ', items_path, class:"btn btn-default btn-block" %>
                 </div>
+                <% if @item.stock > 0 %>
+                <%= form_tag item_carts_items_path(@item), method: :post do %>
+                <%= number_field_tag :quantity, min: 0, max: 10 %>
+                <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"btn btn-warning" %>
+                <% end %>
+                <% else @item.stock == 0 %>
+                <i class="fas fa-shopping-cart"> 在庫がありません</i>
+                <% end %>
               </div>
             </div>
           </div>
@@ -76,14 +89,6 @@
                   </tbody>
                   <% end %>
                 </table>
-                <% if @item.stock > 0 %>
-                <%= form_tag item_carts_items_path(@item), method: :post do %>
-                <%= number_field_tag :quantity %>
-                <%= button_to 'カートに入れる',  item_carts_items_path(@item), class:"btn btn-warning" %>
-                <% end %>
-                <% else @item.stock == 0 %>
-                <i class="fas fa-shopping-cart"> 在庫がありません</i>
-                <% end %>
 
                 <%= render 'reviews/review', item: @item %>
 
