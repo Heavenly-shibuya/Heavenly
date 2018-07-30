@@ -53,7 +53,7 @@
 							<p>郵便番号：<%= @order.zip %></p>
 							<p>送付先：<%= @order.order_delivery %></p>
 							<div class="order-show-button">
-								<%= link_to '注文編集へ', edit_admin_order_path(@order.user.id) , class:"btn btn-success btn-block" %>
+								<%= link_to '注文編集へ', edit_admin_order_path(@order.id) , class:"btn btn-success btn-block" %>
 							</div>
 						</div>
 					</div>

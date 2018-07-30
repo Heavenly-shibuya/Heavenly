@@ -9,9 +9,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
     @order = Order.find(params[:id])
-    @derively = DeliveryAddress.where(user_id: @user.id)
   end
 
   def show
